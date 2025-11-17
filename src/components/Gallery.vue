@@ -106,6 +106,12 @@ const slides = computed(() =>
 }
 
 /* === Lógica dinámica con nth-of-type === */
+.carousel > input:nth-of-type(12):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -1100%; }
+.carousel > input:nth-of-type(11):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -1000%; }
+.carousel > input:nth-of-type(10):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -900%; }
+.carousel > input:nth-of-type(9):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -800%; }
+.carousel > input:nth-of-type(8):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -700%; }
+.carousel > input:nth-of-type(7):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -600%; }
 .carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
   margin-left: -500%;
 }
@@ -158,8 +164,10 @@ const slides = computed(() =>
 
 .carousel__slide figure {
   display: flex;
+  flex-direction: column;
   margin: 0;
 }
+
 
 .carousel__slide div {
   position: relative;

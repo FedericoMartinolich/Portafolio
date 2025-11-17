@@ -47,8 +47,8 @@
           </div>
 
           <div v-else-if="tab === 'methodology'">
-            <h3>Methodology</h3>
-            <p>{{ project.detail.metodology }}</p>
+            <h3 v-if="project.detail.metodology">Methodology</h3>
+            <p v-if="project.detail.metodology">{{ project.detail.metodology }}</p>
 
             <h3>Process</h3>
             <ul>
@@ -65,7 +65,21 @@
 
             <h3>Tech Stack</h3>
             <ul class="stack">
-              <li v-for="tech in project.detail.techStack" :key="tech">{{ tech }}</li>
+              <li v-for="tech in project.detail.techStack" :key="tech">
+                <i v-if="tech === 'HTML'" class="fa-brands fa-html5"></i> 
+                <i v-else-if="tech === 'CSS'" class="fa-brands fa-css3-alt"></i>
+                <i v-else-if="tech === 'JavaScript'" class="fa-brands fa-js"></i>
+                <i v-else-if="tech === 'Vue.js'" class="fa-brands fa-vuejs"></i>
+                <i v-else-if="tech === 'PHP'" class="fa-brands fa-php"></i>
+                <i v-else-if="tech === 'MySQL'" class="fa-solid fa-database"></i>
+                <i v-else-if="tech === 'Laravel' || tech === 'Laravel 10'" class="fa-brands fa-laravel"></i>
+                <i v-else-if="tech === 'Bootstrap'" class="fa-brands fa-bootstrap"></i>
+                <i v-else-if="tech === 'Leaflet'" class="fa-regular fa-map"></i>
+                <i v-else-if="tech === 'AJAX'" class="fa-solid fa-retweet"></i>
+                <i v-else-if="tech === 'FullCalendar'" class="fa-regular fa-calendar"></i>
+                <i v-else-if="tech === 'Tesseract OCR'" class="fa-solid fa-expand"></i>
+                {{ tech }}
+              </li>
             </ul>
           </div>
         </div>

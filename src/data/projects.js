@@ -9,7 +9,7 @@ export default [
   {
     id: "checking",
     title: "ChecKing",
-    shortDesc: "Check out some of the projects I've worked on.",
+    shortDesc: "Sistema de gestión de asistencias para alumnos y profesores.",
     thumbnail: checKingThumb,
     
     detail: {
@@ -22,9 +22,9 @@ export default [
       objetive: `
         Desarrollar un sistema web que permita a los profesores registrar y gestionar las asistencias de los alumnos de forma rápida y precisa.
       `,
-      metodology: `
+      /* metodology: `
         Se utilizó la metodología ágil para el desarrollo del proyecto, permitiendo iteraciones rápidas y adaptaciones según las necesidades del usuario.
-      `,
+      `, */
       process: [
         `1. Análisis de requisitos y diseño del sistema.`,
         `2. Desarrollo del backend utilizando PHP y MySQL para la gestión de datos.`,
@@ -35,11 +35,10 @@ export default [
         El sistema permitió a los profesores registrar asistencias de manera más eficiente, reduciendo errores y ahorrando tiempo en la gestión administrativa.
       `,
       difficulties: `
-        Durante el desarrollo, se enfrentaron desafíos relacionados con la integración de la base de datos y la optimización del rendimiento del sistema.
+        El backend del proyecto debió ser completamente construido con PHP desde cero. Manipular la BD implicó un desafío significativo en términos de diseño para la poca experiencia que tenia en ese momento.
       `,
       role: `
-        Participé como desarrollador principal, encargado del diseño del sistema, desarrollo del backend y creación de la interfaz de usuario.
-      `,
+        Lleve a cabo el desarrollo fullstack del proyecto, encargándome tanto del diseño de la base de datos como de la implementación del frontend y backend.      `,
       conclution: `
         El proyecto "checKing" demostró ser una solución efectiva para la gestión de asistencias, mejorando significativamente la experiencia tanto para profesores como para alumnos.
       `,
@@ -51,10 +50,10 @@ export default [
         "/src/assets/imgs/ChecKing/4.png",
       ],
       galleryText: [
-        "Pantalla de inicio de sesión para profesores.",
-        "Interfaz para registrar asistencias de alumnos.",
-        "Vista de reporte de asistencias por curso.",
-        "Panel de administración para gestionar usuarios y cursos.",
+        "Pantalla de inicio de sesión destinada a profesores. El acceso se realiza mediante DNI y contraseña.",
+        "Interfaz para el registro de asistencias de alumnos. La columna 'Limitaciones' indica si el alumno presenta alguna dificultad que pueda afectar su puntualidad o asistencia.",
+        "Vista de reporte de asistencias por curso. Se muestra la cantidad total y el porcentaje de asistencias calculado en base a las clases dictadas. El número de clases se incrementa diariamente cuando el profesor accede a la plataforma, confirma que se dictó clase y el sistema suma 1 al contador. En esta vista también se encuentra el botón 'Registro', que permite ver la información completa del alumno, y los botones adicionales para editar o eliminar el registro.",
+        "Pantalla para la configuración de parámetros que determinarán la condición final del alumno según sus asistencias. Aquí se definen valores como el porcentaje mínimo necesario para regular o promocionar (en caso de existir promoción).",
       ],
         repository: "https://github.com/FedericoMartinolich/checKing",
 
@@ -98,6 +97,7 @@ export default [
       `,
       
       metodology: `
+        Se utilizó la metodología ágil para el desarrollo del proyecto, permitiendo iteraciones rápidas y adaptaciones según las necesidades del usuario.
         Se trabajó con un enfoque incremental, adaptándose constantemente a las restricciones 
         del framework interno. Se realizaron pruebas continuas sobre la integración manual 
         de Tesseract OCR y se diseñó una arquitectura clara dentro de lo posible, separando 
@@ -150,21 +150,34 @@ export default [
       ],
       
       gallery: [
-        "/src/assets/imgs/FoodService/1.png",
-        "/src/assets/imgs/FoodService/2.png",
-        "/src/assets/imgs/FoodService/3.png",
-        "/src/assets/imgs/FoodService/4.png",
-        "/src/assets/imgs/FoodService/5.png",
-        "/src/assets/imgs/FoodService/6.png",
+        "/src/assets/imgs/FoodService/1.jpeg",
+        "/src/assets/imgs/FoodService/2.jpeg",
+        "/src/assets/imgs/FoodService/3.jpeg",
+        "/src/assets/imgs/FoodService/4.jpeg",
+        "/src/assets/imgs/FoodService/5.jpeg",
+        "/src/assets/imgs/FoodService/6.jpeg",
+        "/src/assets/imgs/FoodService/7.jpeg",
+        "/src/assets/imgs/FoodService/8.jpeg",
+        "/src/assets/imgs/FoodService/9.jpeg",
+        "/src/assets/imgs/FoodService/10.jpeg",
+        "/src/assets/imgs/FoodService/11.jpeg",
+        "/src/assets/imgs/FoodService/12.jpeg",
       ],
       
       galleryText: [
         "Pantalla de inicio de sesión para usuarios.",
-        "Proceso de carga de menús utilizando OCR.",
-        "Resultados del reconocimiento de texto con Tesseract OCR.",
-        "Vista de menú cargado mediante OCR.",
-        "Interfaz para realizar pedidos de viandas.",
-        "Panel administrador para gestionar menús y pedidos.",
+        "Edición de perfil de usuario.",
+        "Perspectiva del administrador para gestionar usuarios.",
+        "Lista de roles disponibles con posibilidad de crear y editar sus permisos.",
+        "Formulario con las opciones del menú semanal cargado en el sistema.",
+        "El administrador puede editar estas opciones manualmente si lo desea o agregar nuevas. Además, se tuvo en consideración a los empleados que no desean pedir viandas, permitiendo marcar esta opción para confirmar que no se han olvidado o fue un error sino una elección de ellos.",
+        "Vista del administrador para cargar la imagen del menú semanal. Se utiliza Tesseract OCR para procesar la imagen y extraer el texto automáticamente.",
+        "Después de procesar la imagen, el sistema muestra una vista previa del texto extraído. El administrador puede revisar y corregir cualquier error antes de guardar el menú en el sistema.",
+        "Interfaz para que los usuarios seleccionen sus viandas diarias según el menú cargado. Cuenta con 3 botones en la parte superior: 'Home Office' para indicar que trabajarán desde casa, 'Faltar' para registrar una ausencia y 'Avisar por WhatsApp' para comunicarse por el grupo.",
+        "Registro de pedidos realizados por los usuarios, con detalles como fecha, usuario y opciones seleccionadas. Ademas, el administrador puede marcar que dichos usuarios se encuentran realizando home office o han faltado en caso de que el usuario se le haya olvidado marcar la opcion o no se encuentre disponible.",
+        "Resumen semanal de pedidos, mostrando la cantidad total de viandas solicitadas por día. Cuenta con una alerta que notifica si algún usuario no ha realizado su pedido para el día actual. Si desea enviar el pedido a la empresa de catering, puede hacerlo haciendo clic en el botón 'Enviar pedido' si antes logro configurar los parametros con éxito.",
+        "En el historial se muestran todos los pedidos realizados por el administrador para tener un seguimiento mensual de las cantidades pedidas. Cuenta con un boton para descargar por PDF.",
+        "Se encuentran 2 entradas en el apartado de configuración de parámetros: 'Enlace del Grupo de la Empresa' para enviar notificaciones por el grupo de WhatsApp, y 'Contacto de la Vianda' para enviar el pedido directamente al proveedor.", 
       ],
       
       repository: "" // si no tiene repo, lo dejamos vacío
@@ -214,6 +227,7 @@ export default [
       `,
 
       metodology: `
+        Se utilizó la metodología ágil Kanban para el desarrollo del proyecto.
         Se trabajó bajo un enfoque iterativo, priorizando MVP y funcionalidades centrales. 
         Se utilizó Laravel 10 con roles basados en permisos usando Spatie. La arquitectura 
         se dividió en módulos claros: autenticación, reservas, gestión de canchas, calificaciones 
@@ -249,9 +263,9 @@ export default [
         - Automatización de notificaciones hacia el propietario.
       `,
 
-      role: `
-        Fullstack developer responsable del desarrollo completo: back-end en Laravel 10, 
-        implementación de roles, vistas, consultas SQL, integración con FullCalendar, 
+      role: ` 
+        Creación del buscador con filtros avanzados,
+        Implementación de roles en el sistema, vistas, consultas SQL, integración con FullCalendar, 
         lógica de filtros, autenticación, diseño del flujo UX y pruebas.
       `,
 
@@ -268,8 +282,8 @@ export default [
       ],
 
       gallery: [
-        "/src/assets/imgs/TiroLibre/cancha-oscuro.png",
         "/src/assets/imgs/TiroLibre/cancha.png",
+        "/src/assets/imgs/TiroLibre/cancha-oscuro.png",
         "/src/assets/imgs/TiroLibre/home-canchero.png",
         "/src/assets/imgs/TiroLibre/home-jugador.png",
         "/src/assets/imgs/TiroLibre/mapa.png",
@@ -277,9 +291,12 @@ export default [
       ],
 
       galleryText: [
-        "Vista detallada de una cancha (modo oscuro).",
-        "Vista detallada de una cancha (modo claro).",
-        "Panel de control del propietario con gestión de canchas y reservas.",
+        `Perfil de la cancha desde la perspectiva del jugador. Se puede observar la 
+        información detallada, imagenes, botón para ver la ubicación con un mapa, 
+        horarios disponibles en forma de boton, la posibilidad de puntuar el servicio
+        con estrellas`,
+        `Vista detallada de una cancha (modo oscuro).`,
+        `Panel de control del propietario con gestión de canchas y reservas.`,
         "Pantalla principal para jugadores con opciones de búsqueda y filtros.",
         "Mapa interactivo para localizar canchas cercanas.",
         "Gestión de solicitudes de reserva pendientes para el propietario.",
