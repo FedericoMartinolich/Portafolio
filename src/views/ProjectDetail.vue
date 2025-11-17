@@ -148,6 +148,7 @@ li {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
+  justify-self: center;
 }
 .stack li {
   background: #222;
@@ -351,7 +352,7 @@ li {
   background: #111827;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  width: 100%;
+  width: auto;
 }
 
 .tab-content h3 {

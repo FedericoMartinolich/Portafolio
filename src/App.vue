@@ -1,12 +1,17 @@
 <template>
   <Header />
+
   <div class="app-container">
-    <transition name="fade" mode="out-in">
-      <router-view />
-    </transition> 
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" :key="$route.fullPath" />
+      </transition>
+    </router-view>
   </div>
+
   <Footer />
 </template>
+
 
 <script setup>
 import Header from './components/Header.vue';
@@ -24,17 +29,18 @@ import { useRoute } from 'vue-router';
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .4s ease;
+  transition: all 0.4s ease;
 }
 
 .fade-enter-from {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
 }
 
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
+
 
 </style>

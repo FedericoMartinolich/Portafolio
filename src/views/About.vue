@@ -67,8 +67,8 @@
     <a href="https://wa.me/541125276194" target="_blank">
         <i class="fa fa-brands fa-whatsapp icons"></i>
     </a>
-    <a href="https://www.instagram.com/fedev.jpg" target="_blank">
-        <i class="fa fa-brands fa-instagram icons"></i>
+    <a href="mailto:martinolichfederico@gmail.com" target="_blank">
+        <i class="fa fa-solid fa-envelope icons"></i>
     </a>
 </footer>
 

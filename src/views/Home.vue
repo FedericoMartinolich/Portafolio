@@ -1,19 +1,21 @@
 <template>
-<p>Hi there! I'm <router-link to="/about">Fede</router-link></p> 
-<h1 class="title-font">I am a Fullstack Developer</h1>
-<p>Welcome to my Portfolio! <br> You can find out anything specific about me using keywords in the search bar at the top.</p>
-<div class="cards-grid">
-    <!-- En un futuro poner carrusel cuando sean de 1 col -->
-    <Card 
-        v-for="project in projects"
-        :key="project.id"
-        :route="`/projects/${project.id}`"
-        :head="project.title"
-        :text="project.shortDesc"
-        :routeImg="project.thumbnail"
-    >
-    </Card>
-</div>
+<main>
+    <p>Hi there! I'm <router-link to="/about">Fede</router-link></p> 
+    <h1 class="title-font">I am a Fullstack Developer</h1>
+    <p>Welcome to my Portfolio! <br> You can find out anything specific about me using keywords in the search bar at the top.</p>
+    <div class="cards-grid">
+        <!-- En un futuro poner carrusel cuando sean de 1 col -->
+        <Card 
+            v-for="project in projects"
+            :key="project.id"
+            :route="`/projects/${project.id}`"
+            :head="project.title"
+            :text="project.shortDesc"
+            :routeImg="project.thumbnail"
+        >
+        </Card>
+    </div>
+</main>
 </template>
 
 <script setup>

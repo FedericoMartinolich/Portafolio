@@ -40,7 +40,7 @@ const activeSection = ref("home");
 
 const menu = [
   { label: "home", href: "Home" },
-  { label: "writing", href: "Writing" },
+  { label: "contact", href: "Writing" },
   { label: "notes", href: "Notes" },
   { label: "about", href: "About" }
 ];
