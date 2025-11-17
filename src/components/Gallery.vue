@@ -1,43 +1,32 @@
 <template>
-  <section class="gallery" v-if="slides && slides.length">
+  <section class="gallery" v-if="slides.length">
     <div class="container">
       <div class="carousel">
-        <!-- Inputs dinámicos -->
-        <template v-for="(slide, index) in slides" :key="index">
-          <input
-            type="radio"
-            name="slides"
-            :id="'slide-' + (index + 1)"
-            :checked="index === 0"
-          />
-        </template>
 
-        <!-- Slides principales -->
-        <ul class="carousel__slides">
-          <li
-            class="carousel__slide"
-            v-for="(slide, index) in slides"
-            :key="'main-' + index"
-          >
+        <!-- Slides -->
+        <ul class="carousel__slides" :style="{ transform: `translateX(-${current * 100}%)` }">
+          <li v-for="(slide, index) in slides" :key="'main-' + index" class="carousel__slide">
             <figure>
               <div>
                 <img :src="slide.image" :alt="`Imagen ${index + 1}`" />
               </div>
-              <figcaption>
-                {{ slide.description }}
-              </figcaption>
+              <figcaption>{{ slide.description }}</figcaption>
             </figure>
           </li>
         </ul>
 
-        <!-- Miniaturas -->
+        <!-- Thumbnails -->
         <ul class="carousel__thumbnails">
-          <li v-for="(slide, index) in slides" :key="'thumb-' + index">
-            <label :for="'slide-' + (index + 1)">
-              <img :src="slide.thumb" :alt="`Miniatura ${index + 1}`" />
-            </label>
+          <li
+            v-for="(slide, index) in slides"
+            :key="'thumb-' + index"
+            :class="{ active: index === current }"
+            @click="goTo(index)"
+          >
+            <img :src="slide.thumb" :alt="`Miniatura ${index + 1}`" />
           </li>
         </ul>
+
       </div>
     </div>
   </section>
@@ -45,10 +34,11 @@
   <section v-else class="gallery-empty">
     <p>No hay imágenes disponibles.</p>
   </section>
+
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   gallery: {
@@ -57,12 +47,12 @@ const props = defineProps({
     default: () => []
   },
   galleryText: {
-    type: Array, // 👈 importante: es un array, no un string
+    type: Array,
     default: () => []
   }
 })
 
-// 🔄 Convertir tus arrays simples en objetos para el carrusel
+// Convertimos la data original en datos utilizables
 const slides = computed(() =>
   props.gallery.map((img, i) => ({
     image: img,
@@ -70,6 +60,15 @@ const slides = computed(() =>
     description: props.galleryText[i] || ''
   }))
 )
+
+// índice dinámico del slide actual
+const current = ref(0)
+
+// cambiar slide
+const goTo = (index) => {
+  current.value = index
+}
+
 </script>
 
 
@@ -90,8 +89,7 @@ const slides = computed(() =>
 /* ==== CONTENEDOR ==== */
 .container {
   max-width: 1044px;
-  margin: 0 auto;
-  padding: 0 20px 40px 20px; /* margen inferior controlado */
+  padding: 0 20px 40px 20px;
 }
 
 /* ==== CAROUSEL ==== */
@@ -99,82 +97,38 @@ const slides = computed(() =>
   position: relative;
   text-align: left;
   margin: 0 auto;
-}
-
-.carousel > input {
-  display: none;
-}
-
-/* === Lógica dinámica con nth-of-type === */
-.carousel > input:nth-of-type(12):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -1100%; }
-.carousel > input:nth-of-type(11):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -1000%; }
-.carousel > input:nth-of-type(10):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -900%; }
-.carousel > input:nth-of-type(9):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -800%; }
-.carousel > input:nth-of-type(8):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -700%; }
-.carousel > input:nth-of-type(7):checked  ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -600%; }
-.carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: -500%;
-}
-.carousel > input:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: -400%;
-}
-.carousel > input:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: -300%;
-}
-.carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: -200%;
-}
-.carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: -100%;
-}
-.carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
-  margin-left: 0%;
-}
-
-/* === Miniatura activa === */
-.carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1),
-.carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2),
-.carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3),
-.carousel > input:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4),
-.carousel > input:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5),
-.carousel > input:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) {
-  box-shadow: 0 0 0 4px rgba(56, 142, 255, 0.8);
-  border-radius: 8px;
+  overflow: hidden; /* 🔥 importante */
 }
 
 /* === Slides === */
 .carousel__slides {
-  position: relative;
-  z-index: 1;
+  display: flex;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  display: flex;
-  transition: margin-left 0.3s ease-out;
+  list-style: none;
+  transition: transform .35s ease;
+  width: 100%;
 }
 
 .carousel__slide {
-  flex: 1 0 100%;
-  width: 100%;
+  flex: 0 0 100%; /* 🔥 asegura tamaño de pantalla completa */
+  max-width: 100%;
   background: #151b24;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .carousel__slide figure {
-  display: flex;
-  flex-direction: column;
   margin: 0;
 }
-
 
 .carousel__slide div {
   position: relative;
   width: 100%;
 }
 
-.carousel__slide div:before {
+.carousel__slide div::before {
   content: "";
   display: block;
   width: 100%;
@@ -201,59 +155,45 @@ const slides = computed(() =>
   font-size: 0.95rem;
 }
 
-.carousel__slide .credit {
-  display: block;
-  margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.85em;
-}
-
 /* === Miniaturas === */
 .carousel__thumbnails {
-  list-style: none;
+  margin: 24px auto 0 auto;
   padding: 0;
-  margin: 20px -10px 0 -10px;
+  list-style: none;
   display: flex;
   justify-content: center;
+  gap: 14px;
   flex-wrap: wrap;
+  max-width: 90%;
 }
 
 .carousel__thumbnails li {
-  flex: 1 1 auto;
-  max-width: calc((100% / 6) - 20px);
-  margin: 0 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carousel__thumbnails label {
-  display: block;
-  cursor: pointer;
+  width: 90px;            /* 🔥 tamaño fijo y uniforme */
+  height: 90px;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
   position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.carousel__thumbnails label:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-top: 100%;
-}
-
-.carousel__thumbnails img {
-  position: absolute;
-  inset: 0;
+.carousel__thumbnails li img {
   width: 100%;
   height: 100%;
+  position: absolute;
   object-fit: cover;
   filter: brightness(0.7);
-  transition: all 0.3s ease;
-  border-radius: 8px;
+  transition: transform .3s ease, filter .3s ease;
 }
 
-.carousel__thumbnails label:hover img {
+.carousel__thumbnails li:hover img {
   filter: brightness(1);
-  box-shadow: 0 0 10px rgba(56, 142, 255, 0.6);
   transform: scale(1.05);
 }
+
+.carousel__thumbnails li.active {
+  box-shadow: 0 0 0 3px rgba(56, 142, 255, .85);
+}
 </style>
+
+
