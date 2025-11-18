@@ -25,10 +25,6 @@
           </li>
         </ul>
       </nav>
-
-      <!-- THEME BTN -->
-      <button class="theme-btn" @click="toggleTheme">🌓</button>
-
     </div>
   </header>
 </template>
@@ -41,13 +37,9 @@ const activeSection = ref("home");
 const menu = [
   { label: "home", href: "Home" },
   { label: "contact", href: "Writing" },
-  { label: "notes", href: "Notes" },
+  /* { label: "notes", href: "Notes" }, */
   { label: "about", href: "About" }
 ];
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-}
 </script>
 
 
@@ -143,4 +135,9 @@ function toggleTheme() {
   background: rgba(255,255,255,0.15);
 }
 
+@media (max-width: 650px) {
+  span {
+    font-size: 0.75rem;
+  }
+}
 </style>

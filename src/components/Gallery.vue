@@ -153,6 +153,7 @@ const goTo = (index) => {
   padding: 20px;
   color: #cfd8e3;
   font-size: 0.95rem;
+  width: 100%;
 }
 
 /* === Miniaturas === */
@@ -195,5 +196,3 @@ const goTo = (index) => {
   box-shadow: 0 0 0 3px rgba(56, 142, 255, .85);
 }
 </style>
-
-
