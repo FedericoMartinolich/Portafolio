@@ -1,12 +1,13 @@
 <template>
   <main v-if="project" class="project-detail">
 
+    <!-- Hero -->
     <header class="hero">
       <img :src="project.thumbnail" alt="" class="hero-img" />
       <h1>{{ project.title }}</h1>
     </header>
 
-    <!-- Navegación con botones -->
+    <!-- Tabs Navigation -->
     <nav class="slidemenu">
       <div class="tabs">
         <button
@@ -31,71 +32,112 @@
       </div>
     </nav>
 
-
-    <!-- Contenido dinámico -->
+    <!-- Dynamic Content -->
     <section class="tab-content">
       <transition name="fade" mode="out-in">
         <div :key="tab">
+
+          <!-- ====================== CONTEXT ======================= -->
           <div v-if="tab === 'context'">
             <h3>Context</h3>
             <p>{{ project.detail.problem }}</p>
           </div>
 
+          <!-- ====================== OBJECTIVE ======================= -->
           <div v-else-if="tab === 'objective'">
             <h3>Objective</h3>
             <p>{{ project.detail.objetive }}</p>
           </div>
 
+          <!-- ====================== METHODOLOGY ======================= -->
           <div v-else-if="tab === 'methodology'">
+
+            <!-- Methodology -->
             <h3 v-if="project.detail.metodology">Methodology</h3>
             <p v-if="project.detail.metodology">{{ project.detail.metodology }}</p>
 
-            <h3>Process</h3>
-            <ul>
+            <!-- Divider: only if Methodology + Process -->
+            <div 
+              v-if="project.detail.metodology && project.detail.process?.length" 
+              class="divider"
+            ></div>
+
+            <!-- Process -->
+            <h3 v-if="project.detail.process?.length">Process</h3>
+            <ul v-if="project.detail.process?.length">
               <li v-for="step in project.detail.process" :key="step">{{ step }}</li>
             </ul>
           </div>
 
+          <!-- ====================== RESULT ======================= -->
           <div v-else-if="tab === 'result'">
+
+            <!-- Result -->
             <h3>Result</h3>
             <p>{{ project.detail.result }}</p>
 
-            <h3>Role</h3>
-            <p>{{ project.detail.role }}</p>
+            <!-- Divider: only if Role exists -->
+            <div v-if="project.detail.role" class="divider"></div>
 
-            <h3>Tech Stack</h3>
-            <ul class="stack">
-              <li v-for="tech in project.detail.techStack" :key="tech">
-                <i v-if="tech === 'HTML'" class="fa-brands fa-html5"></i> 
-                <i v-else-if="tech === 'CSS'" class="fa-brands fa-css3-alt"></i>
-                <i v-else-if="tech === 'JavaScript'" class="fa-brands fa-js"></i>
-                <i v-else-if="tech === 'Vue.js'" class="fa-brands fa-vuejs"></i>
-                <i v-else-if="tech === 'PHP'" class="fa-brands fa-php"></i>
-                <i v-else-if="tech === 'MySQL'" class="fa-solid fa-database"></i>
-                <i v-else-if="tech === 'Laravel' || tech === 'Laravel 10'" class="fa-brands fa-laravel"></i>
-                <i v-else-if="tech === 'Bootstrap'" class="fa-brands fa-bootstrap"></i>
-                <i v-else-if="tech === 'Leaflet'" class="fa-regular fa-map"></i>
-                <i v-else-if="tech === 'AJAX'" class="fa-solid fa-retweet"></i>
-                <i v-else-if="tech === 'FullCalendar'" class="fa-regular fa-calendar"></i>
-                <i v-else-if="tech === 'Tesseract OCR'" class="fa-solid fa-expand"></i>
-                {{ tech }}
-              </li>
-            </ul>
+            <!-- Role -->
+            <h3 v-if="project.detail.role">Role</h3>
+            <p v-if="project.detail.role">{{ project.detail.role }}</p>
+
+            <!-- Divider: only if TechStack exists -->
+            <div v-if="project.detail.techStack?.length" class="divider"></div>
+
+            <!-- Tech Stack -->
+            <h3 v-if="project.detail.techStack?.length">Tech Stack</h3>
+            <div class="item-center" v-if="project.detail.techStack?.length">
+              <ul class="stack">
+                <li v-for="tech in project.detail.techStack" :key="tech">
+                  <i v-if="tech === 'HTML'" class="fa-brands fa-html5"></i>
+                  <i v-else-if="tech === 'CSS'" class="fa-brands fa-css3-alt"></i>
+                  <i v-else-if="tech === 'JavaScript'" class="fa-brands fa-js"></i>
+                  <i v-else-if="tech === 'Vue.js'" class="fa-brands fa-vuejs"></i>
+                  <i v-else-if="tech === 'PHP'" class="fa-brands fa-php"></i>
+                  <i v-else-if="tech === 'MySQL'" class="fa-solid fa-database"></i>
+                  <i v-else-if="tech === 'Laravel' || tech === 'Laravel 10'" class="fa-brands fa-laravel"></i>
+                  <i v-else-if="tech === 'Bootstrap'" class="fa-brands fa-bootstrap"></i>
+                  <i v-else-if="tech === 'Leaflet'" class="fa-regular fa-map"></i>
+                  <i v-else-if="tech === 'AJAX'" class="fa-solid fa-retweet"></i>
+                  <i v-else-if="tech === 'FullCalendar'" class="fa-regular fa-calendar"></i>
+                  <i v-else-if="tech === 'Tesseract OCR'" class="fa-solid fa-expand"></i>
+                  {{ tech }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- Divider: only if repository exists -->
+            <div v-if="project.detail.repository" class="divider"></div>
+
+            <!-- Repository -->
+            <h3 v-if="project.detail.repository">Repository</h3>
+            <div class="item-center" v-if="project.detail.repository">
+              <a :href="project.detail.repository" target="_blank" class="btn-github">
+                <i class="fa-brands fa-github"></i>
+                <span>Ver Repositorio</span>
+              </a>
+            </div>
+
           </div>
+
         </div>
       </transition>
     </section>
-    <Gallery
-        :gallery="project.detail.gallery"
-        :galleryText="project.detail.galleryText"
-      />
 
+    <!-- Gallery -->
+    <Gallery
+      :gallery="project.detail.gallery"
+      :galleryText="project.detail.galleryText"
+    />
   </main>
 
   <main v-else>
     <p>Project not found.</p>
   </main>
 </template>
+
 
 <script setup>
 import { useRoute } from "vue-router";
@@ -115,6 +157,45 @@ const project = projects.find(p => p.id === route.params.id);
 </script>
 
 <style scoped>
+.divider {
+  width: 90%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.062);
+  margin: 1.5rem 0;
+  justify-self: center;
+}
+
+.item-center {
+  display: block;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: 8px;
+  background-color: #24292e;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.btn-github:hover {
+  background-color: #444c56;
+}
+.btn-github i {
+  font-size: 1.2rem;
+}
+.btn-github p {
+  font-size: 0.8rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -162,15 +243,20 @@ li {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;     /* <-- limpiar padding del UL */
+  margin: 0 auto; /* <-- quitar margen por defecto y centrar contenedor */
 }
+
 .stack li {
   background: #222;
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   font-size: 0.9rem;
-    list-style: none;
+  list-style: none;
 }
+
 
 /* Gallery */
 .gallery {
@@ -362,7 +448,7 @@ li {
 /* --- Contenido --- */
 .tab-content {
   margin-top: 25px;
-  padding: 20px;
+  padding: 40px;
   background: #111827;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);

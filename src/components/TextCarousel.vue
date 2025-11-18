@@ -49,7 +49,7 @@ const items = ref([
     icon: 'fa-user',
     color: '#e74c3c',
     description:
-      'Soy Federico Martinolich, desarrollador web con enfoque en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia de los usuarios.',
+      'I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I’m passionate about transforming ideas into applications that truly simplify processes and improve user experience.',
   },
   {
     name: 'Philosophy',
@@ -58,7 +58,7 @@ const items = ref([
     icon: 'fa-solid fa-lightbulb',
     color: '#f1c40f',
     description:
-      'Creo que el desarrollo va más allá del código: se trata de entender problemas reales y resolverlos con claridad, empatía y una buena dosis de curiosidad. Busco escribir código limpio, mantener una comunicación clara y aprender constantemente de cada proyecto.',
+      'I believe development goes beyond code: it’s about understanding real problems and solving them with clarity, empathy, and a good dose of curiosity. I aim to write clean code, maintain clear communication, and constantly learn from every project.',
   },
   {
     name: 'Technologies',
@@ -67,7 +67,7 @@ const items = ref([
     icon: 'fa-solid fa-microchip',
     color: '#2ecc71',
     description:
-      'Trabajo principalmente con tecnologías como Laravel, Vue.js, PHP y JavaScript. También disfruto diseñar interfaces con HTML, CSS y Bootstrap, buscando siempre equilibrio entre funcionalidad y estética.',
+      'I mainly work with technologies such as Laravel, Vue.js, PHP, and JavaScript. I also enjoy designing interfaces with HTML, CSS, and Bootstrap, always looking for a balance between functionality and aesthetics.',
   },
   {
     name: 'Contact',
@@ -76,9 +76,10 @@ const items = ref([
     icon: 'fa-solid fa-phone',
     color: '#e67e22',
     description:
-      'Si te interesa colaborar, conocer más sobre mi trabajo o simplemente charlar sobre desarrollo web, podés contactarme a través de mis redes o escribirme directamente por WhatsApp. Siempre estoy abierto a nuevas ideas y desafíos.',
+      'If you’re interested in collaborating, learning more about my work, or simply chatting about web development, feel free to reach out through my social media or message me directly on WhatsApp. I’m always open to new ideas and challenges.',
   },
 ])
+
 </script>
 
 <style scoped>

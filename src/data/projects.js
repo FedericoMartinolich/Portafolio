@@ -1,6 +1,8 @@
 import checKingThumb from '../assets/imgs/ChecKing/Logo.png';
 import foodServiceThumb from '../assets/imgs/FoodService/Logo.png';
 import tiroLibreThumb from '../assets/imgs/TiroLibre/Logo.png';
+import kreditThumb from '../assets/imgs/Kredit/Logo.png';
+import mechaThumb from '../assets/imgs/Mecha/Logo.png'
 
 export default [
   /* ╔══════════════════════════════════════════════════════════╗
@@ -9,38 +11,42 @@ export default [
   {
     id: "checking",
     title: "ChecKing",
-    shortDesc: "Sistema de gestión de asistencias para alumnos y profesores.",
+    shortDesc: "Attendance management system for students and teachers.",
     thumbnail: checKingThumb,
     
     detail: {
       longText: `
-        Proyecto desarrollado como parte de la materia de programación en la facultad sedes sapientiae. Este sistema tiene como objetivo principal registrar las asistencias de los alumnos de manera eficiente y sencilla.
+        Project developed as part of a programming course at Sedes Sapientiae University. 
+        This system aims to efficiently and easily record student attendance.
       `,
       problem: `
-        La gestión manual de asistencias puede ser propensa a errores y consume mucho tiempo. Se necesitaba una solución digital para agilizar este proceso.
+        Manual attendance tracking is prone to errors and time-consuming. 
+        A digital solution was needed to streamline this process.
       `,
       objetive: `
-        Desarrollar un sistema web que permita a los profesores registrar y gestionar las asistencias de los alumnos de forma rápida y precisa.
+        Develop a web system that allows teachers to quickly and accurately record and manage student attendance.
       `,
       /* metodology: `
-        Se utilizó la metodología ágil para el desarrollo del proyecto, permitiendo iteraciones rápidas y adaptaciones según las necesidades del usuario.
+        Agile methodology was used for project development, enabling fast iterations and adjustments based on user needs.
       `, */
       process: [
-        `1. Análisis de requisitos y diseño del sistema.`,
-        `2. Desarrollo del backend utilizando PHP y MySQL para la gestión de datos.`,
-        `3. Creación de una interfaz de usuario intuitiva con HTML, CSS y JavaScript.`,
-        `4. Pruebas y validación del sistema con usuarios reales.`,
+        `1. Requirements analysis and system design.`,
+        `2. Backend development using PHP and MySQL for data management.`,
+        `3. Creation of an intuitive user interface with HTML, CSS, and JavaScript.`,
+        `4. System testing and validation with real users.`,
       ],
       result: `
-        El sistema permitió a los profesores registrar asistencias de manera más eficiente, reduciendo errores y ahorrando tiempo en la gestión administrativa.
+        The system enabled teachers to register attendance more efficiently, reducing errors and saving administrative time.
       `,
       difficulties: `
-        El backend del proyecto debió ser completamente construido con PHP desde cero. Manipular la BD implicó un desafío significativo en términos de diseño para la poca experiencia que tenia en ese momento.
+        The backend had to be fully built from scratch in PHP. 
+        Database handling posed a significant challenge due to my limited experience at that time.
       `,
       role: `
-        Lleve a cabo el desarrollo fullstack del proyecto, encargándome tanto del diseño de la base de datos como de la implementación del frontend y backend.      `,
+        I carried out full-stack development including database design, frontend implementation, and backend programming.      
+      `,
       conclution: `
-        El proyecto "checKing" demostró ser una solución efectiva para la gestión de asistencias, mejorando significativamente la experiencia tanto para profesores como para alumnos.
+        The "ChecKing" project proved to be an effective solution for attendance management, significantly improving the experience for both teachers and students.
       `,
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Laragon"],
       gallery: [
@@ -50,13 +56,12 @@ export default [
         "/src/assets/imgs/ChecKing/4.png",
       ],
       galleryText: [
-        "Pantalla de inicio de sesión destinada a profesores. El acceso se realiza mediante DNI y contraseña.",
-        "Interfaz para el registro de asistencias de alumnos. La columna 'Limitaciones' indica si el alumno presenta alguna dificultad que pueda afectar su puntualidad o asistencia.",
-        "Vista de reporte de asistencias por curso. Se muestra la cantidad total y el porcentaje de asistencias calculado en base a las clases dictadas. El número de clases se incrementa diariamente cuando el profesor accede a la plataforma, confirma que se dictó clase y el sistema suma 1 al contador. En esta vista también se encuentra el botón 'Registro', que permite ver la información completa del alumno, y los botones adicionales para editar o eliminar el registro.",
-        "Pantalla para la configuración de parámetros que determinarán la condición final del alumno según sus asistencias. Aquí se definen valores como el porcentaje mínimo necesario para regular o promocionar (en caso de existir promoción).",
+        "Login screen for teachers. Access is performed using ID number and password.",
+        "Interface for recording student attendance. The 'Limitations' column indicates if the student has any condition affecting punctuality or attendance.",
+        "Attendance report view by class. It displays total attendance and percentage based on conducted lessons. The number of lessons increases daily when the teacher confirms having taught the class. The view also includes a 'Record' button to display full student details, and extra buttons for editing or deleting records.",
+        "Configuration screen where parameters are set to determine the student's final status based on attendance percentage requirements.",
       ],
-        repository: "https://github.com/FedericoMartinolich/checKing",
-
+      repository: "https://github.com/FedericoMartinolich/checKing",
     }
   },
 
@@ -66,82 +71,77 @@ export default [
   {
     id: "foodservice",
     title: "FoodService",
-    shortDesc: "Sistema interno para gestión de pedidos de viandas, usuarios y carga de menús con OCR.",
+    shortDesc: "Internal system for meal order management, users, and menu uploading with OCR.",
     thumbnail: foodServiceThumb,
     detail: {
       longText: `
-        FoodService es un sistema desarrollado para una empresa dedicada a la consultoría y 
-        al desarrollo de software. Su propósito es facilitar la gestión completa del servicio 
-        de viandas, permitiendo a los usuarios registrarse, iniciar sesión, visualizar opciones 
-        y realizar pedidos de manera ágil. El sistema incluye una funcionalidad clave: la carga 
-        automática de menús mediante OCR, lo que simplifica el trabajo administrativo y reduce 
-        errores de carga manual.
+        FoodService is a system developed for a software consulting and development company.
+        Its purpose is to ease the full management of employee meal requests, allowing users 
+        to register, log in, view food options and place orders efficiently. A key feature
+        is the automatic menu upload through OCR, simplifying administrative work and reducing
+        manual entry errors.
       `,
       
       problem: `
-        La empresa necesitaba una herramienta interna que resolviera dos necesidades críticas: 
-        por un lado, ordenar la gestión de pedidos de viandas; por otro, agilizar la carga 
-        diaria de menús para que el personal no tuviera que ingresarlos manualmente. Sin embargo, 
-        el entorno de desarrollo presentaba limitaciones: el framework propio de la empresa 
-        restringía la instalación de paquetes externos y carecía de documentación, dificultando 
-        la implementación de funcionalidades avanzadas como OCR.
+        The company needed an internal tool that addressed two critical needs: organizing 
+        meal order management and speeding up daily menu uploading without manual entry. 
+        However, the development environment had limitations — the company-owned framework 
+        restricted external package installation and lacked documentation, making advanced 
+        features such as OCR difficult to implement.
       `,
       
       objetive: `
-        Desarrollar un sistema funcional y estable que permita:
-        - Registrar y autenticar usuarios.
-        - Gestionar pedidos de viandas de forma clara y simple.
-        - Permitir a los administradores cargar menús de manera automática mediante OCR.
-        - Integrar Tesseract OCR sin depender de gestores de paquetes modernos (npm/composer),
-          garantizando su correcto funcionamiento dentro del ecosistema limitado del framework.
+        Develop a functional and stable system that enables:
+        - User registration and authentication.
+        - Clear and simple meal order management.
+        - Administrators to automatically upload menus using OCR.
+        - Integration of Tesseract OCR without modern package managers (npm/composer),
+          ensuring proper functionality inside a limited proprietary framework.
       `,
       
       metodology: `
-        Se utilizó la metodología ágil para el desarrollo del proyecto, permitiendo iteraciones rápidas y adaptaciones según las necesidades del usuario.
-        Se trabajó con un enfoque incremental, adaptándose constantemente a las restricciones 
-        del framework interno. Se realizaron pruebas continuas sobre la integración manual 
-        de Tesseract OCR y se diseñó una arquitectura clara dentro de lo posible, separando 
-        vistas, lógica y consultas a base de datos. Para la interfaz se empleó Bootstrap 
-        y AJAX para interacción asíncrona.
+        Agile methodology was used, allowing quick iterations and adjustments based on needs.
+        Development followed an incremental approach, constantly adapting to framework limitations.
+        Continuous testing was performed to integrate Tesseract OCR manually and maintain a clear
+        architecture separating views, logic, and database operations. Bootstrap and AJAX were used 
+        for UI and asynchronous interaction.
       `,
       
       process: [
-        "1. Análisis del framework propietario y mapeo de su estructura interna.",
-        "2. Implementación del sistema de registro e inicio de sesión.",
-        "3. Desarrollo del módulo de pedidos de viandas con PHP y MySQL.",
-        "4. Integración manual de Tesseract OCR sin gestores de paquetes.",
-        "5. Procesamiento y limpieza de texto OCR para generar menús cargables.",
-        "6. Construcción del panel administrador para gestionar menús y pedidos.",
-        "7. Pruebas y ajustes en diferentes entornos brindados por la empresa."
+        "1. Analysis of the proprietary framework and structure mapping.",
+        "2. Development of registration and login system.",
+        "3. Meal order management module built with PHP and MySQL.",
+        "4. Manual integration of Tesseract OCR without package managers.",
+        "5. OCR text processing and cleanup to generate usable menus.",
+        "6. Admin panel development for managing menus and orders.",
+        "7. Testing and adjustments across different company environments."
       ],
       
       result: `
-        El sistema permitió automatizar la carga de menús, reducir el tiempo de gestión diaria 
-        y mejorar la experiencia tanto de usuarios como de administradores. La integración 
-        manual de OCR funcionó de manera estable, demostrando que era posible implementar 
-        soluciones avanzadas incluso en entornos restrictivos.
+        The system automated menu uploading, reduced daily management effort 
+        and improved the experience for both users and administrators.
+        Manual OCR integration worked stably, proving that advanced features
+        can be implemented even in restrictive environments.
       `,
       
       difficulties: `
-        La mayor dificultad fue trabajar dentro del framework propio de la empresa, que no 
-        permitía instalar librerías ni poseía documentación ni un punto de partida limpio. 
-        Esto hizo que la comprensión del código heredado fuera compleja. Otro desafío importante 
-        fue integrar Tesseract OCR de forma manual y asegurar su correcto funcionamiento 
-        sin npm ni composer, lo que implicó mucha experimentación, pruebas y ajustes 
-        en el entorno.
+        The biggest challenge was working within a proprietary framework without
+        documentation or support for external libraries. Understanding legacy
+        code was complex. Another major difficulty was manually integrating OCR
+        and ensuring it worked correctly without modern tooling.
       `,
       
       role: `
-        Desarrollo fullstack dentro del entorno propietario de la empresa. Me encargué de 
-        implementar el sistema de autenticación, la gestión de pedidos, la integración manual 
-        de Tesseract OCR, el procesamiento de menús y el desarrollo del panel administrador.
+        Full-stack development inside the proprietary framework. I implemented the 
+        authentication system, meal order module, manual OCR integration, text processing,
+        and admin panel.
       `,
       
       conclution: `
-        FoodService fue un proyecto desafiante y formativo: demostró que incluso con fuertes 
-        limitaciones técnicas es posible construir soluciones eficientes, robustas y orientadas 
-        a mejorar procesos internos. La experiencia fortaleció mi capacidad de adaptación, 
-        análisis de código heredado y resolución creativa de problemas.
+        FoodService was a challenging and formative project, proving that effective, robust, 
+        and improvement-focused solutions can be built even under strong technical limitations.
+        The experience strengthened my skills in adaptation, legacy code analysis,
+        and creative problem solving.
       `,
       
       techStack: [
@@ -165,22 +165,22 @@ export default [
       ],
       
       galleryText: [
-        "Pantalla de inicio de sesión para usuarios.",
-        "Edición de perfil de usuario.",
-        "Perspectiva del administrador para gestionar usuarios.",
-        "Lista de roles disponibles con posibilidad de crear y editar sus permisos.",
-        "Formulario con las opciones del menú semanal cargado en el sistema.",
-        "El administrador puede editar estas opciones manualmente si lo desea o agregar nuevas. Además, se tuvo en consideración a los empleados que no desean pedir viandas, permitiendo marcar esta opción para confirmar que no se han olvidado o fue un error sino una elección de ellos.",
-        "Vista del administrador para cargar la imagen del menú semanal. Se utiliza Tesseract OCR para procesar la imagen y extraer el texto automáticamente.",
-        "Después de procesar la imagen, el sistema muestra una vista previa del texto extraído. El administrador puede revisar y corregir cualquier error antes de guardar el menú en el sistema.",
-        "Interfaz para que los usuarios seleccionen sus viandas diarias según el menú cargado. Cuenta con 3 botones en la parte superior: 'Home Office' para indicar que trabajarán desde casa, 'Faltar' para registrar una ausencia y 'Avisar por WhatsApp' para comunicarse por el grupo.",
-        "Registro de pedidos realizados por los usuarios, con detalles como fecha, usuario y opciones seleccionadas. Ademas, el administrador puede marcar que dichos usuarios se encuentran realizando home office o han faltado en caso de que el usuario se le haya olvidado marcar la opcion o no se encuentre disponible.",
-        "Resumen semanal de pedidos, mostrando la cantidad total de viandas solicitadas por día. Cuenta con una alerta que notifica si algún usuario no ha realizado su pedido para el día actual. Si desea enviar el pedido a la empresa de catering, puede hacerlo haciendo clic en el botón 'Enviar pedido' si antes logro configurar los parametros con éxito.",
-        "En el historial se muestran todos los pedidos realizados por el administrador para tener un seguimiento mensual de las cantidades pedidas. Cuenta con un boton para descargar por PDF.",
-        "Se encuentran 2 entradas en el apartado de configuración de parámetros: 'Enlace del Grupo de la Empresa' para enviar notificaciones por el grupo de WhatsApp, y 'Contacto de la Vianda' para enviar el pedido directamente al proveedor.", 
+        "User login screen.",
+        "User profile edit screen.",
+        "Admin view for user management.",
+        "Roles listing and permission configuration.",
+        "Weekly menu form loaded into the system.",
+        "Administrators can edit menu options or add new ones. Users may also confirm that they prefer not to order a meal.",
+        "Admin view to upload the weekly menu image. Tesseract OCR processes it to extract text automatically.",
+        "After processing, the system shows a preview of extracted text for review and correction.",
+        "User interface to select daily meal options. Includes buttons for 'Home Office', 'Absence' and WhatsApp notice.",
+        "Order registry with details like date, user and selected options. Admin may mark absences or home office manually.",
+        "Weekly summary showing ordered meal totals. Includes alerts for users who forgot to order.",
+        "History of monthly orders with PDF export option.",
+        "Parameter configuration for WhatsApp group link and catering provider contact.",
       ],
       
-      repository: "" // si no tiene repo, lo dejamos vacío
+      repository: ""
     }
   },
 
@@ -190,90 +190,82 @@ export default [
   {
     id: "tiro-libre",
     title: "Tiro Libre",
-    shortDesc: "Plataforma web para la administración de canchas de fútbol, reservas online y gestión operativa automatizada.",
+    shortDesc: "Web platform for football field management, online reservations and automated operations.",
     thumbnail: tiroLibreThumb,
 
     detail: {
       longText: `
-        Tiro Libre es una plataforma web desarrollada con el objetivo de digitalizar y optimizar 
-        la gestión de reservas de canchas de fútbol amateur. Está orientada tanto a jugadores 
-        como a propietarios de canchas, permitiendo visualizar disponibilidad, realizar reservas, 
-        administrar turnos, eliminar confusiones y mejorar la comunicación mediante un sistema 
-        automatizado y centralizado.
+        Tiro Libre is a web platform created to digitalize and optimize reservation management 
+        for amateur football fields. It is designed for both players and field owners, allowing 
+        them to view availability, book online, manage schedules and improve communication 
+        through a unified automated platform.
         
-        La plataforma busca reemplazar procesos manuales habituales como cuadernos, mensajes 
-        de WhatsApp, llamadas telefónicas o coordinación informal, ofreciendo una solución 
-        moderna, confiable, ordenada y accesible desde cualquier dispositivo.
+        The platform replaces traditional manual methods such as notebooks, WhatsApp messages,
+        phone calls or informal coordination, providing a modern, reliable, and organized 
+        solution, accessible from any device.
       `,
 
       problem: `
-        El proceso de reserva de canchas se gestiona de manera tradicional, lo que genera 
-        problemas recurrentes: sobre reservas, falta de control de horarios, pérdidas de 
-        información, demoras en la comunicación, confusión de turnos, falta de disponibilidad 
-        visible y mala organización para los propietarios.
-        
-        Al mismo tiempo, los jugadores no cuentan con una manera práctica de encontrar canchas 
-        cercanas, comparar opciones ni reservar de forma rápida, especialmente cuando necesitan 
-        completar equipo o están buscando alternativas según precio, tipo, ubicación o horario.
+        Field reservations are traditionally handled manually, generating recurring problems: 
+        double bookings, poor time control, information loss, communication delays, confusion, 
+        lack of real-time availability and poor business organization.
+
+        Players also struggle to find nearby fields, compare options or book quickly, 
+        especially when looking for price, surface type, capacity, or team completion needs.
       `,
 
       objetive: `
-        Crear una plataforma completa y fácil de usar que:
-        - Permita a los propietarios gestionar sus canchas, turnos, disponibilidad y datos comerciales.
-        - Permita a los jugadores buscar canchas por filtros avanzados y reservar de manera inmediata.
-        - Evite errores operativos y mejore la experiencia de organización.
-        - Centralice y automatice la comunicación entre propietario y jugador.
-        - Ofrezca un panorama visual de reservas utilizando calendario interactivo (FullCalendar).
+        Create a complete and easy-to-use platform that:
+        - Allows owners to manage their fields, schedules, availability, and business data.
+        - Allows players to search using advanced filters and book instantly.
+        - Avoids operational errors and improves overall experience.
+        - Centralizes and automates communication between owners and players.
+        - Provides reservation visualization using an interactive calendar (FullCalendar).
       `,
 
       metodology: `
-        Se utilizó la metodología ágil Kanban para el desarrollo del proyecto.
-        Se trabajó bajo un enfoque iterativo, priorizando MVP y funcionalidades centrales. 
-        Se utilizó Laravel 10 con roles basados en permisos usando Spatie. La arquitectura 
-        se dividió en módulos claros: autenticación, reservas, gestión de canchas, calificaciones 
-        y visualización mediante calendario. Las consultas y filtros fueron refinadas para 
-        asegurar una experiencia fluida.
+        Agile Kanban methodology was used.
+        The development followed an iterative, MVP-focused approach. 
+        Built using Laravel 10 with Spatie roles and permissions. Architecture was modular, separating 
+        authentication, reservations, field management, reviews, and UI calendar visualization.
       `,
 
       process: [
-        "Diseño de modelo de datos para gestionar campos, turnos, usuarios y roles.",
-        "Implementación de registro con selección de roles mediante Breeze + Spatie.",
-        "Creación del panel de propietarios con vistas exclusivas y formularios de carga de cancha.",
-        "Desarrollo de filtros avanzados por ubicación, tipo, capacidad y precio.",
-        "Integración de FullCalendar para visualizar reservas de forma dinámica.",
-        "Implementación de notificaciones vía WhatsApp o servicios externos (en proceso).",
-        "Diseño visual del login inspirado en Facebook para una mejor percepción del usuario.",
-        "Implementación de calificaciones y reseñas para aumentar la confianza entre usuarios."
+        "Database modeling for fields, bookings, users and roles.",
+        "Registration with role selection (Breeze + Spatie).",
+        "Owner dashboard with exclusive views and field creation forms.",
+        "Advanced search and filtering by location, price, type and capacity.",
+        "FullCalendar integration for dynamic reservation visualization.",
+        "Notification system via WhatsApp or external services (in progress).",
+        "Login UI designed with Facebook-style aesthetic.",
+        "Ratings and reviews system for trust and transparency."
       ],
 
       result: `
-        Se logró construir una plataforma funcional, escalable y con visión de producto. 
-        Los propietarios pueden administrar su negocio de forma clara y digital, mientras 
-        que los jugadores acceden a un sistema ordenado, accesible e intuitivo. 
-        La plataforma resolvió los principales problemas de comunicación y organización 
-        derivados de la gestión manual.
+        A functional and scalable platform was built, offering business owners a clear digital 
+        management tool and giving players an intuitive, organized and accessible experience. 
+        The platform effectively solved manual management and communication issues.
       `,
 
       difficulties: `
-        El proyecto involucró diversos desafíos técnicos y de diseño: 
-        - Manejo y sincronización de reservas en tiempo real.
-        - Construcción de filtros dinámicos sin afectar el rendimiento.
-        - Integración de FullCalendar dentro de Blade.
-        - Gestión correcta de roles y permisos por tipo de usuario.
-        - Automatización de notificaciones hacia el propietario.
+        Main technical and design challenges included:
+        - Real-time reservation synchronization and conflict handling.
+        - Dynamic filtering while maintaining performance.
+        - FullCalendar integration within Blade.
+        - Correct role/permission assignment and route protection.
+        - Automated notifications towards field owners.
       `,
 
       role: ` 
-        Creación del buscador con filtros avanzados,
-        Implementación de roles en el sistema, vistas, consultas SQL, integración con FullCalendar, 
-        lógica de filtros, autenticación, diseño del flujo UX y pruebas.
+        Developed advanced search and filters,
+        Implemented roles, views and SQL queries, FullCalendar integration, 
+        filtering logic, authentication, UX flow design and testing.
       `,
 
       conclution: `
-        Tiro Libre demuestra cómo una solución digital bien diseñada puede impactar 
-        directamente sobre la organización de un negocio tradicional. La plataforma 
-        no solo optimiza la gestión interna, sino que mejora la experiencia usuario-propietario, 
-        potenciando la visibilidad y profesionalización del ecosistema amateur del fútbol.
+        Tiro Libre demonstrates how a well-designed digital solution can directly improve 
+        the management of a traditional business. The platform enhances visibility, 
+        organization and professionalism in the amateur football ecosystem.
       `,
 
       techStack: [
@@ -291,19 +283,215 @@ export default [
       ],
 
       galleryText: [
-        `Perfil de la cancha desde la perspectiva del jugador. Se puede observar la 
-        información detallada, imagenes, botón para ver la ubicación con un mapa, 
-        horarios disponibles en forma de boton, la posibilidad de puntuar el servicio
-        con estrellas`,
-        `Vista detallada de una cancha (modo oscuro).`,
-        `Panel de control del propietario con gestión de canchas y reservas.`,
-        "Pantalla principal para jugadores con opciones de búsqueda y filtros.",
-        "Mapa interactivo para localizar canchas cercanas.",
-        "Gestión de solicitudes de reserva pendientes para el propietario.",
+        `Field preview from player perspective, with detailed information, images, 
+        location map button, available schedule selector and star rating option.`,
+        `Detailed field view (dark mode).`,
+        `Owner dashboard with field and booking management.`,
+        "Player homepage with search and filtering tools.",
+        "Interactive map to locate nearby fields.",
+        "Pending reservation requests management panel for owners.",
       ],
-
+      
       repository: "https://github.com/Felipe-258/tiro-libre?tab=readme-ov-file"
     }
-  }
+  },
+  /* ╔══════════════════════════════════════════════════════════╗
+     ║ 🚀  Mecha                                                ║
+     ╚══════════════════════════════════════════════════════════╝ */
+  {
+    id: "mecha",
+    title: "Mecha",
+    shortDesc: "Responsive frontend layout and development based on delivered design.",
+    thumbnail: mechaThumb,
 
+    detail: {
+      longText: `
+        Mecha was a project focused on frontend development based on a design provided by a graphic designer.
+        The goal was to transform the design into a fully functional web interface, faithful to the visual requirements and responsive across different devices. We worked using HTML, CSS, and vanilla JavaScript, respecting the dimensions, colors, fonts, and structure established in the original prototype.
+      `,
+      problem: `
+        The main challenge was to accurately translate the provided design, respecting proportions, alignments, and hierarchies,
+        without a functional backend or base repository to start from, which meant building the structure
+        from scratch with clean and maintainable code.
+      `,
+      objetive: `
+        Build a static website mockup, faithful to the delivered design, complete, navigable, and responsive with good visual performance
+        and correct semantics in the code.
+      `,
+      metodology: `
+        - Structuring the layout with semantic HTML5.
+        - Modularization and reuse of styles with CSS.
+        - Responsive adaptation using relative units and media queries.
+        - Constant visual validation by comparing it to the original design.
+      `,
+      process: [
+        "Receiving the final design with measurements and visual references.",
+        "Creating the initial HTML structure and basic configuration.",
+        "Step-by-step layout prioritizing visual accuracy.",
+        "Implementing responsive behavior on mobile, tablet, and desktop.",
+      ],
+      result: `
+        A functional, navigable, and responsive mockup was delivered that respected the original design, with clean code
+        and was ready for future backend integration.
+      `,
+      difficulties: `
+        The main challenge was ensuring visual accuracy and scalability without automated external tools,
+        achieving a result faithful to the original design using only HTML, CSS, and vanilla JavaScript.
+      `,
+      role: `
+        Frontend Developer — responsible for the complete assembly of the interface, faithful layout and responsive design.
+      `,
+      conclution: `
+        The project strengthened skills in professional layout, responsive design, and attention to detail in interfaces,
+        providing a solid foundation ready for future backend functionalities.
+      `,
+      techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      gallery: [
+        "/src/assets/imgs/Mecha/1.jpeg",
+        "/src/assets/imgs/Mecha/2.jpeg",
+        "/src/assets/imgs/Mecha/3.jpeg",
+        "/src/assets/imgs/Mecha/4.jpeg",
+        "/src/assets/imgs/Mecha/5.jpeg",
+        "/src/assets/imgs/Mecha/6.jpeg",
+      ],
+      galleryText: [
+        "Style and typography details.",
+        "Responsive mobile version.",
+        "Desktop version.",
+        "Responsive mobile version.",
+        "Responsive mobile version.",
+        "Responsive menu."
+      ],
+      repository: "",
+    }
+  },
+  /* ╔══════════════════════════════════════════════════════════╗
+     ║ 🚀 Kredit                                                ║
+     ╚══════════════════════════════════════════════════════════╝ */
+  {
+    id: "kredit",
+    title: "Kredit",
+    shortDesc: "Responsive web interface development for a financial platform using API consumption with JWT.",
+    thumbnail: kreditThumb,
+    
+    detail: {
+      longText: `
+        Kredit is a web platform focused on managing loans and financial services.
+        My contribution to the project centered on frontend development, ensuring a
+        responsive, clear, and user-friendly interface capable of consuming data from
+        an API secured through JWT-based authentication.
+      `,
+      problem: `
+        The platform required a modern web interface, adaptable to multiple devices,
+        and capable of correctly interacting with the backend through authenticated
+        requests using JWT tokens.
+      `,
+      objetive: `
+        Build a functional, efficient, and responsive web interface that allows users
+        to access, visualize, and manipulate the data provided by the API, ensuring
+        proper integration with the authentication system.
+      `,
+      metodology: `
+        An incremental methodology was applied, starting with visual design and general
+        structure, then integrating components, and finally consuming the API through
+        requests secured with JWT. Manual testing was conducted across different screen
+        sizes and browsers.
+      `,
+      process: [
+        "Definition and initial UI layout based on the provided requirements.",
+        "Responsive adaptation using CSS techniques and UI best practices.",
+        "Implementation of API consumption logic using JWT authentication.",
+        "Functionality and integration tests with the backend."
+      ],
+      result: `
+        The outcome was a functional and adaptable frontend with proper communication
+        with the API through JWT, delivering a suitable user experience on both desktop
+        and mobile devices.
+      `,
+      difficulties: `
+        Business information and certain internal functionalities were not fully documented,
+        making it necessary to interpret flows through API testing and communication with
+        the backend team.
+      `,
+      role: `
+        Frontend Developer — responsible for visual development, responsiveness,
+        API interaction, and browser testing.
+      `,
+      conclution: `
+        The project strengthened my knowledge in consuming APIs with JWT authentication
+        and applying responsive frontend development best practices in a real environment.
+      `,
+      techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      gallery: [
+        "/src/assets/imgs/Kredit/1.jpeg",
+        "/src/assets/imgs/Kredit/2.jpeg",
+        "/src/assets/imgs/Kredit/3.jpeg",
+        "/src/assets/imgs/Kredit/4.jpeg",
+      ],
+      galleryText: [
+        "Main platform view",
+        "List view with API data",
+        "Responsive flow on mobile devices",
+        "UI detail and navigation"
+      ],
+      repository: "",
+    }
+  },
+  
+  /* ╔══════════════════════════════════════════════════════════╗
+     ║ 🚀                                                       ║
+     ╚══════════════════════════════════════════════════════════╝ */
+  /* {
+    id: "",
+    title: "",
+    shortDesc: "",
+    thumbnail: Thumb,
+    
+    detail: {
+      longText: `
+
+      `,
+      problem: `
+        
+      `,
+      objetive: `
+        
+      `,
+      metodology: `
+        
+      `,
+      process: [
+        ``,
+        ``,
+        ``,
+        ``,
+      ],
+      result: `
+        
+      `,
+      difficulties: `
+        
+      `,
+      role: `
+        
+      `,
+      conclution: `
+        
+      `,
+      techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Laragon"],
+      gallery: [
+        "/src/assets/imgs/folder/1.png",
+        "/src/assets/imgs/folder/2.png",
+        "/src/assets/imgs/folder/3.png",
+        "/src/assets/imgs/folder/4.png",
+      ],
+      galleryText: [
+        "",
+        "",
+        "",
+        "",
+      ],
+      repository: "",
+    }
+  }, */
 ];

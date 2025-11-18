@@ -1,8 +1,9 @@
 <template>
 <main>
     <h1 class="title-font">Hey there!</h1>
-    <img src="/perfil.jpg" alt="">
-
+    <div class="img-wrapper">
+      <img src="/perfil.jpeg" alt="">
+    </div>
     <TextCarousel />
 
 
@@ -67,8 +68,8 @@
     <a href="https://wa.me/541125276194" target="_blank">
         <i class="fa fa-brands fa-whatsapp icons"></i>
     </a>
-    <a href="mailto:martinolichfederico@gmail.com" target="_blank">
-        <i class="fa fa-solid fa-envelope icons"></i>
+    <a href="https://www.instagram.com/fedev.jpg" target="_blank">
+      <i class="fa fa-brands fa-instagram icons"></i>
     </a>
 </footer>
 
@@ -90,6 +91,32 @@ main {
     font-family: 'Arial', sans-serif;
     padding: 2rem;
 }
+
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 5%;
+  overflow: hidden;
+  border: 2px solid rgba(143, 143, 143, 0.25);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08); /* glow exterior */
+}
+
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+.img-wrapper img {
+  max-height: 35rem;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
