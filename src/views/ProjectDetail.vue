@@ -138,7 +138,6 @@
   </main>
 </template>
 
-
 <script setup>
 import { useRoute } from "vue-router";
 import projects from "../data/projects.js";

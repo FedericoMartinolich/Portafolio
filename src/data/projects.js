@@ -4,6 +4,43 @@ import tiroLibreThumb from '../assets/imgs/TiroLibre/Logo.png';
 import kreditThumb from '../assets/imgs/Kredit/Logo.png';
 import mechaThumb from '../assets/imgs/Mecha/Logo.png'
 
+import checking1 from '../assets/imgs/ChecKing/1.png';
+import checking2 from '../assets/imgs/ChecKing/2.png';
+import checking3 from '../assets/imgs/ChecKing/3.png';
+import checking4 from '../assets/imgs/ChecKing/4.png';
+
+import FoodService1 from '../assets/imgs/FoodService/1.jpeg';
+import FoodService2 from '../assets/imgs/FoodService/2.jpeg';
+import FoodService3 from '../assets/imgs/FoodService/3.jpeg';  
+import FoodService4 from '../assets/imgs/FoodService/4.jpeg';
+import FoodService5 from '../assets/imgs/FoodService/5.jpeg';
+import FoodService6 from '../assets/imgs/FoodService/6.jpeg';
+import FoodService7 from '../assets/imgs/FoodService/7.jpeg';
+import FoodService8 from '../assets/imgs/FoodService/8.jpeg';
+import FoodService9 from '../assets/imgs/FoodService/9.jpeg';
+import FoodService10 from '../assets/imgs/FoodService/10.jpeg';
+import FoodService11 from '../assets/imgs/FoodService/11.jpeg';
+import FoodService12 from '../assets/imgs/FoodService/12.jpeg';
+
+import TiroLibre1 from '../assets/imgs/TiroLibre/cancha.png';
+import TiroLibre2 from '../assets/imgs/TiroLibre/cancha-oscuro.png';
+import TiroLibre3 from '../assets/imgs/TiroLibre/home-canchero.png';
+import TiroLibre4 from '../assets/imgs/TiroLibre/home-jugador.png';
+import TiroLibre5 from '../assets/imgs/TiroLibre/mapa.png';
+import TiroLibre6 from '../assets/imgs/TiroLibre/solicitudes-pendientes.png';
+
+import kredit1 from '../assets/imgs/Kredit/1.jpeg';
+import kredit2 from '../assets/imgs/Kredit/2.jpeg';
+import kredit3 from '../assets/imgs/Kredit/3.jpeg';
+import kredit4 from '../assets/imgs/Kredit/4.jpeg';
+
+import mecha1 from '../assets/imgs/Mecha/1.jpeg';
+import mecha2 from '../assets/imgs/Mecha/2.jpeg';
+import mecha3 from '../assets/imgs/Mecha/3.jpeg';
+import mecha4 from '../assets/imgs/Mecha/4.jpeg';
+import mecha5 from '../assets/imgs/Mecha/5.jpeg';
+import mecha6 from '../assets/imgs/Mecha/6.jpeg';
+
 export default [
   /* ╔══════════════════════════════════════════════════════════╗
      ║ 🚀 CHECKING                                              ║
@@ -50,10 +87,10 @@ export default [
       `,
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Laragon"],
       gallery: [
-        "/src/assets/imgs/ChecKing/1.png",
-        "/src/assets/imgs/ChecKing/2.png",
-        "/src/assets/imgs/ChecKing/3.png",
-        "/src/assets/imgs/ChecKing/4.png",
+        checking1,
+        checking2,
+        checking3,
+        checking4,
       ],
       galleryText: [
         "Login screen for teachers. Access is performed using ID number and password.",
@@ -150,18 +187,18 @@ export default [
       ],
       
       gallery: [
-        "/src/assets/imgs/FoodService/1.jpeg",
-        "/src/assets/imgs/FoodService/2.jpeg",
-        "/src/assets/imgs/FoodService/3.jpeg",
-        "/src/assets/imgs/FoodService/4.jpeg",
-        "/src/assets/imgs/FoodService/5.jpeg",
-        "/src/assets/imgs/FoodService/6.jpeg",
-        "/src/assets/imgs/FoodService/7.jpeg",
-        "/src/assets/imgs/FoodService/8.jpeg",
-        "/src/assets/imgs/FoodService/9.jpeg",
-        "/src/assets/imgs/FoodService/10.jpeg",
-        "/src/assets/imgs/FoodService/11.jpeg",
-        "/src/assets/imgs/FoodService/12.jpeg",
+        FoodService1,
+        FoodService2,
+        FoodService3,
+        FoodService4,
+        FoodService5,
+        FoodService6,
+        FoodService7,
+        FoodService8,
+        FoodService9,
+        FoodService10,
+        FoodService11,
+        FoodService12,
       ],
       
       galleryText: [
@@ -274,12 +311,12 @@ export default [
       ],
 
       gallery: [
-        "/src/assets/imgs/TiroLibre/cancha.png",
-        "/src/assets/imgs/TiroLibre/cancha-oscuro.png",
-        "/src/assets/imgs/TiroLibre/home-canchero.png",
-        "/src/assets/imgs/TiroLibre/home-jugador.png",
-        "/src/assets/imgs/TiroLibre/mapa.png",
-        "/src/assets/imgs/TiroLibre/solicitudes-pendientes.png",
+        TiroLibre1,
+        TiroLibre2,
+        TiroLibre3,
+        TiroLibre4,
+        TiroLibre5,
+        TiroLibre6,
       ],
 
       galleryText: [
@@ -347,12 +384,12 @@ export default [
       `,
       techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       gallery: [
-        "/src/assets/imgs/Mecha/1.jpeg",
-        "/src/assets/imgs/Mecha/2.jpeg",
-        "/src/assets/imgs/Mecha/3.jpeg",
-        "/src/assets/imgs/Mecha/4.jpeg",
-        "/src/assets/imgs/Mecha/5.jpeg",
-        "/src/assets/imgs/Mecha/6.jpeg",
+        mecha1,
+        mecha2,
+        mecha3,
+        mecha4,
+        mecha5,
+        mecha6,
       ],
       galleryText: [
         "Style and typography details.",
@@ -423,10 +460,10 @@ export default [
       `,
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       gallery: [
-        "/src/assets/imgs/Kredit/1.jpeg",
-        "/src/assets/imgs/Kredit/2.jpeg",
-        "/src/assets/imgs/Kredit/3.jpeg",
-        "/src/assets/imgs/Kredit/4.jpeg",
+        kredit1,
+        kredit2,
+        kredit3,
+        kredit4,
       ],
       galleryText: [
         "Main platform view",
