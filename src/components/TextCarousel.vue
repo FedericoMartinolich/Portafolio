@@ -226,4 +226,36 @@ h1 {
   height: 100%;
   flex-grow: 3;
 }
+
+@media (max-width: 1000px) {
+  #scene {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  #left-zone {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #1e2530;
+  }
+  #middle-border {
+    width: 100%;
+    height: 2px;
+  }
+  #right-zone {
+    width: 100%;
+  }
+  .item .content {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+  }
+  .content p {
+    max-width: 90%;
+  }
+}
 </style>
