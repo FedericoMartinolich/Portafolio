@@ -11,6 +11,7 @@ const year = new Date().getFullYear()
 </script>
 
 <style scoped>
+
 .main-footer {
   bottom: 0;
   left: 0;
@@ -41,5 +42,10 @@ const year = new Date().getFullYear()
   justify-content: center;
   align-items: flex-end;
   height: 100%;
+}
+@media (max-width: 1200px) {
+  .main-footer {
+    transform: scale(0.7) !important;
+  }
 }
 </style>
