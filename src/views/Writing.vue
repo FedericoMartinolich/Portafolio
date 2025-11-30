@@ -21,9 +21,21 @@
             <input
               type="email"
               class="form-control"
-              id="email"
+              id="reply_to"
               placeholder="EMAIL"
-              name="email"
+              name="reply_to"
+              required
+            />
+
+          </div>
+
+          <div class="form-group">
+          <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="TITLE"
+              name="title"
               required
             />
           </div>

@@ -4,7 +4,7 @@
     <h1 class="title-font">I am a Fullstack Developer</h1>
     <p>
       Welcome to my Portfolio! 
-      <!-- <br> You can find out anything specific about me using keywords in the search bar at the top. -->
+      <br> You can find out anything specific about me using keywords in the search bar at the top.
     </p>
     <div class="cards-grid">
         <!-- En un futuro poner carrusel cuando sean de 1 col -->

@@ -466,10 +466,10 @@ export default [
         kredit4,
       ],
       galleryText: [
-        "Main platform view",
-        "List view with API data",
-        "Responsive flow on mobile devices",
-        "UI detail and navigation"
+        "Main interface of the platform where loan options and their information obtained via API are displayed.",
+        "Form to request a loan",
+        "Contact",
+        "Responsive mobile version",
       ],
       repository: "",
     }
