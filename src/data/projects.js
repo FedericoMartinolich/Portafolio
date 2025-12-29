@@ -41,6 +41,20 @@ import mecha4 from '../assets/imgs/Mecha/4.jpeg';
 import mecha5 from '../assets/imgs/Mecha/5.jpeg';
 import mecha6 from '../assets/imgs/Mecha/6.jpeg';
 
+import ClashRoyaleAppThumb from '../assets/imgs/Clash/Logo.jpg';
+import Clash1 from '../assets/imgs/Clash/contact.png';
+import Clash3 from '../assets/imgs/Clash/loading.png';
+
+import moroThumb from '../assets/imgs/FerreteriaElMoro/Logo.png';
+import elmoro1 from '../assets/imgs/FerreteriaElMoro/1.png';
+import elmoro2 from '../assets/imgs/FerreteriaElMoro/2.png';
+import elmoro3 from '../assets/imgs/FerreteriaElMoro/3.png';
+import elmoro4 from '../assets/imgs/FerreteriaElMoro/4.png';  
+import elmoro5 from '../assets/imgs/FerreteriaElMoro/5.png';
+import elmoro6 from '../assets/imgs/FerreteriaElMoro/6.png';
+import elmoro7 from '../assets/imgs/FerreteriaElMoro/7.png';
+import elmoro8 from '../assets/imgs/FerreteriaElMoro/8.png';
+
 export default [
   /* ╔══════════════════════════════════════════════════════════╗
      ║ 🚀 CHECKING                                              ║
@@ -458,7 +472,7 @@ export default [
         The project strengthened my knowledge in consuming APIs with JWT authentication
         and applying responsive frontend development best practices in a real environment.
       `,
-      techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "JWT"],
       gallery: [
         kredit1,
         kredit2,
@@ -474,6 +488,217 @@ export default [
       repository: "",
     }
   },
+  /* ╔══════════════════════════════════════════════════════════╗
+     ║ 🚀  Ferretería El Moro – Catálogo Web Dinámico           ║
+     ╚══════════════════════════════════════════════════════════╝ */
+  {
+    id: "ferreteria-el-moro",
+    title: "Ferretería El Moro",
+    shortDesc: "Online product catalog for a hardware store, built without a backend, optimized for performance and easy content management.",
+    thumbnail: moroThumb,
+
+    detail: {
+      longText: `
+      Web catalog project developed for a local hardware store, aimed at
+      showcasing its product stock in a clear, fast, and professional way,
+      without requiring a traditional backend system or infrastructure costs.
+
+      The solution relies on free external services for data and image management,
+      allowing the client to retain full control over their content.
+      `,
+
+      problem: `
+      The hardware store had an internal stock management system but lacked a
+      simple and cost-effective way to display its products online. The large
+      volume of products did not justify the development or maintenance of a
+      dedicated backend.
+      `,
+
+      objetive: `
+      To create an accessible, fast, and scalable online catalog that displays
+      products, prices, and descriptions, with the ability to add images without
+      impacting performance or generating additional costs.
+      `,
+
+      metodology: `
+      A frontend-first architecture was designed, fully decoupled from any backend,
+      using external data sources and CDN services to optimize load times and user
+      experience.
+      `,
+
+      process: [
+        "Data consumption from Google Sheets published as CSV to simulate an API.",
+        "Normalization and mapping of products on the frontend.",
+        "Cloudinary integration for efficient image management using Public IDs.",
+        "Implementation of placeholder images for products without photos.",
+        "Project deployment on Vercel with optimized configuration for Vite."
+      ],
+
+      result: `
+      A fully functional, fast, and professional web catalog was delivered,
+      accessible from any device, with optimized images and product data that can
+      be easily updated by the client without constant technical intervention.
+      `,
+
+      difficulties: `
+      The main challenges were related to asset and route management in production,
+      as well as proper Vite build configuration and handling external images
+      without a backend.
+      `,
+
+      role: `
+      Full project development: frontend architecture, integration of external
+      services, performance optimization, deployment, and client documentation.
+      `,
+
+      conclution: `
+      This project demonstrates that it is possible to build professional and
+      scalable web solutions on a zero-budget by properly leveraging modern tools
+      and a decoupled architecture. The separation between data, images, and
+      frontend allows the model to be reused for multiple clients.
+      `,
+
+      techStack: [
+        "Vue 3",
+        "Vite",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Cloudinary",
+        "Google Sheets",
+        "Vercel"
+      ],
+
+      gallery: [
+        elmoro1,
+        elmoro2,
+        elmoro3,
+        elmoro4,
+        elmoro5,
+        elmoro6,
+        elmoro7,
+        elmoro8
+      ],
+
+      galleryText: [
+        "General view of the product catalog with a responsive grid and optimized navigation.",
+        "Product detail view with dynamic data and image loading from external services.",
+        "Placeholder image handling for products without available photos.",
+        "Contact section featuring an interactive map implemented with Leaflet.",
+        "‘About Us’ section with institutional information about the hardware store.",
+        "Shopping cart view with selected product management.",
+        "Cart modal to finalize the order and contact directly via WhatsApp.",
+        "New products section highlighting recently added or promoted items."
+      ],
+
+      repository: ""
+    }
+  },
+
+
+/*   ╔══════════════════════════════════════════════════════════╗
+     ║ 🚀 Clash Royale App – Dashboard de Clan                 ║
+     ╚══════════════════════════════════════════════════════════╝ */
+/*   {
+    id: "clash-royale-app",
+    title: "Clash Royale - Dashboard",
+    shortDesc: "Plataforma creada para consultar en tiempo real la información de un clan de Clash Royale usando la API oficial y un backend propio.",
+    thumbnail: ClashRoyaleAppThumb,
+    
+    detail: {
+      longText: `
+        Clash Royale App es una plataforma completamente personalizada 
+        que permite visualizar la información más importante de un clan 
+        en específico utilizando la API oficial 
+        de Supercell. La aplicación reúne datos sobre el clan, ranking, 
+        donaciones, guerras de clanes, River Races y estadísticas 
+        destacadas, todo presentado con una estética inspirada en el 
+        universo visual del juego.
+      `,
+
+      problem: `
+        Supercell no ofrece una interfaz web oficial para administrar 
+        o visualizar métricas avanzadas del clan. Los líderes o jugadores 
+        deben revisar la información manualmente desde la app del juego, 
+        lo cual limita el acceso, no permite comparar datos fácilmente 
+        ni funciona bien como "dashboard".
+      `,
+
+      objetive: `
+        Crear un panel centralizado, moderno y accesible desde cualquier 
+        dispositivo para visualizar toda la información del clan en tiempo 
+        real, con métricas útiles, rankings automáticos y un diseño 
+        inspirado directamente en Clash Royale.
+      `,
+
+      metodology: `
+        Se desarrolló un backend en Node.js alojado en Render para 
+        conectarse de forma segura a la API oficial de Supercell utilizando 
+        JWT con validación por IP. El frontend se construyó con Vue 3 y Vite, 
+        consumiendo los endpoints del backend y transformando los datos 
+        crudos en componentes visuales y rankings dinámicos.
+      `,
+
+      process: [
+        `Diseño y creación del backend Node.js con Express y node-fetch.`,
+        `Configuración del JWT y whitelist de IP para la API de Clash Royale.`,
+        `Implementación de CORS para permitir entorno local y producción.`,
+        `Construcción del frontend con Vue 3, componentes y estilos personalizados.`,
+        `Cálculo automático de métricas como POTW (Jugador de la semana), POTS (Jugador de la temporada) y Top 5 del River Race.`,
+        `Despliegue del backend en Render y del frontend en Render Static Hosting.`
+      ],
+
+      result: `
+        La plataforma permite consultar todo un dashboard de clan en segundos:
+        miembros con filtros, roles, donaciones, guerra actual, River Race, 
+        historial de temporadas, Hall of Fame, ranking semanal y ranking 
+        total de fama. La interfaz utiliza un estilo visual inspirado en 
+        Clash Royale con banners de madera, tarjetas personalizadas, 
+        bordes legendarios y tipografía Supercell.
+      `,
+
+      difficulties: `
+        El mayor desafío fue el uso del sistema de autenticación con JWT de 
+        Supercell, que exige registrar una IP fija. Render usa IP dinámica 
+        en su plan gratuito, por lo que hubo que actualizar manualmente la IP 
+        al regenerar el token. También fue complejo resolver los problemas 
+        de CORS entre Render y Vite en entorno local.
+      `,
+
+      role: `
+        Desarrollo full stack: creación de la API en Node.js, manejo de JWT, 
+        integración con API oficial de Supercell, diseño de componentes Vue, 
+        estilos basados en Clash Royale, deploy en Render y optimización de 
+        consumo de datos.
+      `,
+
+      conclution: `
+        El proyecto permitió crear un dashboard profesional, claro y útil 
+        para cualquier clan de Clash Royale, resolviendo un problema real: 
+        la falta de una plataforma web oficial para monitorear la actividad 
+        del clan. Fue un aprendizaje completo en APIs externas, Node.js, 
+        Render y Vue 3.
+      `,
+
+      techStack: ["HTML", "CSS", "JavaScript", "Vue 3", "Vite", "Node.js", "Express", "Render"],
+
+      gallery: [
+        Clash1,
+        Clash3,
+      ],
+
+      galleryText: [
+        "Vista general del dashboard del clan.",
+        "Componente ClanBanner con estética Clash Royale.",
+        "Ranking automático de River Race y Hall of Fame.",
+        "Estadísticas y tabla de miembros con roles y donaciones."
+      ],
+
+      repository: "https://github.com/FedericoMartinolich/clash-royale-app"
+    }
+  }, */
+
+  
   
   /* ╔══════════════════════════════════════════════════════════╗
      ║ 🚀                                                       ║

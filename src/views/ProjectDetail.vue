@@ -103,6 +103,13 @@
                   <i v-else-if="tech === 'AJAX'" class="fa-solid fa-retweet"></i>
                   <i v-else-if="tech === 'FullCalendar'" class="fa-regular fa-calendar"></i>
                   <i v-else-if="tech === 'Tesseract OCR'" class="fa-solid fa-expand"></i>
+                  <i v-else-if="tech === 'JWT'" class="fa-solid fa-key"></i>
+                  <i v-else-if="tech === 'Vue 3'" class="fa-brands fa-vuejs"></i>
+                  <i v-else-if="tech === 'Vite'" class="fa-solid fa-bolt-lightning"></i>
+                  <i v-else-if="tech === 'Cloudinary'" class="fa-solid fa-cloud"></i>
+                  <i v-else-if="tech === 'Google Drive'" class="fa-brands fa-google-drive"></i>
+                  <i v-else-if="tech === 'Google Sheets'" class="fa-brands fa-google-drive"></i>
+                  <i v-else-if="tech === 'Vercel'" class="fa-solid fa-square-caret-up"></i>
                   {{ tech }}
                 </li>
               </ul>
