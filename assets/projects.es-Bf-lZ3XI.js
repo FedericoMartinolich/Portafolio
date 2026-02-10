@@ -40,7 +40,9 @@ const e={checking:{title:"ChecKing",shortDesc:"Sistema de gestión de asistencia
         sin gestor de paquetes ni documentación.
       `,objetive:`
         Construir un sistema estable que permita autenticación de usuarios,
-        gestión de pedidos de comida y carga automática de menús mediante OCR,
+        gestión de pedidos de comida, enviar solicitudes al contacto de las 
+        viandas diariamente, carga automática de menús mediante OCR y
+        un panel de control de pedidos con exportación a PDF,
         todo dentro de un entorno técnico restringido.
       `,metodology:`
         Metodología ágil con desarrollo incremental.
