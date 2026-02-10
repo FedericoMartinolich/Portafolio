@@ -35,9 +35,12 @@ export default {
       description: `Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.`
     },
     {
-      name: 'Filosofía',
-      title: 'Filosofía',
-      description: `Creo que el desarrollo va más allá del código: se trata de entender problemas reales y resolverlos con claridad, empatía y una buena dosis de curiosidad. Mi objetivo es escribir código limpio, mantener una comunicación clara y aprender constantemente de cada proyecto.`
+      name: 'Experiencia',
+      title: 'Experiencia',
+      description: `
+      Tengo un año de experiencia como desarrollador web en Rebrit SRL, trabajando con PHP, MySQL y JavaScript sobre un framework interno propio, realizando mantenimiento, mejoras y comunicación asíncrona con AJAX en aplicaciones web en producción.
+Además, desarrollo proyectos personales, disponibles en mi portfolio.
+`
     },
     { 
       name: 'Tecnologías',

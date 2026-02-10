@@ -48,8 +48,8 @@ const items = computed(() => {
 
   return carousel.map((item, index) => ({
     ...item,
-    slug: ['about', 'philosophy', 'technologies', 'contact'][index],
-    icon: ['fa-user', 'fa-brain', 'fa-code', 'fa-envelope'][index],
+    slug: ['about', 'experience', 'technologies', 'contact'][index],
+    icon: ['fa-user', 'fa-briefcase', 'fa-code', 'fa-envelope'][index],
     color: ['#4CAF50', '#2196F3', '#FF5722', '#9C27B0'][index]
   }))
 })

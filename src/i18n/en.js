@@ -44,9 +44,14 @@ export default {
       description: `I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I'm passionate about transforming ideas into applications that truly simplify processes and improve user experience.`
     },
     {
-      name: 'Philosophy',
-      title: 'Philosophy',
-      description: `I believe development goes beyond code: it's about understanding real problems and solving them with clarity, empathy, and a good dose of curiosity. I aim to write clean code, maintain clear communication, and constantly learn from every project.`
+      name: 'Experience',
+      title: 'Experience',
+      description: `I have one year of experience as a web developer working at Rebrit SRL, participating in the maintenance and evolution of web applications used in real production environments.
+During this period, I worked with PHP, MySQL, and JavaScript, developing and maintaining both backend and frontend functionalities on an internal framework specific to the company. I performed corrective and evolutionary maintenance tasks, modifications on existing code, and improvements aimed at system stability.
+I participated in systems with microservices-based architecture, collaborating in the maintenance and integration of different services, and in multi-tenant environments, adapting functionalities according to different clients or usage contexts. I implemented asynchronous communication between frontend and backend using AJAX, optimizing flows and user experience.
+Additionally, I performed refactoring tasks, optimized database queries, and created technical documentation to facilitate maintenance and teamwork.
+Complementarily, I develop personal projects, where I apply best practices and carry out the complete development and deployment cycle, which can be seen in my portfolio.
+`
     },
     {
       name: 'Technologies',
