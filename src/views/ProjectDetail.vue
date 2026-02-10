@@ -135,9 +135,12 @@
 
     <!-- Gallery -->
     <Gallery
-      :gallery="project.detail.gallery"
+      v-if="project?.gallery?.length && project?.detail?.galleryText?.length"
+      :gallery="project.gallery"
       :galleryText="project.detail.galleryText"
     />
+
+
   </main>
 
   <main v-else>
@@ -146,21 +149,53 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import projects from "../data/projects.js";
-import { ref } from 'vue'
-import Gallery from '../components/Gallery.vue';
+import { ref, computed, watch } from "vue"
+import { useRoute } from "vue-router"
+import { useI18n } from "vue-i18n"
 
-const tab = ref('context')
-const tabs = [
-  { label: 'Context', value: 'context', icon: '📘' },
-  { label: 'Objective', value: 'objective', icon: '🎯' },
-  { label: 'Methodology', value: 'methodology', icon: '⚙️' },
-  { label: 'Result', value: 'result', icon: '🏁' }
-]
-const route = useRoute();
-const project = projects.find(p => p.id === route.params.id);
+import baseProjects from "../data/projects.base.js"
+import Gallery from "../components/Gallery.vue"
+
+const route = useRoute()
+const { locale, t } = useI18n()
+
+const tab = ref("context")
+
+const tabs = computed(() => [
+  { label: t("tabs.context"), value: "context", icon: "📘" },
+  { label: t("tabs.objective"), value: "objective", icon: "🎯" },
+  { label: t("tabs.methodology"), value: "methodology", icon: "⚙️" },
+  { label: t("tabs.result"), value: "result", icon: "🏁" }
+])
+
+const project = ref(null)
+
+const loadProject = async () => {
+  const langProjects = (await import(`../data/projects.${locale.value}.js`)).default
+  const slug = route.params.id
+
+  const baseProject = baseProjects[slug] || {}
+  const langProject = langProjects[slug] || {}
+
+  // Asegurar que detail exista
+  const baseDetail = baseProject.detail || {}
+  const langDetail = langProject.detail || {}
+
+  project.value = {
+    ...baseProject,
+    ...langProject,
+    detail: {
+      ...baseDetail,
+      ...langDetail,
+      gallery: (baseDetail.gallery || []).map(img => `/Portafolio/${img}`),
+      galleryText: langDetail.galleryText || []
+    }
+  }
+}
+
+watch([locale, () => route.params.id], loadProject, { immediate: true })
 </script>
+
 
 <style scoped>
 .divider {

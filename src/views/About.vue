@@ -1,6 +1,6 @@
 <template>
 <main>
-    <h1 class="title-font">Hey there!</h1>
+    <h1 class="title-font">{{ $t("about.title") }}</h1>
     <div class="img-wrapper">
       <img src="/perfil.jpeg" alt="">
     </div>
@@ -78,6 +78,8 @@
 
 <script setup>
 import TextCarousel from '../components/TextCarousel.vue';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 </script>
 
 <style scoped>

@@ -1,10 +1,11 @@
 <template>
 <main>
-    <p>Hi there! I'm <router-link to="/about">Fede</router-link></p> 
-    <h1 class="title-font">I am a Fullstack Developer</h1>
+    <p>{{ $t('home.intro') }} <router-link to="/about">Fede</router-link> {{ $t('home.intro2') }}</p> 
+    <h1 class="title-font">{{ $t('home.profession') }}</h1>
     <p>
-      Welcome to my Portfolio! 
-      <br> You can find out anything specific about me using keywords in the search bar at the top.
+        {{ $t('home.welcome') }}       
+      <br>  
+        {{ $t('home.instructions') }}
     </p>
     <div class="cards-grid">
         <!-- En un futuro poner carrusel cuando sean de 1 col -->
@@ -22,8 +23,31 @@
 </template>
 
 <script setup>
-import Card from '../components/Card.vue';
-import projects from '../data/projects.js';
+import { ref, watch } from "vue"
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+
+import Card from "../components/Card.vue"
+import baseProjects from "../data/projects.base.js"
+
+const { locale } = useI18n()
+
+const projects = ref([])
+
+const loadProjects = async () => {
+  const langProjects = (
+    await import(`../data/projects.${locale.value}.js`)
+  ).default
+
+  projects.value = Object.keys(baseProjects).map((key) => ({
+    id: key,
+    ...baseProjects[key],
+    ...langProjects[key]
+  }))
+}
+
+// cargar al inicio + cuando cambia el idioma
+watch(locale, loadProjects, { immediate: true })
 </script>
 
 <style scoped>

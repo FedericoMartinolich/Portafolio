@@ -52,14 +52,20 @@ const props = defineProps({
   }
 })
 
+console.log('Props recibidos:', props)
+
 // Convertimos la data original en datos utilizables
 const slides = computed(() =>
   props.gallery.map((img, i) => ({
-    image: img,
+    image: img,           // no concatenar /Portafolio/
     thumb: img,
     description: props.galleryText[i] || ''
   }))
 )
+
+
+console.log('Slides procesados:', slides.value)
+
 
 // índice dinámico del slide actual
 const current = ref(0)

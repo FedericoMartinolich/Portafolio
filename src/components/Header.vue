@@ -33,7 +33,7 @@
           <input
             type="text"
             class="searcher"
-            placeholder="Buscar proyectos..."
+            :placeholder="t('search.placeholder')"
             v-model="search"
           />
 
@@ -52,45 +52,135 @@
 
       </div>
 
+      <!-- Lang -->
+      <div class="lang-switcher">
+        <button
+          class="lang-btn"
+          :class="{ active: locale === 'en' }"
+          @click="locale = 'en'"
+        >
+          EN
+        </button>
+
+        <button
+          class="lang-btn"
+          :class="{ active: locale === 'es' }"
+          @click="locale = 'es'"
+        >
+          ES
+        </button>
+      </div>
+
+
     </div>
   </header>
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import projects from '../data/projects';
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+import baseProjects from '../data/projects.base.js'
 
-const activeSection = ref("home");
+const { locale } = useI18n()
 
-const menu = [
-  { label: "home", href: "Home" },
-  { label: "contact", href: "Writing" },
-  /* { label: "notes", href: "Notes" }, */
-  { label: "about", href: "About" }
-];
+// ======================
+// PROJECTS (ASYNC SAFE)
+// ======================
+const projects = ref([])
 
-const search = ref("");
+const loadProjects = async () => {
+  const langProjects = (
+    await import(`../data/projects.${locale.value}.js`)
+  ).default
+
+  projects.value = Object.keys(baseProjects).map((key) => ({
+    id: key,
+    ...baseProjects[key],
+    ...langProjects[key]
+  }))
+}
+
+// cargar al inicio + cuando cambia idioma
+watch(locale, loadProjects, { immediate: true })
+
+// ======================
+// NAV
+// ======================
+const activeSection = ref('Home')
+
+const menu = computed(() => [
+  { label: t("menu.home"), href: 'Home' },
+  { label: t("menu.contact"), href: 'Writing' },
+  { label: t("menu.about"), href: 'About' }
+])
+
+// ======================
+// SEARCH
+// ======================
+const search = ref('')
+
 const filteredProjects = computed(() => {
-  /* watch(filteredProjects, (v) => {
-    console.log("Resultados:", v);
-  }) */
+  const q = search.value.trim().toLowerCase()
+  if (!q) return []
 
-  const q = search.value.trim().toLowerCase();
-  if (!q) return [];
+  return projects.value.filter(p => {
+    const titleMatch = p.title?.toLowerCase().includes(q)
 
-  return projects.filter(p => {
-    const titleMatch = p.title.toLowerCase().includes(q);
-
-    const techMatch = p.detail?.techStack?.some(tech =>
+    const techMatch = p.techStack?.some(tech =>
       tech.toLowerCase().includes(q)
-    );
+    )
 
-    return titleMatch || techMatch;
-  });
-});
+    return titleMatch || techMatch
+  })
+})
+
 </script>
 
+
 <style scoped>
+/* ===========================
+   Lang Switcher (Pill Toggle)
+=========================== */
+.lang-switcher {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: 
+    background .25s ease,
+    color .25s ease,
+    transform .15s ease;
+}
+
+.lang-btn:hover {
+  color: white;
+}
+
+.lang-btn.active {
+  background: #3b58ff;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 88, 255, 0.35);
+}
+
+.lang-btn:active {
+  transform: scale(0.95);
+}
+
 /* ===========================
    Search Wrapper
 =========================== */

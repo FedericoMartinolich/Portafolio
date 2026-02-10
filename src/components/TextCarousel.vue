@@ -39,47 +39,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const items = ref([
-  {
-    name: 'About Me',
-    title: 'About Me',
-    slug: 'strawberry',
-    icon: 'fa-user',
-    color: '#e74c3c',
-    description:
-      'I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I’m passionate about transforming ideas into applications that truly simplify processes and improve user experience.',
-  },
-  {
-    name: 'Philosophy',
-    title: 'Philosophy',
-    slug: 'banana',
-    icon: 'fa-solid fa-lightbulb',
-    color: '#f1c40f',
-    description:
-      'I believe development goes beyond code: it’s about understanding real problems and solving them with clarity, empathy, and a good dose of curiosity. I aim to write clean code, maintain clear communication, and constantly learn from every project.',
-  },
-  {
-    name: 'Technologies',
-    title: 'Technologies',
-    slug: 'apple',
-    icon: 'fa-solid fa-microchip',
-    color: '#2ecc71',
-    description:
-      'I mainly work with technologies such as Laravel, Vue.js, PHP, and JavaScript. I also enjoy designing interfaces with HTML, CSS, and Bootstrap, always looking for a balance between functionality and aesthetics.',
-  },
-  {
-    name: 'Contact',
-    title: 'Contact',
-    slug: 'orange',
-    icon: 'fa-solid fa-phone',
-    color: '#e67e22',
-    description:
-      'If you’re interested in collaborating, learning more about my work, or simply chatting about web development, feel free to reach out through my social media or message me directly on WhatsApp. I’m always open to new ideas and challenges.',
-  },
-])
+const { t, tm } = useI18n()
+const items = computed(() => {
+  const carousel = tm('carousel')
 
+  return carousel.map((item, index) => ({
+    ...item,
+    slug: ['about', 'philosophy', 'technologies', 'contact'][index],
+    icon: ['fa-user', 'fa-brain', 'fa-code', 'fa-envelope'][index],
+    color: ['#4CAF50', '#2196F3', '#FF5722', '#9C27B0'][index]
+  }))
+})
 </script>
 
 <style scoped>

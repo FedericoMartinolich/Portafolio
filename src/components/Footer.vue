@@ -1,12 +1,14 @@
 <template>
     <footer class="main-footer">
     <div class="containter">
-      <p>© {{ year }} Portafolio — Creado por <a href="https://www.linkedin.com/in/federico-martinolich/" target="_blank">FeDev03</a></p>
+      <p>© {{ year }} {{ $t('copyright') }} <a href="https://www.linkedin.com/in/federico-martinolich/" target="_blank">Federico Martinolich</a></p>
     </div>
   </footer>
 </template>
 
 <script setup>
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
 const year = new Date().getFullYear()
 </script>
 

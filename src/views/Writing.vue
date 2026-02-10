@@ -1,7 +1,7 @@
 <template>
   <main class="contact-view">
     <section id="contact">
-      <h1 class="section-header">Contact</h1>
+      <h1 class="section-header">{{ t('menu.contact') }}</h1>
 
       <div class="contact-wrapper">
         <!-- Formulario -->
@@ -11,7 +11,7 @@
               type="text"
               class="form-control"
               id="name"
-              placeholder="NAME"
+              :placeholder="t('contact.name')"
               name="name"
               required
             />
@@ -22,7 +22,7 @@
               type="email"
               class="form-control"
               id="reply_to"
-              placeholder="EMAIL"
+              :placeholder="t('contact.email')"
               name="reply_to"
               required
             />
@@ -34,7 +34,7 @@
               type="text"
               class="form-control"
               id="title"
-              placeholder="TITLE"
+              :placeholder="t('contact.title')"
               name="title"
               required
             />
@@ -43,7 +43,7 @@
           <textarea
             class="form-control"
             rows="8"
-            placeholder="MESSAGE"
+            :placeholder="t('contact.message')"
             name="message"
             required
           ></textarea>
@@ -51,7 +51,7 @@
           <button class="btn btn-primary send-button" type="submit">
             <div class="alt-send-button">
               <i class="fa fa-paper-plane"></i>
-              <span class="send-text">SEND</span>
+              <span class="send-text">{{ t('contact.send') }}</span>
             </div>
           </button>
           <p id="form-msg" class="col-span-2 text-center text-sm">{{ msg }}</p>
@@ -108,6 +108,8 @@
 <script setup>
 import emailjs from 'emailjs-com';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const form = ref(null);
 const msg = ref("");
