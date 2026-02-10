@@ -23,7 +23,12 @@ export default {
     context: "Context",
     objective: "Objective",
     methodology: "Methodology",
-    result: "Result"
+    result: "Result",
+    role: "Role",
+    technologies: "Technologies",
+    process: "Process",
+    repository: "Repository",
+    repositorySpan: "View Repository"
   },
 
   /* ABOUT ME */

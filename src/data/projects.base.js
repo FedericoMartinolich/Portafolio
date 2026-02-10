@@ -24,17 +24,17 @@ export default {
     ],
     gallery: [
       '/Portafolio/imgs/projects/FoodService/1.jpeg',
-      '/Portafolio/imgs/projects/FoodService/2.jpeg',
-      '/Portafolio/imgs/projects/FoodService/3.jpeg',
-      '/Portafolio/imgs/projects/FoodService/4.jpeg',
-      '/Portafolio/imgs/projects/FoodService/5.jpeg',
-      '/Portafolio/imgs/projects/FoodService/6.jpeg',
-      '/Portafolio/imgs/projects/FoodService/7.jpeg',
-      '/Portafolio/imgs/projects/FoodService/8.jpeg',
-      '/Portafolio/imgs/projects/FoodService/9.jpeg',
-      '/Portafolio/imgs/projects/FoodService/10.jpeg',
-      '/Portafolio/imgs/projects/FoodService/11.jpeg',
-      '/Portafolio/imgs/projects/FoodService/12.jpeg'
+      '/Portafolio/imgs/projects/FoodService/2.png',
+      '/Portafolio/imgs/projects/FoodService/3.png',
+      '/Portafolio/imgs/projects/FoodService/4.png',
+      '/Portafolio/imgs/projects/FoodService/5.png',
+      '/Portafolio/imgs/projects/FoodService/6.png',
+      '/Portafolio/imgs/projects/FoodService/7.png',
+      '/Portafolio/imgs/projects/FoodService/8.png',
+      '/Portafolio/imgs/projects/FoodService/9.png',
+      '/Portafolio/imgs/projects/FoodService/10.png',
+      '/Portafolio/imgs/projects/FoodService/11.png',
+      '/Portafolio/imgs/projects/FoodService/12.png'
     ],
     repository: ''
   },

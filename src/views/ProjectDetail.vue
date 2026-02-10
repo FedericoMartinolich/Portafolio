@@ -39,13 +39,13 @@
 
           <!-- ====================== CONTEXT ======================= -->
           <div v-if="tab === 'context'">
-            <h3>Context</h3>
+            <h3>{{ $t('tabs.context') }}</h3>
             <p>{{ project.detail.problem }}</p>
           </div>
 
           <!-- ====================== OBJECTIVE ======================= -->
           <div v-else-if="tab === 'objective'">
-            <h3>Objective</h3>
+            <h3>{{ $t('tabs.objective') }}</h3>
             <p>{{ project.detail.objetive }}</p>
           </div>
 
@@ -53,7 +53,7 @@
           <div v-else-if="tab === 'methodology'">
 
             <!-- Methodology -->
-            <h3 v-if="project.detail.metodology">Methodology</h3>
+            <h3 v-if="project.detail.metodology">{{ $t('tabs.methodology') }}</h3>
             <p v-if="project.detail.metodology">{{ project.detail.metodology }}</p>
 
             <!-- Divider: only if Methodology + Process -->
@@ -63,34 +63,19 @@
             ></div>
 
             <!-- Process -->
-            <h3 v-if="project.detail.process?.length">Process</h3>
+            <h3 v-if="project.detail.process?.length">{{ $t('tabs.process') }}</h3>
             <ul v-if="project.detail.process?.length">
-              <li v-for="step in project.detail.process" :key="step">{{ step }}</li>
+              <li class="process-step" v-for="step in project.detail.process" :key="step">{{ step }}</li>
             </ul>
-          </div>
-
-          <!-- ====================== RESULT ======================= -->
-          <div v-else-if="tab === 'result'">
-
-            <!-- Result -->
-            <h3>Result</h3>
-            <p>{{ project.detail.result }}</p>
-
-            <!-- Divider: only if Role exists -->
-            <div v-if="project.detail.role" class="divider"></div>
-
-            <!-- Role -->
-            <h3 v-if="project.detail.role">Role</h3>
-            <p v-if="project.detail.role">{{ project.detail.role }}</p>
 
             <!-- Divider: only if TechStack exists -->
-            <div v-if="project.detail.techStack?.length" class="divider"></div>
+            <div v-if="project.techStack?.length" class="divider"></div>
 
             <!-- Tech Stack -->
-            <h3 v-if="project.detail.techStack?.length">Tech Stack</h3>
-            <div class="item-center" v-if="project.detail.techStack?.length">
+            <h3 v-if="project.techStack?.length">{{ $t('tabs.technologies') }}</h3>
+            <div class="item-center" v-if="project.techStack?.length">
               <ul class="stack">
-                <li v-for="tech in project.detail.techStack" :key="tech">
+                <li v-for="tech in project.techStack" :key="tech">
                   <i v-if="tech === 'HTML'" class="fa-brands fa-html5"></i>
                   <i v-else-if="tech === 'CSS'" class="fa-brands fa-css3-alt"></i>
                   <i v-else-if="tech === 'JavaScript'" class="fa-brands fa-js"></i>
@@ -114,16 +99,31 @@
                 </li>
               </ul>
             </div>
+          </div>
+
+          <!-- ====================== RESULT ======================= -->
+          <div v-else-if="tab === 'result'">
+
+            <!-- Result -->
+            <h3>{{ $t('tabs.result') }}</h3>
+            <p>{{ project.detail.result }}</p>
+
+            <!-- Divider: only if Role exists -->
+            <div v-if="project.detail.role" class="divider"></div>
+
+            <!-- Role -->
+            <h3 v-if="project.detail.role">{{ $t('tabs.role') }}</h3>
+            <p v-if="project.detail.role">{{ project.detail.role }}</p>
 
             <!-- Divider: only if repository exists -->
-            <div v-if="project.detail.repository" class="divider"></div>
+            <div v-if="project.repository" class="divider"></div>
 
             <!-- Repository -->
-            <h3 v-if="project.detail.repository">Repository</h3>
-            <div class="item-center" v-if="project.detail.repository">
-              <a :href="project.detail.repository" target="_blank" class="btn-github">
+            <!-- <h3 v-if="project.repository">{{ $t('tabs.repository') }}</h3> -->
+            <div class="item-center" v-if="project.repository">
+              <a :href="project.repository" target="_blank" class="btn-github">
                 <i class="fa-brands fa-github"></i>
-                <span>Ver Repositorio</span>
+                <span>{{ $t('tabs.repositorySpan') }}</span>
               </a>
             </div>
 
@@ -194,10 +194,18 @@ const loadProject = async () => {
 }
 
 watch([locale, () => route.params.id], loadProject, { immediate: true })
+
+console.log("Project Detail Loaded:", project)
 </script>
 
 
 <style scoped>
+.process-step {
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
 .divider {
   width: 90%;
   height: 1px;

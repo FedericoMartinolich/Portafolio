@@ -10,7 +10,12 @@ export default {
     context: "Contexto",
     objective: "Objetivo",
     methodology: "Metodología",
-    result: "Resultado"
+    result: "Resultado",
+    role: "Rol",
+    technologies: "Tecnologías",
+    process: "Proceso",
+    repository: "Repositorio",
+    repositorySpan: "Ver Repositorio"
   },
   search: {
     placeholder: "Buscar proyectos..."
