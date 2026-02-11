@@ -34,6 +34,7 @@ export default {
   /* ABOUT ME */
   about: {
     title: "Hey there!",
+    cv: "Download CV"
   },
 
   /* Text Carousel */

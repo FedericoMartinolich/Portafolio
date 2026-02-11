@@ -26,7 +26,8 @@ export default {
     about: "Acerca de mi"
   },
   about: {
-    title: "¡Hola a todos!"
+    title: "¡Hola a todos!",
+    cv: "Descargar CV"
   },
   carousel: [
     {

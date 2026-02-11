@@ -4,7 +4,12 @@
     <div class="img-wrapper">
       <img src="/perfil.jpeg" alt="">
     </div>
+    <a href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf" download class="btn-cv">
+      <i class="fa fa-download"></i> {{ $t("about.cv") }}
+    </a>
+
     <TextCarousel />
+
 
 
 <div class="main-wrapper">
@@ -83,6 +88,35 @@ const { t } = useI18n();
 </script>
 
 <style scoped>
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.85rem 1.6rem;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+  transition: all 0.25s ease;
+
+  margin-top: 2rem;
+}
+
+.btn-cv:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.45);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+.btn-cv:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
 
 /* all */
 
