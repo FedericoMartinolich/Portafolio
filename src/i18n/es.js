@@ -39,8 +39,7 @@ export default {
       name: 'Experiencia',
       title: 'Experiencia',
       description: `
-      Tengo un año de experiencia como desarrollador web en Rebrit SRL, trabajando con PHP, MySQL y JavaScript sobre un framework interno propio, realizando mantenimiento, mejoras y comunicación asíncrona con AJAX en aplicaciones web en producción.
-Además, desarrollo proyectos personales, disponibles en mi portfolio.
+      Más de un año de experiencia como desarrollador Full Stack en una empresa de software, participando en el desarrollo y evolución de plataformas empresariales utilizadas en producción. Trabajo con PHP, MySQL y JavaScript sobre arquitecturas modulares, implementando nuevas funcionalidades, sistemas de permisos, componentes reutilizables e integraciones frontend-backend mediante comunicación asíncrona. Además, desarrollo proyectos personales disponibles en mi portfolio.
 `
     },
     { 

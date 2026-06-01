@@ -104,5 +104,26 @@ export default {
       '/Portafolio/imgs/projects/FerreteriaElMoro/8.png'
     ],
     repository: ''
+  },
+  'estancias': 
+  {
+    id: 'estancias',
+    thumbnail: '/Portafolio/imgs/projects/Estancias/Logo.png',
+    techStack: [
+      "Laravel",
+      "PHP",
+      "Livewire",
+      "Blade",
+      "Tailwind CSS",
+      "MySQL",
+      "Spatie Permission",
+    ],
+    gallery: [
+      '/Portafolio/imgs/projects/Estancias/1.png',
+      '/Portafolio/imgs/projects/Estancias/2.png',
+      '/Portafolio/imgs/projects/Estancias/3.png',
+      '/Portafolio/imgs/projects/Estancias/4.png'
+    ],
+    repository: ''
   }
 }
