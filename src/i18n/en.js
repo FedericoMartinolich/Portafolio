@@ -47,22 +47,21 @@ export default {
     {
       name: 'Experience',
       title: 'Experience',
-      description: `I have one year of experience as a web developer working at Rebrit SRL, participating in the maintenance and evolution of web applications used in real production environments.
-During this period, I worked with PHP, MySQL, and JavaScript, developing and maintaining both backend and frontend functionalities on an internal framework specific to the company. I performed corrective and evolutionary maintenance tasks, modifications on existing code, and improvements aimed at system stability.
-I participated in systems with microservices-based architecture, collaborating in the maintenance and integration of different services, and in multi-tenant environments, adapting functionalities according to different clients or usage contexts. I implemented asynchronous communication between frontend and backend using AJAX, optimizing flows and user experience.
-Additionally, I performed refactoring tasks, optimized database queries, and created technical documentation to facilitate maintenance and teamwork.
-Complementarily, I develop personal projects, where I apply best practices and carry out the complete development and deployment cycle, which can be seen in my portfolio.
-`
+      description: `
+      Full Stack Developer with over a year of experience on enterprise production platforms. I work with PHP, MySQL, and JavaScript, developing features, frontend-backend integrations, and scalable solutions. I also develop personal projects available in my portfolio.
+      ` 
     },
     {
       name: 'Technologies',
       title: 'Technologies',
       description: `I mainly work with technologies such as Laravel, Vue.js, PHP, and JavaScript. I also enjoy designing interfaces with HTML, CSS, and Bootstrap, always looking for a balance between functionality and aesthetics.`
     },
-    {
-      name: 'Contact',
-      title: 'Contact',
-      description: `If you're interested in collaborating, learning more about my work, or simply chatting about web development, feel free to reach out through my social media or message me directly on WhatsApp. I'm always open to new ideas and challenges.`
+    { 
+      name: 'Formation',
+      title: 'Formation',
+      description: ` 
+        Higher Technician in Software Analysis and Development, with training in programming, databases, and application development. I am currently studying English with a Pre-Intermediate level.
+      ` 
     }
   ],
 

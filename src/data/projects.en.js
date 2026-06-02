@@ -338,7 +338,7 @@ export default {
     }
   },
   "estancias": {
-    title: "Estancias - Integral Tourism Management System",
+    title: "Estancias - Integral Tourism Management System (Under Development)",
     shortDesc: "Management platform for tourism and hospitality establishments that centralises bookings, guests, payments, services, availability, stock and internal operations through a scalable modular architecture.",
     detail: {
       longText: "Estancias is an all-in-one management system tailored for tourism establishments, boutique hotels, rural lodges and holiday complexes. The project was designed to resolve real-world operational challenges related to complex bookings, multiple guests, split payments, additional services, dynamic availability, financial control, stock and user management. The architecture was conceived with a vision for growth towards a multi-establishment SaaS model.",
@@ -355,10 +355,12 @@ export default {
         "Construction of operational dashboards and administrative tools.",
         "Preparation of the architecture for future multi-tenant capabilities."
       ],
-      result: "The outcome was a functional platform capable of managing complex bookings, guests, rooms, services, payments, stock and permissions from a single administrative interface. The system reduces manual processes, improves traceability and provides a solid foundation for future business evolution.",
+      result: "Under development...",
+      /* result: "The outcome was a functional platform capable of managing complex bookings, guests, rooms, services, payments, stock and permissions from a single administrative interface. The system reduces manual processes, improves traceability and provides a solid foundation for future business evolution.", */
       difficulties: "The main challenge was correctly modelling real-world scenarios where the person making the payment is not necessarily the person staying. It was also necessary to design a flexible structure that allowed multiple guests, rooms, services and payments to be linked to a single booking without creating unnecessary coupling. Another major challenge was the efficient management of temporal availability through decoupled structures.",
       role: "Architecture, functional analysis, domain design, database modelling, backend development, frontend development, permissions implementation, administrative UX design and planning the product's future evolution.",
-      conclution: "The project demonstrates the capability to design and develop enterprise software based on complex domains, applying principles of scalable architecture, advanced relational modelling and business-oriented thinking. Rather than just a booking system, it represents an operational platform prepared to evolve into SaaS solutions for the tourism sector.",
+      conclution: "Under development...",
+      /* conclution: "The project demonstrates the capability to design and develop enterprise software based on complex domains, applying principles of scalable architecture, advanced relational modelling and business-oriented thinking. Rather than just a booking system, it represents an operational platform prepared to evolve into SaaS solutions for the tourism sector.", */
       galleryText: [
         "Operational dashboard featuring occupancy metrics, bookings and revenue.",
         "Visual calendar for room availability and occupancy.",

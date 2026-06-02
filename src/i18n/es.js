@@ -39,7 +39,7 @@ export default {
       name: 'Experiencia',
       title: 'Experiencia',
       description: `
-      Más de un año de experiencia como desarrollador Full Stack en una empresa de software, participando en el desarrollo y evolución de plataformas empresariales utilizadas en producción. Trabajo con PHP, MySQL y JavaScript sobre arquitecturas modulares, implementando nuevas funcionalidades, sistemas de permisos, componentes reutilizables e integraciones frontend-backend mediante comunicación asíncrona. Además, desarrollo proyectos personales disponibles en mi portfolio.
+      Desarrollador Full Stack con más de un año de experiencia en plataformas empresariales en producción. Trabajo con PHP, MySQL y JavaScript, desarrollando funcionalidades, integraciones frontend-backend y soluciones escalables. Además, desarrollo proyectos personales disponibles en mi portfolio.
 `
     },
     { 
@@ -48,9 +48,11 @@ export default {
       description: `Principalmente trabajo con tecnologías como Laravel, Vue.js, PHP y JavaScript. También disfruto diseñar interfaces con HTML, CSS y Bootstrap, siempre buscando un equilibrio entre funcionalidad y estética.`
     },
     {
-      name: 'Contacto',
-      title: 'Contacto',
-      description: `Si estás interesado en colaborar, aprender más sobre mi trabajo o simplemente charlar sobre desarrollo web, no dudes en contactarme a través de mis redes sociales o enviarme un mensaje directamente por WhatsApp. Siempre estoy abierto a nuevas ideas y desafíos.`
+      name: 'Formación',
+      title: 'Formación',
+      description: `
+        Técnico Superior en Análisis y Desarrollo de Software, con formación en programación, bases de datos y desarrollo de aplicaciones. Actualmente estudio inglés con nivel Pre-Intermediate.
+      `
     }
   ],
   contact: {

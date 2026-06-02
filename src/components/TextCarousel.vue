@@ -2,11 +2,7 @@
   <div id="scene">
     <div id="left-zone">
       <ul class="list">
-        <li
-          v-for="(item, index) in items"
-          :key="index"
-          class="item"
-        >
+        <li v-for="(item, index) in items" :key="index" class="item">
           <input
             type="radio"
             :id="'radio_' + item.slug"
@@ -14,10 +10,7 @@
             :value="item.description"
             :checked="index === 0"
           />
-          <label
-            :class="'label_' + item.slug"
-            :for="'radio_' + item.slug"
-          >
+          <label :class="'label_' + item.slug" :for="'radio_' + item.slug">
             <i :class="['fa-solid', item.icon]"></i>
             {{ item.name }}
           </label>
@@ -28,6 +21,20 @@
             </span>
             <h1 :style="{ color: item.color }">{{ item.title }}</h1>
             <p>{{ item.description }}</p>
+            <a
+              v-if="item.name === 'Formación'"
+              href="/Portafolio/degree/Titulo-FedericoJoseMartinolich-Sistemas-IPSS.pdf"
+              download
+            >
+              <i class="fa-solid fa-download"></i> Descargar título
+            </a>
+            <a
+              v-if="item.name === 'Formation'"
+              href="/Portafolio/degree/Titulo-FedericoJoseMartinolich-Sistemas-IPSS.pdf"
+              download
+            >
+              <i class="fa-solid fa-download"></i> Download degree
+            </a>
           </div>
         </li>
       </ul>
@@ -39,31 +46,43 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { t, tm } = useI18n()
+const { t, tm } = useI18n();
 const items = computed(() => {
-  const carousel = tm('carousel')
+  const carousel = tm("carousel");
 
   return carousel.map((item, index) => ({
     ...item,
-    slug: ['about', 'experience', 'technologies', 'contact'][index],
-    icon: ['fa-user', 'fa-briefcase', 'fa-code', 'fa-envelope'][index],
-    color: ['#4CAF50', '#2196F3', '#FF5722', '#9C27B0'][index]
-  }))
-})
+    slug: ["about", "experience", "technologies", "contact"][index],
+    icon: ["fa-user", "fa-briefcase", "fa-code", "fa-graduation-cap"][index],
+    color: ["#4CAF50", "#2196F3", "#FF5722", "#9C27B0"][index],
+  }));
+});
 </script>
 
 <style scoped>
 /* Animaciones (igual que antes) */
 @keyframes slidein {
-  0% { top: -400px; opacity: 0; }
-  100% { top: 0; opacity: 1; }
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 @keyframes slideout {
-  0% { top: 0; opacity: 1; }
-  100% { top: -400px; opacity: 0; }
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
 }
 
 h1 {
@@ -108,7 +127,7 @@ h1 {
 }
 
 /* Oculta radios */
-.item input[type=radio] {
+.item input[type="radio"] {
   display: none;
 }
 
@@ -172,16 +191,16 @@ h1 {
 }
 
 /* Efectos selección */
-.item input[type=radio]:checked ~ label {
+.item input[type="radio"]:checked ~ label {
   opacity: 1;
   font-weight: 600;
 }
 
-.item input[type=radio]:checked ~ label i {
+.item input[type="radio"]:checked ~ label i {
   color: currentColor;
 }
 
-.item input[type=radio]:checked ~ .content {
+.item input[type="radio"]:checked ~ .content {
   animation-name: slidein;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);

@@ -368,7 +368,7 @@ export default {
   },
 
   "estancias": {
-    title: "Estancias - Sistema Integral de Gestión Turística",
+    title: "Estancias - Sistema Integral de Gestión Turística (En Desarrollo)",
     shortDesc: "Plataforma de gestión para establecimientos turísticos y hoteleros que centraliza reservas, huéspedes, pagos, servicios, disponibilidad, stock y operaciones internas mediante una arquitectura modular escalable.",
     detail: {
       longText: "Estancias es un sistema de gestión integral orientado a establecimientos turísticos, hoteles boutique, estancias rurales y complejos de hospedaje. El proyecto fue diseñado para resolver problemáticas operativas reales relacionadas con reservas complejas, múltiples huéspedes, pagos parciales, servicios adicionales, disponibilidad dinámica, control financiero, stock y gestión de usuarios. La arquitectura fue concebida con una visión de crecimiento hacia un modelo SaaS multiestablecimiento.",
@@ -385,10 +385,12 @@ export default {
         "Construcción de dashboards operativos y herramientas de administración.",
         "Preparación de la arquitectura para futuras capacidades multi-tenant."
       ],
-      result: "Se obtuvo una plataforma funcional capaz de gestionar reservas complejas, huéspedes, habitaciones, servicios, pagos, stock y permisos desde una única interfaz administrativa. El sistema reduce procesos manuales, mejora la trazabilidad y proporciona una base sólida para futuras evoluciones empresariales.",
+      result: "En desarrollo...",
+      /* result: "Se obtuvo una plataforma funcional capaz de gestionar reservas complejas, huéspedes, habitaciones, servicios, pagos, stock y permisos desde una única interfaz administrativa. El sistema reduce procesos manuales, mejora la trazabilidad y proporciona una base sólida para futuras evoluciones empresariales.", */
       difficulties: "El principal desafío fue modelar correctamente escenarios reales donde quien realiza el pago no necesariamente coincide con quien se hospeda. También fue necesario diseñar una estructura flexible que permitiera asociar múltiples huéspedes, habitaciones, servicios y pagos a una misma reserva sin generar acoplamientos innecesarios. Otro reto importante fue la gestión eficiente de disponibilidad temporal mediante estructuras desacopladas.",
       role: "Arquitectura, análisis funcional, diseño de dominio, modelado de base de datos, desarrollo backend, desarrollo frontend, implementación de permisos, diseño de experiencia administrativa y planificación de evolución futura del producto.",
-      conclution: "El proyecto demuestra capacidad para diseñar y desarrollar software empresarial basado en dominios complejos, aplicando principios de arquitectura escalable, modelado relacional avanzado y pensamiento orientado al negocio. Más que un sistema de reservas, representa una plataforma operativa preparada para evolucionar hacia soluciones SaaS del sector turístico.",
+      conclution: "En desarrollo...",
+      /* conclution: "El proyecto demuestra capacidad para diseñar y desarrollar software empresarial basado en dominios complejos, aplicando principios de arquitectura escalable, modelado relacional avanzado y pensamiento orientado al negocio. Más que un sistema de reservas, representa una plataforma operativa preparada para evolucionar hacia soluciones SaaS del sector turístico.", */
       galleryText: [
         "Dashboard operativo con métricas de ocupación, reservas e ingresos.",
         "Calendario visual de disponibilidad y ocupación de habitaciones.",
