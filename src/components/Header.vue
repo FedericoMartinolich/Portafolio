@@ -44,10 +44,16 @@
 
         <!-- RESULTADOS (fuera del input-container) -->
         <div v-if="filteredProjects.length" class="search-results">
-          <div class="result-item" v-for="p in filteredProjects" :key="p.id">
+          <router-link
+            class="result-item"
+            v-for="p in filteredProjects"
+            :key="p.id"
+            :to="`/projects/${p.id}`"
+            @click="search = ''"
+          >
             <img :src="p.thumbnail" class="result-thumb" />
             <span class="result-title">{{ p.title }}</span>
-          </div>
+          </router-link>
         </div>
 
       </div>
@@ -265,6 +271,7 @@ const filteredProjects = computed(() => {
   padding: .55rem 1rem;
   cursor: pointer;
   transition: background .15s;
+  text-decoration: none;
 }
 
 .result-item:hover {
