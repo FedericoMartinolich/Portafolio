@@ -318,7 +318,7 @@ export default {
     title: "Tiro Libre",
     shortDesc: "Web platform for football field management, online reservations and automation.",
     meta: {
-      type: "Personal project",
+      type: "Academic project",
       role: "Full Stack Developer",
       state: "Finished"
     },

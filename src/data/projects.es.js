@@ -321,7 +321,7 @@ export default {
     title: "Tiro Libre",
     shortDesc: "Plataforma web para gestión de canchas de fútbol, reservas online y automatización.",
     meta: {
-      type: "Proyecto personal",
+      type: "Proyecto académico",
       role: "Desarrollador Full Stack",
       state: "Finalizado"
     },

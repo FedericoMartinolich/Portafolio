@@ -296,56 +296,6 @@
       "tags": ["Laravel", "Vue 3", "PHP", "Livewire", "Tailwind CSS", "MySQL", "Vite", "Cloudinary", "Vercel"],
       "sections": [
         {
-          "id": "tiro-libre",
-          "title": {
-            "es": "Plataforma de reservas de canchas",
-            "en": "Football field booking platform"
-          },
-          "icon": "fa-solid fa-futbol",
-          "blocks": [
-            {
-              "type": "text",
-              "title": {
-                "es": "Objetivo",
-                "en": "Goal"
-              },
-              "content": {
-                "es": "Digitalizar la gestión de reservas de canchas de fútbol, con roles, calendario y búsqueda avanzada.",
-                "en": "Digitalize football field booking management, with roles, calendar and advanced search."
-              }
-            },
-            {
-              "type": "bullets",
-              "title": {
-                "es": "Mi participación",
-                "en": "My involvement"
-              },
-              "items": [
-                {
-                  "es": "Arquitectura Laravel 10 con roles y permisos.",
-                  "en": "Laravel 10 architecture with roles and permissions."
-                },
-                {
-                  "es": "Sistema de búsqueda y filtrado de canchas.",
-                  "en": "Field search and filtering system."
-                },
-                {
-                  "es": "Integración de calendario con FullCalendar.",
-                  "en": "Calendar integration with FullCalendar."
-                }
-              ]
-            },
-            {
-              "type": "projects",
-              "title": {
-                "es": "Proyecto",
-                "en": "Project"
-              },
-              "projects": ["tiro-libre"]
-            }
-          ]
-        },
-        {
           "id": "catalogo",
           "title": {
             "es": "Catálogos sin backend",
@@ -469,7 +419,7 @@
         "es": "Formación en programación, bases de datos y desarrollo de aplicaciones, con proyectos integradores reales.",
         "en": "Training in programming, databases and application development, with real capstone projects."
       },
-      "tags": ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      "tags": ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
       "sections": [
         {
           "id": "checking",
@@ -518,6 +468,56 @@
                 "en": "Project"
               },
               "projects": ["checking"]
+            }
+          ]
+        },
+        {
+          "id": "tiro-libre",
+          "title": {
+            "es": "Plataforma de reservas de canchas",
+            "en": "Football field booking platform"
+          },
+          "icon": "fa-solid fa-futbol",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Digitalizar la gestión de reservas de canchas de fútbol, con roles, calendario y búsqueda avanzada.",
+                "en": "Digitalize football field booking management, with roles, calendar and advanced search."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Arquitectura Laravel 10 con roles y permisos.",
+                  "en": "Laravel 10 architecture with roles and permissions."
+                },
+                {
+                  "es": "Sistema de búsqueda y filtrado de canchas.",
+                  "en": "Field search and filtering system."
+                },
+                {
+                  "es": "Integración de calendario con FullCalendar.",
+                  "en": "Calendar integration with FullCalendar."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto",
+                "en": "Project"
+              },
+              "projects": ["tiro-libre"]
             }
           ]
         },
