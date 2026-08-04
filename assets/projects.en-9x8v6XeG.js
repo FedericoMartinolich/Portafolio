@@ -53,7 +53,7 @@ const e={checking:{title:"ChecKing",shortDesc:"Attendance management system for 
         `},{id:"distinto",type:"text",title:"What would I do differently today?",content:`
           I would invest more time documenting the proprietary framework
           and defining the database schema before starting to code.
-        `}]},"tiro-libre":{title:"Tiro Libre",shortDesc:"Web platform for football field management, online reservations and automation.",meta:{type:"Personal project",role:"Full Stack Developer",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"Summary",content:`
+        `}]},"tiro-libre":{title:"Tiro Libre",shortDesc:"Web platform for football field management, online reservations and automation.",meta:{type:"Academic project",role:"Full Stack Developer",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"Summary",content:`
           Tiro Libre is a web platform that digitalizes football field
           reservations. It allows players to book online and owners
           to manage schedules, availability and communication

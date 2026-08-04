@@ -56,7 +56,7 @@ const e={checking:{title:"ChecKing",shortDesc:"Sistema de gestión de asistencia
         `},{id:"distinto",type:"text",title:"¿Qué haría distinto hoy?",content:`
           Invertiría más tiempo en documentar el framework propietario
           y en definir el esquema de la base de datos antes de comenzar a programar.
-        `}]},"tiro-libre":{title:"Tiro Libre",shortDesc:"Plataforma web para gestión de canchas de fútbol, reservas online y automatización.",meta:{type:"Proyecto personal",role:"Desarrollador Full Stack",state:"Finalizado"},blocks:[{id:"resumen",type:"text",title:"Resumen",content:`
+        `}]},"tiro-libre":{title:"Tiro Libre",shortDesc:"Plataforma web para gestión de canchas de fútbol, reservas online y automatización.",meta:{type:"Proyecto académico",role:"Desarrollador Full Stack",state:"Finalizado"},blocks:[{id:"resumen",type:"text",title:"Resumen",content:`
           Tiro Libre es una plataforma web que digitaliza la gestión de reservas
           de canchas de fútbol. Permite a los jugadores reservar online
           y a los propietarios administrar horarios, disponibilidad
