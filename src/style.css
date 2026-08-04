@@ -1,5 +1,10 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* ====== Typography tokens ====== */
+  --font-serif: "TitleFont", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Courier New", monospace;
+
+  font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
 
@@ -21,7 +26,7 @@
 }
 
 .title-font {
-  font-family: "TitleFont";
+  font-family: var(--font-serif);
 }
 
 a {
@@ -35,10 +40,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-sans);
 }
 
 h1 {
@@ -55,14 +59,11 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
+
+a:focus-visible,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 .card {
@@ -72,17 +73,4 @@ button:focus-visible {
 #app {
   margin: 0 auto;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

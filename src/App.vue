@@ -22,7 +22,6 @@ import { useRoute } from 'vue-router';
 
 <style scoped>
 .app-container {
-  min-width: 100vw;
   min-height: 65vh;
   background: #0e131b;
 }

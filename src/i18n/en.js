@@ -6,16 +6,21 @@ export default {
     about: "About me"
   },
   search: {
-    placeholder: "Search projects..."
+    prefix: "Search",
+    suggestions: ["Laravel", "OCR", "FoodService", "Vue", "Tiro Libre"],
+    noResults: 'No results for "{q}"'
   },
 
   /* HOME */
   home: {
-    intro: "Hi there! I'm",
-    intro2: "and I am a ...",
-    profession: "Fullstack Developer",
-    welcome: "Welcome to my Portfolio!",
-    instructions: " You can find out anything specific about me using keywords in the search bar at the top."
+    profession: "Full Stack Developer",
+    tagline: "I build scalable web applications using Laravel, Vue and PHP.",
+    hint: "Search for any technology or project ↑"
+  },
+
+  /* LANGUAGE */
+  language: {
+    label: "Language"
   },
 
   /* PROJECT DETAIL */
@@ -34,7 +39,38 @@ export default {
   /* ABOUT ME */
   about: {
     title: "Hey there!",
-    cv: "Download CV"
+    cv: "Download CV",
+    intro: "I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I'm passionate about transforming ideas into applications that truly simplify processes and improve user experience.",
+    careerTitle: "Experience"
+  },
+
+  /* EXPERIENCE */
+  experience: {
+    viewProject: "View project",
+    present: "Present"
+  },
+
+  /* PROJECT DETAIL */
+  project: {
+    company: "Company",
+    type: "Type",
+    role: "Role",
+    duration: "Duration",
+    state: "Status",
+    technologies: "Technologies",
+    onThisPage: "On this page",
+    back: "All projects",
+    notFound: "Project not found.",
+    verDemo: "Live Demo",
+    github: "GitHub",
+    moreTechs: "+{n} more",
+    lessTechs: "Show less"
+  },
+  categories: {
+    context: "Context",
+    development: "Development",
+    conclusion: "Conclusion",
+    resources: "Links"
   },
 
   /* Text Carousel */

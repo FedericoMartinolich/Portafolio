@@ -1,10 +1,16 @@
 export default {
   home: {
-    intro: "¡Hola! Soy",
-    intro2: "y soy un ...",
-    profession: "Desarrollador Fullstack",
-    welcome: "¡Bienvenido a mi Portafolio!",
-    instructions: " Puedes encontrar cualquier información específica sobre mí utilizando palabras clave en la barra de búsqueda en la parte superior."
+    profession: "Desarrollador Full Stack",
+    tagline: "Construyo aplicaciones web escalables utilizando Laravel, Vue y PHP.",
+    hint: "Busca cualquier tecnología o proyecto ↑"
+  },
+  search: {
+    prefix: "Buscar",
+    suggestions: ["Laravel", "OCR", "FoodService", "Vue", "Tiro Libre"],
+    noResults: "Sin resultados para \"{q}\""
+  },
+  language: {
+    label: "Idioma"
   },
   tabs: {
     context: "Contexto",
@@ -17,9 +23,6 @@ export default {
     repository: "Repositorio",
     repositorySpan: "Ver Repositorio"
   },
-  search: {
-    placeholder: "Buscar proyectos..."
-  },
   menu: {
     home: "Inicio",
     contact: "Contacto",
@@ -27,7 +30,34 @@ export default {
   },
   about: {
     title: "¡Hola a todos!",
-    cv: "Descargar CV"
+    cv: "Descargar CV",
+    intro: "Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.",
+    careerTitle: "Experiencia"
+  },
+  experience: {
+    viewProject: "Ver proyecto",
+    present: "Actualidad"
+  },
+  project: {
+    company: "Empresa",
+    type: "Tipo",
+    role: "Rol",
+    duration: "Duración",
+    state: "Estado",
+    technologies: "Tecnologías",
+    onThisPage: "En esta página",
+    back: "Todos los proyectos",
+    notFound: "Proyecto no encontrado.",
+    verDemo: "Ver Demo",
+    github: "GitHub",
+    moreTechs: "+{n} tecnologías",
+    lessTechs: "Ver menos"
+  },
+  categories: {
+    context: "Contexto",
+    development: "Desarrollo",
+    conclusion: "Conclusión",
+    resources: "Enlaces"
   },
   carousel: [
     {

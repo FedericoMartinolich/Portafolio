@@ -1,529 +1,615 @@
 <template>
   <main v-if="project" class="project-detail">
+    <div class="pd">
+      <header class="pd-head">
+        <router-link to="/" class="pd-back">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          {{ t("project.back") }}
+        </router-link>
+      </header>
 
-    <!-- Hero -->
-    <header class="hero">
-      <img :src="project.thumbnail" alt="" class="hero-img" />
-      <h1>{{ project.title }}</h1>
-    </header>
-
-    <!-- Tabs Navigation -->
-    <nav class="slidemenu">
-      <div class="tabs">
-        <button
-          v-for="(item, i) in tabs"
-          :key="i"
-          :class="['tab-btn', { active: tab === item.value }]"
-          @click="tab = item.value"
-        >
-          <span class="icon">{{ item.icon }}</span>
-          <span>{{ item.label }}</span>
-        </button>
-      </div>
-
-      <div class="slider">
-        <div
-          class="bar"
-          :style="{
-            width: 100 / tabs.length + '%',
-            left: (tabs.findIndex(t => t.value === tab) * (100 / tabs.length)) + '%'
-          }"
-        ></div>
-      </div>
-    </nav>
-
-    <!-- Dynamic Content -->
-    <section class="tab-content">
-      <transition name="fade" mode="out-in">
-        <div :key="tab">
-
-          <!-- ====================== CONTEXT ======================= -->
-          <div v-if="tab === 'context'">
-            <h3>{{ $t('tabs.context') }}</h3>
-            <p>{{ project.detail.problem }}</p>
+      <!-- Executive summary -->
+      <section class="exec">
+        <div class="exec__head">
+          <img
+            v-if="project.thumbnail"
+            :src="project.thumbnail"
+            class="exec__logo"
+            :style="{ '--accent': project.accent || '#3b58ff' }"
+            alt=""
+          />
+          <div class="exec__head-text">
+            <h1 class="exec__title">{{ project.title }}</h1>
+            <p v-if="project.company" class="exec__company">
+              {{ project.company }}
+            </p>
+            <p class="exec__summary">{{ project.shortDesc }}</p>
           </div>
-
-          <!-- ====================== OBJECTIVE ======================= -->
-          <div v-else-if="tab === 'objective'">
-            <h3>{{ $t('tabs.objective') }}</h3>
-            <p>{{ project.detail.objetive }}</p>
-          </div>
-
-          <!-- ====================== METHODOLOGY ======================= -->
-          <div v-else-if="tab === 'methodology'">
-
-            <!-- Methodology -->
-            <h3 v-if="project.detail.metodology">{{ $t('tabs.methodology') }}</h3>
-            <p v-if="project.detail.metodology">{{ project.detail.metodology }}</p>
-
-            <!-- Divider: only if Methodology + Process -->
-            <div 
-              v-if="project.detail.metodology && project.detail.process?.length" 
-              class="divider"
-            ></div>
-
-            <!-- Process -->
-            <h3 v-if="project.detail.process?.length">{{ $t('tabs.process') }}</h3>
-            <ul v-if="project.detail.process?.length">
-              <li class="process-step" v-for="step in project.detail.process" :key="step">{{ step }}</li>
-            </ul>
-
-            <!-- Divider: only if TechStack exists -->
-            <div v-if="project.techStack?.length" class="divider"></div>
-
-            <!-- Tech Stack -->
-            <h3 v-if="project.techStack?.length">{{ $t('tabs.technologies') }}</h3>
-            <div class="item-center" v-if="project.techStack?.length">
-              <ul class="stack">
-                <li v-for="tech in project.techStack" :key="tech">
-                  <i v-if="tech === 'HTML'" class="fa-brands fa-html5"></i>
-                  <i v-else-if="tech === 'CSS'" class="fa-brands fa-css3-alt"></i>
-                  <i v-else-if="tech === 'JavaScript'" class="fa-brands fa-js"></i>
-                  <i v-else-if="tech === 'Vue.js'" class="fa-brands fa-vuejs"></i>
-                  <i v-else-if="tech === 'PHP'" class="fa-brands fa-php"></i>
-                  <i v-else-if="tech === 'MySQL'" class="fa-solid fa-database"></i>
-                  <i v-else-if="tech === 'Laravel' || tech === 'Laravel 10'" class="fa-brands fa-laravel"></i>
-                  <i v-else-if="tech === 'Bootstrap'" class="fa-brands fa-bootstrap"></i>
-                  <i v-else-if="tech === 'Leaflet'" class="fa-regular fa-map"></i>
-                  <i v-else-if="tech === 'AJAX'" class="fa-solid fa-retweet"></i>
-                  <i v-else-if="tech === 'FullCalendar'" class="fa-regular fa-calendar"></i>
-                  <i v-else-if="tech === 'Tesseract OCR'" class="fa-solid fa-expand"></i>
-                  <i v-else-if="tech === 'JWT'" class="fa-solid fa-key"></i>
-                  <i v-else-if="tech === 'Vue 3'" class="fa-brands fa-vuejs"></i>
-                  <i v-else-if="tech === 'Vite'" class="fa-solid fa-bolt-lightning"></i>
-                  <i v-else-if="tech === 'Cloudinary'" class="fa-solid fa-cloud"></i>
-                  <i v-else-if="tech === 'Google Drive'" class="fa-brands fa-google-drive"></i>
-                  <i v-else-if="tech === 'Google Sheets'" class="fa-brands fa-google-drive"></i>
-                  <i v-else-if="tech === 'Vercel'" class="fa-solid fa-square-caret-up"></i>
-                  {{ tech }}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- ====================== RESULT ======================= -->
-          <div v-else-if="tab === 'result'">
-
-            <!-- Result -->
-            <h3>{{ $t('tabs.result') }}</h3>
-            <p>{{ project.detail.result }}</p>
-
-            <!-- Divider: only if Role exists -->
-            <div v-if="project.detail.role" class="divider"></div>
-
-            <!-- Role -->
-            <h3 v-if="project.detail.role">{{ $t('tabs.role') }}</h3>
-            <p v-if="project.detail.role">{{ project.detail.role }}</p>
-
-            <!-- Divider: only if repository exists -->
-            <div v-if="project.repository" class="divider"></div>
-
-            <!-- Repository -->
-            <!-- <h3 v-if="project.repository">{{ $t('tabs.repository') }}</h3> -->
-            <div class="item-center" v-if="project.repository">
-              <a :href="project.repository" target="_blank" class="btn-github">
-                <i class="fa-brands fa-github"></i>
-                <span>{{ $t('tabs.repositorySpan') }}</span>
-              </a>
-            </div>
-
-          </div>
-
         </div>
-      </transition>
-    </section>
 
-    <!-- Gallery -->
-    <Gallery
-      v-if="project?.gallery?.length && project?.detail?.galleryText?.length"
-      :gallery="project.gallery"
-      :galleryText="project.detail.galleryText"
-    />
+        <div v-if="meta.state" class="exec__state-row">
+          <span
+            :class="['exec__state', `exec__state--${project.status || 'done'}`]"
+            >{{ meta.state }}</span
+          >
+        </div>
 
+        <div class="exec__meta-line">
+          <span v-if="meta.type">{{ meta.type }}</span>
+          <span
+            v-if="meta.type && meta.role"
+            class="exec__dot"
+            aria-hidden="true"
+          ></span>
+          <span v-if="meta.role">{{ meta.role }}</span>
+          <span
+            v-if="meta.duration"
+            class="exec__dot"
+            aria-hidden="true"
+          ></span>
+          <span v-if="meta.duration">{{ meta.duration }}</span>
+        </div>
 
+        <div v-if="project.techStack?.length" class="exec__tech-row">
+          <TechBadge v-for="tech in visibleTech" :key="tech" :name="tech" />
+          <button
+            v-if="hiddenTechCount > 0"
+            type="button"
+            class="exec__more"
+            :aria-expanded="showAllTech"
+            @click="showAllTech = !showAllTech"
+          >
+            {{
+              showAllTech
+                ? t("project.lessTechs")
+                : t("project.moreTechs", { n: hiddenTechCount })
+            }}
+          </button>
+        </div>
+
+        <div v-if="hasActions" class="exec__actions">
+          <a
+            v-if="project.demo"
+            :href="project.demo"
+            target="_blank"
+            rel="noopener"
+            class="exec__action exec__action--primary"
+          >
+            <i
+              class="fa-solid fa-arrow-up-right-from-square"
+              aria-hidden="true"
+            ></i>
+            {{ t("project.verDemo") }}
+          </a>
+          <a
+            v-if="project.repository"
+            :href="project.repository"
+            target="_blank"
+            rel="noopener"
+            class="exec__action"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            {{ t("project.github") }}
+          </a>
+        </div>
+      </section>
+
+      <!-- Mobile index -->
+      <nav v-if="sections.length" class="pd-chips">
+        <button
+          v-for="section in sections"
+          :key="section.id"
+          type="button"
+          class="pd-chips__item"
+          :class="{ 'pd-chips__item--active': section.id === activeId }"
+          @click="setSection(section.id)"
+        >
+          {{ section.title }}
+        </button>
+      </nav>
+
+      <div class="pd-layout">
+        <ProjectSidebar
+          class="pd-sidebar"
+          :groups="groupedSections"
+          :active-id="activeId"
+          :label="t('project.onThisPage')"
+          @navigate="setSection"
+        />
+
+        <div class="pd-content">
+          <Transition name="pd-fade" mode="out-in">
+            <ProjectBlock
+              v-if="activeBlock"
+              :key="activeBlock.id"
+              :block="activeBlock"
+              :project="project"
+            />
+          </Transition>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <main v-else>
-    <p>Project not found.</p>
+  <main v-else class="project-detail">
+    <p class="pd-notfound">{{ t("project.notFound") }}</p>
   </main>
 </template>
 
 <script setup>
-import { ref, computed, watch } from "vue"
-import { useRoute } from "vue-router"
-import { useI18n } from "vue-i18n"
+import { ref, computed, watch, nextTick } from "vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 
-import baseProjects from "../data/projects.base.js"
-import Gallery from "../components/Gallery.vue"
+import baseProjects from "../data/projects.base.js";
+import ProjectSidebar from "../components/ProjectSidebar.vue";
+import ProjectBlock from "../components/ProjectBlock.vue";
+import TechBadge from "../components/TechBadge.vue";
 
-const route = useRoute()
-const { locale, t } = useI18n()
+const route = useRoute();
+const { locale, t } = useI18n();
 
-const tab = ref("context")
+const SHOW_TECH_COUNT = 3;
 
-const tabs = computed(() => [
-  { label: t("tabs.context"), value: "context", icon: "📘" },
-  { label: t("tabs.objective"), value: "objective", icon: "🎯" },
-  { label: t("tabs.methodology"), value: "methodology", icon: "⚙️" },
-  { label: t("tabs.result"), value: "result", icon: "🏁" }
-])
-
-const project = ref(null)
+const project = ref(null);
+const activeId = ref("");
+const showAllTech = ref(false);
 
 const loadProject = async () => {
-  const langProjects = (await import(`../data/projects.${locale.value}.js`)).default
-  const slug = route.params.id
-
-  const baseProject = baseProjects[slug] || {}
-  const langProject = langProjects[slug] || {}
-
-  // Asegurar que detail exista
-  const baseDetail = baseProject.detail || {}
-  const langDetail = langProject.detail || {}
+  const langProjects = (await import(`../data/projects.${locale.value}.js`))
+    .default;
+  const slug = route.params.id;
 
   project.value = {
-    ...baseProject,
-    ...langProject,
-    detail: {
-      ...baseDetail,
-      ...langDetail,
-      gallery: (baseDetail.gallery || []).map(img => `/Portafolio/${img}`),
-      galleryText: langDetail.galleryText || []
-    }
+    ...(baseProjects[slug] || {}),
+    ...(langProjects[slug] || {}),
+  };
+
+  showAllTech.value = false;
+  await nextTick();
+  activeId.value = sections.value[0]?.id || "";
+  window.scrollTo(0, 0);
+};
+
+watch([locale, () => route.params.id], loadProject, { immediate: true });
+
+const meta = computed(() => project.value?.meta || {});
+const blocks = computed(() => project.value?.blocks || []);
+const sections = computed(() =>
+  blocks.value
+    .filter((b) => b.title)
+    .map((b) => ({ id: b.id, title: b.title })),
+);
+
+const visibleTech = computed(() => {
+  const stack = project.value?.techStack || [];
+  return showAllTech.value ? stack : stack.slice(0, SHOW_TECH_COUNT);
+});
+
+const hiddenTechCount = computed(() =>
+  Math.max(0, (project.value?.techStack?.length || 0) - SHOW_TECH_COUNT),
+);
+
+const hasActions = computed(() =>
+  Boolean(project.value?.demo || project.value?.repository),
+);
+
+const activeBlock = computed(() =>
+  blocks.value.find((b) => b.id === activeId.value) || blocks.value[0],
+);
+
+const CATEGORY_BY_ID = {
+  resumen: "context",
+  problema: "context",
+  objetivo: "context",
+  solucion: "development",
+  reportes: "development",
+  reglas: "development",
+  carga: "development",
+  ocr: "development",
+  pedido: "development",
+  seguimiento: "development",
+  panel: "development",
+  datos: "development",
+  canchero: "development",
+  busqueda: "development",
+  cancha: "development",
+  detalles: "development",
+  responsive: "development",
+  navegacion: "development",
+  solicitud: "development",
+  contacto: "development",
+  compra: "development",
+  empresa: "development",
+  nuevos: "development",
+  arquitectura: "development",
+  implementacion: "development",
+  desafios: "development",
+  resultado: "conclusion",
+  aprendizajes: "conclusion",
+  distinto: "conclusion",
+  galeria: "conclusion",
+  enlaces: "resources",
+};
+
+const CATEGORY_ORDER = ["context", "development", "conclusion", "resources"];
+
+const groupedSections = computed(() => {
+  const map = {};
+  for (const s of sections.value) {
+    const cat = CATEGORY_BY_ID[s.id] || "development";
+    if (!map[cat]) map[cat] = [];
+    map[cat].push(s);
   }
-}
+  return CATEGORY_ORDER.filter((key) => map[key]).map((key) => ({
+    key,
+    items: map[key],
+  }));
+});
 
-watch([locale, () => route.params.id], loadProject, { immediate: true })
-
-console.log("Project Detail Loaded:", project)
+const setSection = (id) => {
+  activeId.value = id;
+};
 </script>
 
-
 <style scoped>
-.process-step {
-  margin-bottom: 0.75rem;
-  padding-left: 1.25rem;
-  position: relative;
+.project-detail {
+  font-family: var(--font-sans);
+  color: #e2e8f0;
+  min-height: 60vh;
 }
 
-.divider {
-  width: 90%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.062);
-  margin: 1.5rem 0;
-  justify-self: center;
+.pd {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
 }
 
-.item-center {
-  display: block;
-  justify-self: center;
-  align-items: center;
-  text-align: center;
-}
-
-.btn-github {
-  display: inline-flex;
-  align-items: center;
-  justify-self: center;
-  gap: 8px;
-  background-color: #24292e;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.2s;
-}
-.btn-github:hover {
-  background-color: #444c56;
-}
-.btn-github i {
-  font-size: 1.2rem;
-}
-.btn-github p {
-  font-size: 0.8rem;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-main {
+.pd-head {
+  margin-bottom: 1.6rem;
   text-align: left;
 }
 
-h3 {
-  text-align: center;
-}
-
-li {
-  list-style: none;
-}
-
-.project-detail {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: "Roboto", sans-serif;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.hero-img {
-  width: 100%;
-  max-height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Body */
-.content p {
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-/* Tech stack badges */
-.stack {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-  justify-content: center;
-  text-align: center;
-  padding: 0;     /* <-- limpiar padding del UL */
-  margin: 0 auto; /* <-- quitar margen por defecto y centrar contenedor */
-}
-
-.stack li {
-  background: #222;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  list-style: none;
-}
-
-
-/* Gallery */
-.gallery {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.gallery img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* github */
-/* --- Botón GitHub estilizado --- */
-.btn-github {
+.pd-back {
   display: inline-flex;
-  align-items: stretch;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #181c24; /* 🎨 base más elegante */
-  text-decoration: none;
-  transition: background .3s ease, box-shadow .3s ease, transform .2s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.45);
-}
-
-/* Hover uniforme */
-.btn-github:hover {
-  background: #0a0c10;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-  transform: translateY(-2px);
-}
-
-/* Bloque del ícono */
-.btn-github > i {
-  background: #0f1116; /* 🎯 más profundo que el fondo */
-  padding: 12px 16px;
-  font-size: 1.35rem;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  color: #646cff;
-  position: relative;
+  gap: 0.55rem;
+  margin-left: -0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
-/* Pico */
-.btn-github > i::after {
+.pd-back:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== Executive summary card ===== */
+.exec {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.exec::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: -8px;
-  transform: translateY(-50%);
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #0f1116; /* mismo color que el bloque del icono */
-}
-
-/* Texto */
-.btn-github > span {
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #c8d0ff; /* 💎 un blanco-azulado suave */
-}
-
-/* Hover: acento + claridad controlada */
-.btn-github:hover > span,
-.btn-github:hover > i {
-  color: #8c92ff; /* un purple un poco más brillante en hover */
-}
-
-/* Pico en hover */
-.btn-github:hover > i::after {
-  border-left-color: #0a0c10;
-}
-
-/* --- Fondo general --- */
-.project-detail {
-  background: #0e131b;
-  color: #e2e8f0;
-  min-height: 100vh;
-  padding-bottom: 40px;
-}
-
-/* --- Hero --- */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.hero-img {
-  max-width: 250px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-
-.hero h1 {
-  color: #f9fafb;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-/* --- Slide Menu --- */
-.slidemenu {
-  font-family: 'Inter', sans-serif;
-  max-width: 700px;
-  margin: 40px auto;
-  text-align: center;
-}
-
-/* contenedor principal */
-.slidemenu .tabs {
-  display: flex;
-  justify-content: space-between; /* los separa parejo */
-  align-items: center;
-  gap: 0; /* 🔹 sin espacio extra entre botones */
-}
-
-/* Botones de pestaña */
-.tab-btn {
-  flex: 1; /* 🔹 todos ocupan exactamente el mismo ancho */
-  text-align: center;
-  color: #9ca3af;
-  opacity: 0.7;
-  border: none;
-  background: transparent;
-  padding: 12px 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-
-.tab-btn:hover {
-  opacity: 0.9;
-  color: #f1f5f9;
-}
-
-.tab-btn.active {
-  opacity: 1;
-  color: #ffffff;
-}
-
-/* Icono */
-.tab-btn .icon {
-  display: block;
-  font-size: 22px;
-  border: 2px solid #9ca3af;
-  height: 45px;
-  width: 45px;
-  margin: 0 auto 5px;
-  line-height: 45px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.tab-btn.active .icon {
-  border-color: #38bdf8;
-  color: #38bdf8;
-}
-
-/* --- Slider --- */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 4px;
-  background: #1f2937;
-  border-radius: 5px;
-  margin-top: 10px;
-  overflow: hidden;
-}
-
-.bar {
-  position: absolute;
-  left: 0;
   top: 0;
-  height: 4px;
-  background: #38bdf8;
-  border-radius: 5px;
-  transition: all 0.4s ease;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b58ff, #ff3b77);
 }
 
-/* --- Contenido --- */
-.tab-content {
-  margin-top: 25px;
-  padding: 40px;
-  background: #111827;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  width: auto;
+.exec__head {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
 }
 
-.tab-content h3 {
-  color: #f9fafb;
-  margin-bottom: 8px;
+.exec__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
-.tab-content p,
-.tab-content li {
-  color: #cbd5e1;
+.exec__title {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-align: left;
+}
+
+.exec__company {
+  margin: 0.1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+
+.exec__summary {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
   line-height: 1.6;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  text-wrap: pretty;
 }
 
-/* --- Responsive --- */
-@media (max-width: 700px) {
-  .slidemenu .tabs {
-    flex-wrap: wrap;
+.exec__state-row {
+  margin-top: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.exec__state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.exec__state::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.exec__state--done {
+  background: rgba(74, 222, 128, 0.14);
+  border: 1px solid rgba(74, 222, 128, 0.45);
+  color: #6ee7a0;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.35);
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.exec__state--progress {
+  background: rgba(250, 204, 21, 0.14);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  color: #fde047;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.35);
+  text-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.exec__meta-line {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.exec__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.exec__tech-row {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exec__more {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.exec__more:hover {
+  border-color: rgba(59, 88, 255, 0.6);
+  background: rgba(59, 88, 255, 0.12);
+  color: #fff;
+}
+
+.exec__actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.exec__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.exec__action:hover {
+  border-color: rgba(59, 88, 255, 0.6);
+  background: rgba(59, 88, 255, 0.14);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.exec__action--primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+}
+
+.exec__action--primary:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  border-color: transparent;
+}
+
+/* ===== Layout ===== */
+.pd-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.pd-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.pd-content {
+  min-width: 0;
+}
+
+.pd-fade-enter-active,
+.pd-fade-leave-active {
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.pd-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.pd-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* ===== Mobile chips ===== */
+.pd-chips {
+  display: none;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  padding: 0.75rem 0 0.5rem;
+  background: #0e131b;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  scrollbar-width: none;
+}
+
+.pd-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.pd-chips__item {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.pd-chips__item:hover {
+  color: #fff;
+}
+
+.pd-chips__item--active {
+  border-color: rgba(59, 88, 255, 0.6);
+  background: rgba(59, 88, 255, 0.15);
+  color: #fff;
+}
+
+.pd-notfound {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .pd-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  .tab-btn {
-    flex: 1 1 50%;
+
+  .pd-sidebar {
+    display: none;
+  }
+
+  .pd-chips {
+    display: flex;
   }
 }
 
+@media (max-width: 640px) {
+  .pd {
+    padding: 1.4rem 1.2rem 4rem;
+  }
 
+  .exec {
+    padding: 1rem 1rem;
+  }
+
+  .exec__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .exec__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .exec__title {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
 </style>

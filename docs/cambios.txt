@@ -1,0 +1,300 @@
+Sí. De hecho creo que el problema no es el diseño visual en sí, sino la jerarquía de la información. Hay mucho contenido con el mismo peso visual, entonces el ojo no sabe dónde mirar.
+
+Te marco las cosas que me llamaron la atención como si estuviera haciendo una review de UI/UX.
+
+1. La card es demasiado alta
+
+Es lo primero que noté.
+
+Tenés:
+
+logo
+nombre
+descripción
+línea
+tipo
+rol
+estado
+otra línea
+tecnologías
+
+Todo eso ocupa casi media pantalla.
+
+Y el problema es que esa información no ayuda al usuario a decidir nada. Ya hizo click en el proyecto.
+
+La card debería responder solamente:
+
+¿Qué proyecto es?
+
+No contar toda la historia.
+
+2. Hay demasiadas líneas divisorias
+
+Tenés algo así
+
+Título
+------------------
+Tipo      Estado
+Rol
+------------------
+Tecnologías
+
+Las líneas hacen que parezca un formulario.
+
+Yo directamente eliminaría las dos.
+
+Dejá respirar con espacio.
+
+3. Tipo, Rol y Estado parecen un formulario administrativo
+
+Esto se siente muy de dashboard.
+
+TIPO
+
+Proyecto personal
+
+ROL
+
+Desarrollador Full Stack
+
+ESTADO
+
+Finalizado
+
+Eso está perfecto para un CRM.
+
+Pero no para un portfolio.
+
+Yo haría algo mucho más resumido.
+
+Por ejemplo:
+
+Proyecto personal
+•
+Full Stack
+•
+Finalizado
+
+O incluso
+
+Personal
+Laravel
+2025
+
+Todo en una línea.
+
+Muchísimo más limpio.
+
+4. Las tecnologías ocupan demasiado protagonismo
+
+Esto creo que es el principal problema.
+
+Tenés once badges.
+
+Laravel
+PHP
+MySQL
+Spatie
+Blade
+JavaScript
+Bootstrap
+AJAX
+Leaflet
+...
+
+Visualmente parece un catálogo de tecnologías.
+
+Y el usuario todavía ni empezó a leer el proyecto.
+
+Yo haría algo como GitHub.
+
+Laravel
+PHP
+MySQL
+
++7 tecnologías
+
+o
+
+Laravel
+PHP
+MySQL
+JavaScript
+
+Y después, más abajo, en una sección llamada
+
+Stack utilizado
+
+recién ahí mostrar todas.
+
+5. El resumen empieza demasiado abajo
+
+La persona entra al proyecto.
+
+Lo primero que debería ver es:
+
+Tiro Libre
+
+Una plataforma para administrar reservas...
+
+Y enseguida
+
+Resumen
+
+Pero hoy tiene que atravesar una tarjeta enorme.
+
+6. Falta una acción principal
+
+Hoy la card informa.
+
+Pero no invita a hacer nada.
+
+Podría tener, por ejemplo
+
+GitHub
+Demo
+Video
+
+como acciones.
+
+O
+
+Repositorio
+Ver código
+Live Demo
+
+Eso genera mucho más interés.
+
+7. Todo tiene el mismo contraste
+
+Esto es muy importante.
+
+Hoy veo:
+
+logo
+título
+badges
+estado
+labels
+tecnologías
+
+Todos compiten.
+
+No hay descanso.
+
+8. Hay mucha información repetida
+
+Por ejemplo.
+
+Ya sé que es Laravel.
+
+¿Por qué?
+
+Porque:
+
+aparece en las tecnologías
+seguramente después lo volvés a mencionar
+probablemente en Modelo de Datos también
+
+La información aparece tres veces.
+
+Yo reorganizaría completamente esa cabecera.
+
+Algo así.
+
+--------------------------------------------------
+
+LOGO
+
+Tiro Libre
+
+Plataforma para gestión de canchas de fútbol,
+reservas online y automatización.
+
+🟢 Finalizado
+
+Proyecto Personal · Full Stack
+
+Laravel • PHP • MySQL • +6
+
+[ Ver Demo ]   [ GitHub ]
+
+--------------------------------------------------
+
+Nada más.
+
+Fijate cuánto más liviano queda.
+
+Y recién después
+
+Resumen
+
+...
+Otra cosa que noto
+
+El menú lateral pesa muchísimo.
+
+Resumen
+Problema
+Modelo
+Panel
+Mapa
+Vista
+Desafíos
+Resultado
+Aprendí
+
+Hay diez secciones.
+
+Eso hace que la página parezca larguísima incluso antes de hacer scroll.
+
+Yo intentaría agrupar.
+
+Por ejemplo:
+
+Contexto
+    • Problema
+    • Resumen
+
+Desarrollo
+    • Modelo
+    • Panel
+    • Vista
+
+Conclusión
+    • Resultado
+    • Aprendizajes
+
+Enlaces
+
+Visualmente se siente mucho más corta.
+
+Hay un detalle que me parece el más importante de todos
+
+Cuando entro a un proyecto, mi mirada hace este recorrido:
+
+Logo
+
+↓
+
+Título
+
+↓
+
+Tecnologías
+
+↓
+
+Menú lateral
+
+↓
+
+Resumen
+
+Pero el resumen es justamente lo que más quiero leer.
+
+Tu cabecera está "robándole protagonismo" al contenido principal.
+
+Si redujeras esa tarjeta aproximadamente un 40–50% de altura, eliminaras las líneas divisorias, resumieras los metadatos en una sola fila y dejaras solo 3–4 tecnologías visibles, el resultado probablemente se vería mucho más moderno y editorial, sin necesidad de cambiar colores, tipografías ni estilo general.
+
+De hecho, el diseño base me gusta. Lo que está fallando no es el estilo, sino que la introducción ocupa demasiado espacio y le da el mismo peso a información secundaria que al contenido realmente importante. Ese pequeño cambio de jerarquía haría que todo el portafolio se sintiera mucho más profesional. 

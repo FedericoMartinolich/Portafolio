@@ -8,9 +8,12 @@
       <i class="fa fa-download"></i> {{ $t("about.cv") }}
     </a>
 
-    <TextCarousel />
+    <p class="intro">{{ $t("about.intro") }}</p>
 
-
+    <section class="career">
+      <h2 class="career__title title-font">{{ $t("about.careerTitle") }}</h2>
+      <ExperienceList :experiences="experiences" />
+    </section>
 
 <div class="main-wrapper">
   <div class="badge yellow">
@@ -21,10 +24,6 @@
     <div class="circle"> <i class="fa fa-brands fa-html5"></i></div>
     <div class="ribbon">Html</div>
   </div>
-  <!-- <div class="badge pink">
-    <div class="circle"> <i class="fa fa-pied-piper"></i></div>
-    <div class="ribbon">Nuker</div>
-  </div> -->
   <div class="badge red">
     <div class="circle"> <i class="fa fa-brands fa-laravel"></i></div>
     <div class="ribbon">Laravel</div>
@@ -33,10 +32,6 @@
     <div class="circle"> <i class="fa fa-brands fa-bootstrap"></i></div>
     <div class="ribbon">Bootstrap</div>
   </div>
-  <!-- <div class="badge teal">
-    <div class="circle"> <i class="fa fa-bicycle"></i></div>
-    <div class="ribbon">Roamer</div>
-  </div> -->
   <div class="badge blue">
     <div class="circle"> <i class="fa fa-brands fa-css3"></i></div>
     <div class="ribbon">Css</div>
@@ -45,10 +40,6 @@
     <div class="circle"> <i class="fa fa-brands fa-php"></i></div>
     <div class="ribbon">PHP</div>
   </div>
-  <!-- <div class="badge green">
-    <div class="circle"> <i class="fa fa-tree"></i></div>
-    <div class="ribbon">Jungler</div>
-  </div> -->
   <div class="badge green-dark">
     <div class="circle"> <i class="fa fa-brands fa-vuejs"></i></div>
     <div class="ribbon">vue</div>
@@ -57,10 +48,6 @@
     <div class="circle"> <i class="fa fa-solid fa-database"></i></div>
     <div class="ribbon">SQL</div>
   </div>
-  <!-- <div class="badge gold">
-    <div class="circle"> <i class="fa fa-magic"></i></div>
-    <div class="ribbon">Support</div>
-  </div> -->
 </div>
 
 <footer>
@@ -82,9 +69,12 @@
 </template>
 
 <script setup>
-import TextCarousel from '../components/TextCarousel.vue';
+import ExperienceList from '../components/ExperienceList.vue';
 import { useI18n } from 'vue-i18n';
+import experiencesData from '../data/experiences.json';
+
 const { t } = useI18n();
+const experiences = experiencesData.experiences;
 </script>
 
 <style scoped>
@@ -124,7 +114,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-sans);
     padding: 2rem;
 }
 
@@ -158,12 +148,27 @@ h1 {
     margin-bottom: 1rem;
 }
 
-/* icons */
-
-body {
-  font-family: "Comfortaa", sans-serif;
-  background: #111;
+.intro {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
 }
+
+.career {
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+.career__title {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+/* icons */
 
 .main-wrapper {
   width: 90%;
@@ -221,10 +226,6 @@ body {
   font-size: 2em;
   margin-top: 8px;
 }
-.badge .font {
-  display: inline-block;
-  margin-top: 1em;
-}
 .badge .ribbon {
   position: absolute;
   border-radius: 4px;
@@ -254,11 +255,6 @@ body {
   color: #f68401;
 }
 
-.pink {
-  background: linear-gradient(to bottom right, #F48FB1 0%, #d81b60 100%);
-  color: #dc306f;
-}
-
 .red {
   background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
   color: #c62828;
@@ -267,11 +263,6 @@ body {
 .purple {
   background: linear-gradient(to bottom right, #ab47bc 0%, #4527a0 100%);
   color: #7127a8;
-}
-
-.teal {
-  background: linear-gradient(to bottom right, #4DB6AC 0%, #00796B 100%);
-  color: #34a297;
 }
 
 .blue {
@@ -284,11 +275,6 @@ body {
   color: #1c68c5;
 }
 
-.green {
-  background: linear-gradient(to bottom right, #cddc39 0%, #8bc34a 100%);
-  color: #7cb342;
-}
-
 .green-dark {
   background: linear-gradient(to bottom right, #4CAF50 0%, #1B5E20 100%);
   color: #00944a;
@@ -297,11 +283,6 @@ body {
 .silver {
   background: linear-gradient(to bottom right, #E0E0E0 0%, #BDBDBD 100%);
   color: #9e9e9e;
-}
-
-.gold {
-  background: linear-gradient(to bottom right, #e6ce6a 0%, #b7892b 100%);
-  color: #b7892b;
 }
 
 footer {
@@ -326,5 +307,14 @@ footer a .icons {
   margin-top: 12px;
   display: inline-block;
   font-size: 20px;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  .career__title {
+    font-size: 1.6rem;
+  }
 }
 </style>

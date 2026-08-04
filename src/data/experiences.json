@@ -1,0 +1,558 @@
+{
+  "experiences": [
+    {
+      "id": "rebrit",
+      "role": {
+        "es": "Desarrollador Web Full Stack",
+        "en": "Full Stack Web Developer"
+      },
+      "company": "Rebrit SRL",
+      "period": {
+        "es": "2024 — Actualidad",
+        "en": "2024 — Present"
+      },
+      "duration": {
+        "es": "Más de 1 año",
+        "en": "1+ year"
+      },
+      "summary": {
+        "es": "Desarrollo de aplicaciones empresariales de gestión interna sobre un framework propietario, sin gestor de paquetes ni documentación oficial.",
+        "en": "Development of enterprise internal-management applications on a proprietary framework, with no package manager or official documentation."
+      },
+      "tags": ["PHP", "MySQL", "JavaScript", "Bootstrap", "AJAX", "Tesseract OCR", "JWT"],
+      "sections": [
+        {
+          "id": "viandas",
+          "title": {
+            "es": "Sistema de gestión de viandas",
+            "en": "Meal order management system"
+          },
+          "icon": "fa-solid fa-utensils",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Construir un sistema interno para gestionar los pedidos de comida de los empleados, con carga automática de menús mediante OCR.",
+                "en": "Build an internal system to manage employee meal orders, with automatic menu uploads using OCR."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Desarrollo full stack del sistema.",
+                  "en": "Full stack development of the system."
+                },
+                {
+                  "es": "Integración manual de Tesseract OCR.",
+                  "en": "Manual integration of Tesseract OCR."
+                },
+                {
+                  "es": "Autenticación, roles, pedidos y panel de administración.",
+                  "en": "Authentication, roles, orders and admin panel."
+                },
+                {
+                  "es": "Exportación de reportes a PDF.",
+                  "en": "PDF report export."
+                }
+              ]
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Desafíos",
+                "en": "Challenges"
+              },
+              "items": [
+                {
+                  "es": "Trabajar sin librerías externas ni documentación.",
+                  "en": "Working without external libraries or documentation."
+                },
+                {
+                  "es": "Estabilizar el reconocimiento OCR dentro del framework.",
+                  "en": "Stabilizing OCR recognition within the framework."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Solución",
+                "en": "Solution"
+              },
+              "content": {
+                "es": "Limpieza y corrección del texto extraído por OCR antes de la carga, validada con pruebas continuas en distintos entornos.",
+                "en": "Cleaning and correction of OCR-extracted text before upload, validated with continuous testing across environments."
+              }
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto relacionado",
+                "en": "Related project"
+              },
+              "projects": ["foodservice"]
+            }
+          ]
+        },
+        {
+          "id": "frontend",
+          "title": {
+            "es": "Desarrollo Frontend",
+            "en": "Frontend development"
+          },
+          "icon": "fa-solid fa-code",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Construir interfaces responsive y fieles a los diseños provistos por el equipo.",
+                "en": "Build responsive interfaces faithful to the designs provided by the team."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Maquetado con HTML, CSS, Bootstrap y JavaScript.",
+                  "en": "Layout with HTML, CSS, Bootstrap and JavaScript."
+                },
+                {
+                  "es": "Adaptación responsive y ajustes de UI/UX.",
+                  "en": "Responsive adaptation and UI/UX adjustments."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyectos relacionados",
+                "en": "Related projects"
+              },
+              "projects": ["mecha", "kredit"]
+            }
+          ]
+        },
+        {
+          "id": "apis",
+          "title": {
+            "es": "Integración con APIs",
+            "en": "API integration"
+          },
+          "icon": "fa-solid fa-plug",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Conectar el frontend con APIs backend protegidas de forma segura.",
+                "en": "Securely connect the frontend with protected backend APIs."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Desafíos",
+                "en": "Challenges"
+              },
+              "items": [
+                {
+                  "es": "Documentación limitada del backend.",
+                  "en": "Limited backend documentation."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Solución",
+                "en": "Solution"
+              },
+              "content": {
+                "es": "Consumo de endpoints con autenticación JWT, interpretando el comportamiento de la API mediante pruebas y colaboración.",
+                "en": "Consuming endpoints with JWT authentication, interpreting API behavior through testing and collaboration."
+              }
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto relacionado",
+                "en": "Related project"
+              },
+              "projects": ["kredit"]
+            }
+          ]
+        },
+        {
+          "id": "maintenance",
+          "title": {
+            "es": "Mantenimiento de aplicaciones",
+            "en": "Application maintenance"
+          },
+          "icon": "fa-solid fa-wrench",
+          "blocks": [
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Responsabilidades",
+                "en": "Responsibilities"
+              },
+              "items": [
+                {
+                  "es": "Corrección de errores en producción.",
+                  "en": "Bug fixing in production."
+                },
+                {
+                  "es": "Optimización de consultas y rendimiento.",
+                  "en": "Query and performance optimization."
+                },
+                {
+                  "es": "Incorporación de nuevas funcionalidades sobre código existente.",
+                  "en": "Adding new features on top of existing code."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "framework",
+          "title": {
+            "es": "Evolución del framework",
+            "en": "Framework evolution"
+          },
+          "icon": "fa-solid fa-arrows-rotate",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Aprendizaje",
+                "en": "Learning"
+              },
+              "content": {
+                "es": "Profundo conocimiento de un framework propietario, resolviendo problemas complejos dentro de sus limitaciones.",
+                "en": "Deep knowledge of a proprietary framework, solving complex problems within its constraints."
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech",
+          "title": {
+            "es": "Tecnologías",
+            "en": "Technologies"
+          },
+          "icon": "fa-solid fa-layer-group",
+          "blocks": [
+            {
+              "type": "tags",
+              "title": {
+                "es": "Tecnologías principales",
+                "en": "Main technologies"
+              },
+              "items": ["PHP", "MySQL", "JavaScript", "Bootstrap", "AJAX", "Tesseract OCR", "JWT"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "role": {
+        "es": "Proyectos personales y freelance",
+        "en": "Personal & freelance projects"
+      },
+      "company": "Freelance",
+      "period": {
+        "es": "2022 — Actualidad",
+        "en": "2022 — Present"
+      },
+      "duration": {
+        "es": "Continuo",
+        "en": "Ongoing"
+      },
+      "summary": {
+        "es": "Desarrollo de productos web propios y para clientes, cubriendo arquitectura, frontend, backend y despliegue.",
+        "en": "Development of my own and client web products, covering architecture, frontend, backend and deployment."
+      },
+      "tags": ["Laravel", "Vue 3", "PHP", "Livewire", "Tailwind CSS", "MySQL", "Vite", "Cloudinary", "Vercel"],
+      "sections": [
+        {
+          "id": "tiro-libre",
+          "title": {
+            "es": "Plataforma de reservas de canchas",
+            "en": "Football field booking platform"
+          },
+          "icon": "fa-solid fa-futbol",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Digitalizar la gestión de reservas de canchas de fútbol, con roles, calendario y búsqueda avanzada.",
+                "en": "Digitalize football field booking management, with roles, calendar and advanced search."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Arquitectura Laravel 10 con roles y permisos.",
+                  "en": "Laravel 10 architecture with roles and permissions."
+                },
+                {
+                  "es": "Sistema de búsqueda y filtrado de canchas.",
+                  "en": "Field search and filtering system."
+                },
+                {
+                  "es": "Integración de calendario con FullCalendar.",
+                  "en": "Calendar integration with FullCalendar."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto",
+                "en": "Project"
+              },
+              "projects": ["tiro-libre"]
+            }
+          ]
+        },
+        {
+          "id": "catalogo",
+          "title": {
+            "es": "Catálogos sin backend",
+            "en": "Backend-less catalogs"
+          },
+          "icon": "fa-solid fa-store",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Crear un catálogo online rápido y fácil de mantener para un comercio local, sin infraestructura backend.",
+                "en": "Create a fast, easy-to-maintain online catalog for a local business, with no backend infrastructure."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Solución",
+                "en": "Solution"
+              },
+              "items": [
+                {
+                  "es": "Google Sheets como fuente de datos.",
+                  "en": "Google Sheets as the data source."
+                },
+                {
+                  "es": "Cloudinary para la gestión de imágenes.",
+                  "en": "Cloudinary for image management."
+                },
+                {
+                  "es": "Despliegue en Vercel con Vite.",
+                  "en": "Deployment on Vercel with Vite."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto",
+                "en": "Project"
+              },
+              "projects": ["ferreteria-el-moro"]
+            }
+          ]
+        },
+        {
+          "id": "estancias",
+          "title": {
+            "es": "Sistema de gestión turística",
+            "en": "Tourism management system"
+          },
+          "icon": "fa-solid fa-hotel",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Plataforma integral para establecimientos turísticos: reservas, huéspedes, pagos, servicios y stock.",
+                "en": "All-in-one platform for tourism establishments: bookings, guests, payments, services and stock."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Diseño de dominio y modelado de base de datos.",
+                  "en": "Domain design and database modelling."
+                },
+                {
+                  "es": "Arquitectura modular en Laravel con Livewire y Tailwind.",
+                  "en": "Modular architecture in Laravel with Livewire and Tailwind."
+                },
+                {
+                  "es": "RBAC con permisos granulares.",
+                  "en": "RBAC with granular permissions."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto",
+                "en": "Project"
+              },
+              "projects": ["estancias"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "role": {
+        "es": "Técnico Superior en Análisis y Desarrollo de Software",
+        "en": "Higher Technician in Software Analysis & Development"
+      },
+      "company": {
+        "es": "Universidad Sedes Sapientiae",
+        "en": "Sedes Sapientiae University"
+      },
+      "period": {
+        "es": "2021 — 2024",
+        "en": "2021 — 2024"
+      },
+      "duration": {
+        "es": "3 años",
+        "en": "3 years"
+      },
+      "summary": {
+        "es": "Formación en programación, bases de datos y desarrollo de aplicaciones, con proyectos integradores reales.",
+        "en": "Training in programming, databases and application development, with real capstone projects."
+      },
+      "tags": ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      "sections": [
+        {
+          "id": "checking",
+          "title": {
+            "es": "Sistema de gestión de asistencia",
+            "en": "Attendance management system"
+          },
+          "icon": "fa-solid fa-clipboard-check",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Objetivo",
+                "en": "Goal"
+              },
+              "content": {
+                "es": "Proyecto integrador para registrar y gestionar la asistencia de alumnos de forma digital.",
+                "en": "Capstone project to digitally record and manage student attendance."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Mi participación",
+                "en": "My involvement"
+              },
+              "items": [
+                {
+                  "es": "Backend en PHP y MySQL desarrollado desde cero.",
+                  "en": "PHP and MySQL backend built from scratch."
+                },
+                {
+                  "es": "Interfaz con HTML, CSS y JavaScript.",
+                  "en": "Interface with HTML, CSS and JavaScript."
+                },
+                {
+                  "es": "Reportes y configuración de porcentajes de asistencia.",
+                  "en": "Reports and attendance percentage configuration."
+                }
+              ]
+            },
+            {
+              "type": "projects",
+              "title": {
+                "es": "Proyecto",
+                "en": "Project"
+              },
+              "projects": ["checking"]
+            }
+          ]
+        },
+        {
+          "id": "learning",
+          "title": {
+            "es": "Aprendizajes",
+            "en": "Learning"
+          },
+          "icon": "fa-solid fa-graduation-cap",
+          "blocks": [
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Base técnica",
+                "en": "Technical foundation"
+              },
+              "items": [
+                {
+                  "es": "Diseño de bases de datos relacionales.",
+                  "en": "Relational database design."
+                },
+                {
+                  "es": "Programación web full stack.",
+                  "en": "Full stack web programming."
+                },
+                {
+                  "es": "Metodologías de análisis y desarrollo de software.",
+                  "en": "Software analysis and development methodologies."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

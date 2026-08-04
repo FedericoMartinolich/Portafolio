@@ -5,8 +5,12 @@
       <!-- BRAND -->
       <router-link class="brand" to="/">
         <img class="brand__avatar" src="/perfil.jpg" alt="Avatar">
-        <span class="brand__name">Federico Martinolich</span>
-        <span class="brand__check">✔</span>
+        <span class="brand__text">
+          <span class="brand__name">
+            Federico Martinolich <span class="brand__check">✔</span>
+          </span>
+          <span class="brand__subtitle">Laravel · Vue · PHP</span>
+        </span>
       </router-link>
 
       <!-- NAV -->
@@ -26,93 +30,36 @@
         </ul>
       </nav>
 
-      <!-- SEARCH WRAPPER (input + dropdown separados) -->
-      <div class="search-wrapper">
-
-        <div class="searcher-container">
-          <input
-            type="text"
-            class="searcher"
-            :placeholder="t('search.placeholder')"
-            v-model="search"
-          />
-
-          <button type="submit" class="searcher-btn">
-            <i class="fa fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-
-        <!-- RESULTADOS (fuera del input-container) -->
-        <div v-if="filteredProjects.length" class="search-results">
-          <router-link
-            class="result-item"
-            v-for="p in filteredProjects"
-            :key="p.id"
-            :to="`/projects/${p.id}`"
-            @click="search = ''"
-          >
-            <img :src="p.thumbnail" class="result-thumb" />
-            <span class="result-title">{{ p.title }}</span>
-          </router-link>
-        </div>
-
-      </div>
-
       <!-- Lang -->
       <div class="lang-switcher">
-        <button
-          class="lang-btn"
-          :class="{ active: locale === 'en' }"
-          @click="locale = 'en'"
-        >
-          EN
-        </button>
-
-        <button
-          class="lang-btn"
-          :class="{ active: locale === 'es' }"
-          @click="locale = 'es'"
-        >
-          ES
-        </button>
+        <span class="lang-switcher__label">{{ t('language.label') }}</span>
+        <div class="lang-switcher__control">
+          <button
+            class="lang-btn"
+            :class="{ active: locale === 'es' }"
+            @click="locale = 'es'"
+          >
+            ES
+          </button>
+          <button
+            class="lang-btn"
+            :class="{ active: locale === 'en' }"
+            @click="locale = 'en'"
+          >
+            EN
+          </button>
+        </div>
       </div>
-
 
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-import baseProjects from '../data/projects.base.js'
+const { t, locale } = useI18n()
 
-const { locale } = useI18n()
-
-// ======================
-// PROJECTS (ASYNC SAFE)
-// ======================
-const projects = ref([])
-
-const loadProjects = async () => {
-  const langProjects = (
-    await import(`../data/projects.${locale.value}.js`)
-  ).default
-
-  projects.value = Object.keys(baseProjects).map((key) => ({
-    id: key,
-    ...baseProjects[key],
-    ...langProjects[key]
-  }))
-}
-
-// cargar al inicio + cuando cambia idioma
-watch(locale, loadProjects, { immediate: true })
-
-// ======================
-// NAV
-// ======================
 const activeSection = ref('Home')
 
 const menu = computed(() => [
@@ -120,184 +67,18 @@ const menu = computed(() => [
   { label: t("menu.contact"), href: 'Writing' },
   { label: t("menu.about"), href: 'About' }
 ])
-
-// ======================
-// SEARCH
-// ======================
-const search = ref('')
-
-const filteredProjects = computed(() => {
-  const q = search.value.trim().toLowerCase()
-  if (!q) return []
-
-  return projects.value.filter(p => {
-    const titleMatch = p.title?.toLowerCase().includes(q)
-
-    const techMatch = p.techStack?.some(tech =>
-      tech.toLowerCase().includes(q)
-    )
-
-    return titleMatch || techMatch
-  })
-})
-
 </script>
 
 
 <style scoped>
 /* ===========================
-   Lang Switcher (Pill Toggle)
-=========================== */
-.lang-switcher {
-  display: flex;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 999px;
-  padding: 4px;
-  gap: 4px;
-}
-
-.lang-btn {
-  background: transparent;
-  border: none;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.6);
-  cursor: pointer;
-  transition: 
-    background .25s ease,
-    color .25s ease,
-    transform .15s ease;
-}
-
-.lang-btn:hover {
-  color: white;
-}
-
-.lang-btn.active {
-  background: #3b58ff;
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(59, 88, 255, 0.35);
-}
-
-.lang-btn:active {
-  transform: scale(0.95);
-}
-
-/* ===========================
-   Search Wrapper
-=========================== */
-.search-wrapper {
-  position: relative; /* Ahora el dropdown depende de este */
-  width: 260px;
-}
-
-/* ===========================
-   Searcher
-=========================== */
-.searcher-container {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color .25s ease;
-}
-
-.searcher-container:focus-within {
-  border-color: #3b58ff;
-}
-
-.searcher {
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 0.55rem 0.8rem;
-  color: white;
-  width: 180px;
-  font-size: 0.9rem;
-}
-
-.searcher::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.searcher-btn {
-  background: transparent;
-  border: none;
-  padding: 0.55rem 0.8rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .2s ease;
-}
-
-.searcher-btn:hover {
-  background: rgba(255,255,255,0.12);
-}
-
-.fa {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
-}
-
-/* ===========================
-   Dropdown de resultados
-=========================== */
-.search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  width: 100%;
-  background: #1a1f27;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: 1000;
-  padding: .5rem 0;
-}
-
-.result-item {
-  display: flex;
-  align-items: center;
-  gap: .7rem;
-  padding: .55rem 1rem;
-  cursor: pointer;
-  transition: background .15s;
-  text-decoration: none;
-}
-
-.result-item:hover {
-  background: rgba(255,255,255,0.08);
-}
-
-.result-thumb {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.result-title {
-  color: white;
-  font-size: .9rem;
-  font-weight: 400;
-}
-
-/* ===========================
    Header
 =========================== */
 .site-header {
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   background: #0e131b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header-inner {
@@ -307,6 +88,7 @@ const filteredProjects = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 /* ===========================
@@ -315,21 +97,43 @@ const filteredProjects = computed(() => {
 .brand {
   display: flex;
   align-items: center;
-  gap: .6rem;
+  gap: .7rem;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
 
 .brand__avatar {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.25;
+}
+
+.brand__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
 }
 
 .brand__check {
   color: #4db3ff;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
+  margin-left: 2px;
+}
+
+.brand__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
 }
 
 /* ===========================
@@ -352,8 +156,11 @@ const filteredProjects = computed(() => {
 }
 
 .nav__num {
+  font-family: var(--font-mono);
   font-weight: 600;
   margin-right: .4rem;
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .nav__link.active::after,
@@ -373,30 +180,79 @@ const filteredProjects = computed(() => {
 }
 
 /* ===========================
-   Theme button
+   Lang Switcher
 =========================== */
-.theme-btn {
-  background: rgba(255,255,255,0.07);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background .2s ease;
+.lang-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
 }
 
-.theme-btn:hover {
-  background: rgba(255,255,255,0.15);
+.lang-switcher__label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.lang-switcher__control {
+  display: flex;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .15s ease;
+}
+
+.lang-btn:hover {
+  color: white;
+}
+
+.lang-btn.active {
+  background: #3b58ff;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 88, 255, 0.35);
+}
+
+.lang-btn:active {
+  transform: scale(0.95);
 }
 
 /* ===========================
    Responsive
 =========================== */
-@media (max-width: 650px) {
-  span {
-    font-size: 0.75rem;
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.8rem;
+  }
+
+  .nav__list {
+    gap: 1.4rem;
+  }
+
+  .brand__subtitle,
+  .lang-switcher__label {
+    display: none;
   }
 }
 </style>

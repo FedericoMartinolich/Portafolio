@@ -4,6 +4,9 @@
 export default {
   checking: {
     id: 'checking',
+    company: 'Universidad Sedes Sapientiae',
+    accent: '#38bdf8',
+    status: 'done',
     thumbnail: '/Portafolio/imgs/projects/ChecKing/Logo.png',
     techStack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'Laragon'],
     gallery: [
@@ -17,6 +20,9 @@ export default {
 
   foodservice: {
     id: 'foodservice',
+    company: 'Rebrit SRL',
+    accent: '#f97316',
+    status: 'done',
     thumbnail: '/Portafolio/imgs/projects/FoodService/Logo.png',
     techStack: [
       'HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL',
@@ -34,13 +40,16 @@ export default {
       '/Portafolio/imgs/projects/FoodService/9.png',
       '/Portafolio/imgs/projects/FoodService/10.png',
       '/Portafolio/imgs/projects/FoodService/11.png',
-      '/Portafolio/imgs/projects/FoodService/12.png'
+      '/Portafolio/imgs/projects/FoodService/12.png',
+      '/Portafolio/imgs/projects/FoodService/13.png'
     ],
     repository: ''
   },
 
   'tiro-libre': {
     id: 'tiro-libre',
+    accent: '#22c55e',
+    status: 'done',
     thumbnail: '/Portafolio/imgs/projects/TiroLibre/Logo.png',
     techStack: [
       'Laravel 10', 'PHP', 'MySQL', 'Spatie Roles & Permissions',
@@ -60,6 +69,9 @@ export default {
 
   mecha: {
     id: 'mecha',
+    company: 'Rebrit SRL',
+    accent: '#f59e0b',
+    status: 'done',
     thumbnail: '/Portafolio/imgs/projects/Mecha/Logo.png',
     techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     gallery: [
@@ -75,6 +87,9 @@ export default {
 
   kredit: {
     id: 'kredit',
+    company: 'Rebrit SRL',
+    accent: '#34d399',
+    status: 'done',
     thumbnail: '/Portafolio/imgs/projects/Kredit/Logo.png',
     techStack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'JWT'],
     gallery: [
@@ -88,6 +103,10 @@ export default {
 
   'ferreteria-el-moro': {
     id: 'ferreteria-el-moro',
+    company: 'Ferretería El Moro',
+    accent: '#fb923c',
+    status: 'done',
+    demo: 'https://ferreteriaelmoro-five.vercel.app/',
     thumbnail: '/Portafolio/imgs/projects/FerreteriaElMoro/Logo.png',
     techStack: [
       'Vue 3', 'Vite', 'JavaScript', 'HTML', 'CSS',
@@ -108,6 +127,8 @@ export default {
   'estancias': 
   {
     id: 'estancias',
+    accent: '#2dd4bf',
+    status: 'progress',
     thumbnail: '/Portafolio/imgs/projects/Estancias/Logo.png',
     techStack: [
       "Laravel",
