@@ -1,300 +1,261 @@
-Sí. De hecho creo que el problema no es el diseño visual en sí, sino la jerarquía de la información. Hay mucho contenido con el mismo peso visual, entonces el ojo no sabe dónde mirar.
+Instrucciones para reescribir completamente la sección "Experiencia Profesional – Rebrit"
+Objetivo general
 
-Te marco las cosas que me llamaron la atención como si estuviera haciendo una review de UI/UX.
+Reescribir completamente la sección de experiencia en Rebrit para que transmita el nivel real de complejidad técnica del trabajo realizado. El objetivo es que un reclutador o Tech Lead perciba que se trata de experiencia profesional en desarrollo de software empresarial sobre frameworks propietarios, y no simplemente de proyectos realizados con PHP.
 
-1. La card es demasiado alta
+No modificar el diseño visual del portfolio. Mantener la estructura general de tarjetas y acordeones, pero reorganizar y ampliar el contenido.
 
-Es lo primero que noté.
+1. Reescribir el resumen principal
 
-Tenés:
+Eliminar el resumen actual.
 
-logo
-nombre
-descripción
-línea
-tipo
-rol
-estado
-otra línea
-tecnologías
+Reemplazarlo por un texto similar al siguiente:
 
-Todo eso ocupa casi media pantalla.
+Durante más de un año y medio participé en el desarrollo de aplicaciones web empresariales utilizando los frameworks propietarios de Rebrit (Mecha y posteriormente Aiken). Trabajé tanto en el desarrollo de nuevos sistemas desde cero como en el mantenimiento de aplicaciones en producción, resolución de incidencias, integración con APIs, implementación de interfaces responsive y evolución del framework interno de la empresa. La mayor parte del trabajo consistía en comprender arquitecturas existentes, analizar código desarrollado por otros integrantes del equipo y desarrollar nuevas funcionalidades manteniendo la compatibilidad del sistema.
 
-Y el problema es que esa información no ayuda al usuario a decidir nada. Ya hizo click en el proyecto.
+2. Agregar una sección llamada "Framework interno"
 
-La card debería responder solamente:
+Crear una nueva sección expandible antes de los proyectos.
 
-¿Qué proyecto es?
+Contenido:
 
-No contar toda la historia.
+Explicar que la empresa desarrollaba sus propias herramientas internas.
 
-2. Hay demasiadas líneas divisorias
+Mencionar que primero se trabajó sobre Mecha y posteriormente sobre Aiken.
 
-Tenés algo así
+Explicar que:
 
-Título
-------------------
-Tipo      Estado
-Rol
-------------------
-Tecnologías
+no existía documentación pública
+no existía comunidad
+no existían tutoriales
+el aprendizaje consistía en analizar el código existente
 
-Las líneas hacen que parezca un formulario.
+Agregar que estos frameworks incluían componentes propios para:
 
-Yo directamente eliminaría las dos.
+renderizado de vistas
+comunicación AJAX
+sistema de contenidos
+componentes JavaScript
+modales
+tablas
+formularios
+gestión de usuarios
+permisos
 
-Dejá respirar con espacio.
+Cerrar indicando que esta experiencia fortaleció la capacidad para comprender arquitecturas desconocidas y adaptarse rápidamente a tecnologías internas.
 
-3. Tipo, Rol y Estado parecen un formulario administrativo
+3. Reescribir completamente FoodService
 
-Esto se siente muy de dashboard.
+No presentarlo simplemente como un proyecto.
 
-TIPO
+Presentarlo como el primer sistema desarrollado dentro de la empresa.
 
-Proyecto personal
+Explicar que fue desarrollado prácticamente desde cero utilizando el framework propietario.
 
-ROL
+Agregar una descripción funcional del sistema.
 
-Desarrollador Full Stack
+Debe mencionar:
 
-ESTADO
+administración de usuarios
+administración de empleados
+perfiles
+pedidos semanales
+panel administrativo
+generación de estadísticas
+cancelación diaria de pedidos
+opción Home Office
+opción Ausencia
 
-Finalizado
+Crear un apartado específico para OCR.
 
-Eso está perfecto para un CRM.
+Explicar que:
 
-Pero no para un portfolio.
+el proveedor enviaba semanalmente el menú escaneado.
 
-Yo haría algo mucho más resumido.
+El sistema utilizaba Tesseract OCR para interpretar automáticamente el contenido de la imagen.
 
-Por ejemplo:
+Posteriormente se procesaban esos datos para generar automáticamente las opciones disponibles dentro del formulario que completaban los empleados.
 
-Proyecto personal
-•
-Full Stack
-•
-Finalizado
+Indicar que este proceso reducía significativamente la carga manual del menú.
 
-O incluso
+4. Reescribir la experiencia Frontend
 
-Personal
-Laravel
-2025
+No hablar únicamente de HTML y CSS.
 
-Todo en una línea.
+Explicar que se desarrollaban interfaces completas a partir de diseños entregados por el área de diseño.
 
-Muchísimo más limpio.
+Mencionar:
 
-4. Las tecnologías ocupan demasiado protagonismo
-
-Esto creo que es el principal problema.
-
-Tenés once badges.
-
-Laravel
-PHP
-MySQL
-Spatie
-Blade
-JavaScript
+Pixel Perfect
+Responsive Design
 Bootstrap
-AJAX
-Leaflet
-...
+JavaScript
+adaptación para escritorio
+adaptación para dispositivos móviles
 
-Visualmente parece un catálogo de tecnologías.
+Indicar que el objetivo era reproducir exactamente el diseño aprobado por el cliente.
 
-Y el usuario todavía ni empezó a leer el proyecto.
+5. Reescribir la integración con APIs
 
-Yo haría algo como GitHub.
+Crear una sección independiente.
 
-Laravel
+Explicar que se desarrollaron interfaces visuales conectadas con APIs existentes.
+
+Mencionar:
+
+consumo de APIs REST
+procesamiento de respuestas
+renderizado dinámico
+validaciones
+comunicación asincrónica
+6. Reescribir mantenimiento
+
+Eliminar cualquier texto que transmita únicamente corrección de errores.
+
+Explicar que el trabajo consistía en:
+
+analizar incidencias reportadas
+investigar el origen del problema
+comprender módulos existentes
+implementar nuevas funcionalidades
+optimizar consultas SQL
+mantener compatibilidad con el resto del sistema
+
+Mencionar que muchas incidencias requerían comprender código desarrollado previamente por otros integrantes del equipo.
+
+7. Crear una sección exclusiva llamada "Migración hacia Aiken"
+
+Esta debe ser una de las secciones más importantes.
+
+Explicar que la empresa comenzó el desarrollo de una nueva plataforma denominada Aiken.
+
+Indicar que el objetivo era construir un framework:
+
+más moderno
+más mantenible
+más escalable
+
+Explicar que una de las principales responsabilidades fue adaptar el sistema de Roles y Permisos existente en Mecha.
+
+Aclarar expresamente que:
+
+no fue una copia del código.
+
+Fue necesario comprender ambas arquitecturas y desarrollar nuevamente el módulo para integrarlo correctamente dentro del nuevo framework.
+
+Describir que el trabajo incluyó:
+
+adaptación de consultas SQL
+adaptación de modelos
+adaptación de controladores
+rediseño de interfaces
+integración con contenidos
+sincronización de usuarios
+lógica de permisos
+
+Concluir indicando que este trabajo permitió participar activamente en la evolución del framework interno de la empresa.
+
+8. Crear una sección "Arquitectura empresarial"
+
+Explicar que el desarrollo se realizaba sobre aplicaciones empresariales bajo una arquitectura basada en:
+
+MVC
+microservicios
+múltiples clientes (multitenant)
+
+Indicar que muchas funcionalidades debían mantenerse compatibles para distintos clientes utilizando la misma base del sistema.
+
+9. Crear una sección "Trabajo con bases de datos"
+
+Explicar que el desarrollo implicaba trabajar continuamente sobre MySQL.
+
+Incluir:
+
+consultas SQL
+JOIN
+filtros
+optimización
+relaciones entre tablas
+modificación de estructuras
+análisis de información
+
+Indicar que phpMyAdmin era utilizado habitualmente para administrar y analizar la base de datos.
+
+10. Crear una sección "Resolución de problemas"
+
+Explicar que gran parte del trabajo consistía en comprender aplicaciones existentes.
+
+Mencionar específicamente:
+
+lectura de código legado
+seguimiento del flujo entre frontend y backend
+análisis de consultas SQL
+identificación de errores
+mantenimiento de compatibilidad
+incorporación de nuevas funcionalidades
+
+Aclarar que muchas tareas requerían investigar el comportamiento del framework debido a la ausencia de documentación oficial.
+
+11. Crear una sección "Trabajo en equipo"
+
+Explicar que se trabajó tanto de forma individual como colaborando con otros desarrolladores.
+
+Mencionar:
+
+resolución conjunta de incidencias
+revisión de funcionalidades
+colaboración en nuevos desarrollos
+apoyo en la evolución del framework
+12. Crear una sección "Tecnologías utilizadas"
+
+En lugar de mostrar únicamente badges, organizar las tecnologías por categorías.
+
+Backend
+
 PHP
 MySQL
+SQL
 
-+7 tecnologías
+Frontend
 
-o
-
-Laravel
-PHP
-MySQL
+HTML5
+CSS3
+Bootstrap
 JavaScript
 
-Y después, más abajo, en una sección llamada
+Herramientas
 
-Stack utilizado
+AJAX
+Tesseract OCR
+phpMyAdmin
+Git
 
-recién ahí mostrar todas.
+Frameworks internos
 
-5. El resumen empieza demasiado abajo
+Mecha
+Aiken
+13. Agregar un bloque final llamado "Lo que me dejó esta experiencia"
 
-La persona entra al proyecto.
+Crear un bloque de cierre.
 
-Lo primero que debería ver es:
+No mencionar tecnologías.
 
-Tiro Libre
+Explicar que esta experiencia permitió desarrollar competencias como:
 
-Una plataforma para administrar reservas...
+adaptación rápida a nuevas tecnologías
+comprensión de arquitecturas complejas
+lectura de código legado
+resolución de problemas
+análisis funcional
+mantenimiento de software empresarial
+trabajo sobre productos en producción
+evolución de frameworks internos
+desarrollo de soluciones escalables
 
-Y enseguida
+Finalizar con una idea similar a:
 
-Resumen
+"Trabajar sobre frameworks propietarios sin documentación pública fortaleció mi capacidad para comprender rápidamente sistemas existentes, analizar arquitecturas complejas y desarrollar nuevas funcionalidades manteniendo la estabilidad del producto. Esta experiencia me permitió adquirir una metodología de trabajo basada en el análisis, la investigación y la resolución de problemas, habilidades que hoy considero uno de mis principales diferenciales como desarrollador."
 
-Pero hoy tiene que atravesar una tarjeta enorme.
+Objetivo final de la reescritura
 
-6. Falta una acción principal
-
-Hoy la card informa.
-
-Pero no invita a hacer nada.
-
-Podría tener, por ejemplo
-
-GitHub
-Demo
-Video
-
-como acciones.
-
-O
-
-Repositorio
-Ver código
-Live Demo
-
-Eso genera mucho más interés.
-
-7. Todo tiene el mismo contraste
-
-Esto es muy importante.
-
-Hoy veo:
-
-logo
-título
-badges
-estado
-labels
-tecnologías
-
-Todos compiten.
-
-No hay descanso.
-
-8. Hay mucha información repetida
-
-Por ejemplo.
-
-Ya sé que es Laravel.
-
-¿Por qué?
-
-Porque:
-
-aparece en las tecnologías
-seguramente después lo volvés a mencionar
-probablemente en Modelo de Datos también
-
-La información aparece tres veces.
-
-Yo reorganizaría completamente esa cabecera.
-
-Algo así.
-
---------------------------------------------------
-
-LOGO
-
-Tiro Libre
-
-Plataforma para gestión de canchas de fútbol,
-reservas online y automatización.
-
-🟢 Finalizado
-
-Proyecto Personal · Full Stack
-
-Laravel • PHP • MySQL • +6
-
-[ Ver Demo ]   [ GitHub ]
-
---------------------------------------------------
-
-Nada más.
-
-Fijate cuánto más liviano queda.
-
-Y recién después
-
-Resumen
-
-...
-Otra cosa que noto
-
-El menú lateral pesa muchísimo.
-
-Resumen
-Problema
-Modelo
-Panel
-Mapa
-Vista
-Desafíos
-Resultado
-Aprendí
-
-Hay diez secciones.
-
-Eso hace que la página parezca larguísima incluso antes de hacer scroll.
-
-Yo intentaría agrupar.
-
-Por ejemplo:
-
-Contexto
-    • Problema
-    • Resumen
-
-Desarrollo
-    • Modelo
-    • Panel
-    • Vista
-
-Conclusión
-    • Resultado
-    • Aprendizajes
-
-Enlaces
-
-Visualmente se siente mucho más corta.
-
-Hay un detalle que me parece el más importante de todos
-
-Cuando entro a un proyecto, mi mirada hace este recorrido:
-
-Logo
-
-↓
-
-Título
-
-↓
-
-Tecnologías
-
-↓
-
-Menú lateral
-
-↓
-
-Resumen
-
-Pero el resumen es justamente lo que más quiero leer.
-
-Tu cabecera está "robándole protagonismo" al contenido principal.
-
-Si redujeras esa tarjeta aproximadamente un 40–50% de altura, eliminaras las líneas divisorias, resumieras los metadatos en una sola fila y dejaras solo 3–4 tecnologías visibles, el resultado probablemente se vería mucho más moderno y editorial, sin necesidad de cambiar colores, tipografías ni estilo general.
-
-De hecho, el diseño base me gusta. Lo que está fallando no es el estilo, sino que la introducción ocupa demasiado espacio y le da el mismo peso a información secundaria que al contenido realmente importante. Ese pequeño cambio de jerarquía haría que todo el portafolio se sintiera mucho más profesional. 
+La nueva sección debe transmitir que el candidato no solo conoce PHP, JavaScript y MySQL, sino que cuenta con experiencia real desarrollando software empresarial sobre arquitecturas propietarias, participando en la creación de nuevos productos, el mantenimiento de sistemas en producción, la integración de tecnologías como OCR y APIs, la resolución de incidencias en entornos multitenant y la evolución de un framework interno mediante la adaptación de uno de sus módulos más importantes: el sistema de Roles y Permisos. El resultado debe proyectar el perfil de un desarrollador con capacidad para comprender sistemas complejos, adaptarse rápidamente a nuevas arquitecturas y aportar valor desde etapas tempranas del desarrollo.

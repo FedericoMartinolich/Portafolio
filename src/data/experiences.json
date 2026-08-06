@@ -16,81 +16,170 @@
         "en": "1.5 years"
       },
       "summary": {
-        "es": "Desarrollo de aplicaciones empresariales de gestión interna sobre un framework propietario, sin gestor de paquetes ni documentación oficial.",
-        "en": "Development of enterprise internal-management applications on a proprietary framework, with no package manager or official documentation."
+        "es": "Durante más de un año y medio participé en el desarrollo de aplicaciones web empresariales utilizando los frameworks propietarios de Rebrit. Trabajé tanto en el desarrollo de nuevos sistemas desde cero como en el mantenimiento de aplicaciones en producción, resolución de incidencias, integración con APIs, implementación de interfaces responsive y evolución del framework interno de la empresa. La mayor parte del trabajo consistía en comprender arquitecturas existentes, analizar código desarrollado por otros integrantes del equipo y desarrollar nuevas funcionalidades manteniendo la compatibilidad del sistema.",
+        "en": "For over a year and a half, I took part in the development of enterprise web applications using Rebrit's proprietary frameworks. I worked on both building new systems from scratch and maintaining applications in production, resolving incidents, integrating with APIs, implementing responsive interfaces and evolving the company's internal framework. Most of the work involved understanding existing architectures, analysing code written by other team members and developing new features while keeping the system compatible."
       },
-      "tags": ["PHP", "MySQL", "JavaScript", "Bootstrap", "AJAX", "Tesseract OCR", "JWT"],
+      "tags": ["PHP", "MySQL", "SQL", "JavaScript", "Bootstrap", "HTML5", "CSS3", "AJAX", "Tesseract OCR", "phpMyAdmin", "Git"],
       "sections": [
         {
-          "id": "viandas",
+          "id": "framework-interno",
           "title": {
-            "es": "Sistema de gestión de viandas",
-            "en": "Meal order management system"
+            "es": "Framework interno",
+            "en": "Internal framework"
+          },
+          "icon": "fa-solid fa-layer-group",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Herramientas propias",
+                "en": "In-house tools"
+              },
+              "content": {
+                "es": "La empresa desarrollaba sus propias herramientas internas. Primero trabajé sobre el framework en el que se basaba la plataforma existente y posteriormente sobre su versión renovada, la nueva plataforma en desarrollo.",
+                "en": "The company built its own in-house tools. I first worked on the framework behind the existing platform and later on its renewed version, the new platform under development."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Aprendizaje autónomo",
+                "en": "Self-directed learning"
+              },
+              "items": [
+                {
+                  "es": "No existía documentación pública.",
+                  "en": "There was no public documentation."
+                },
+                {
+                  "es": "No existía comunidad.",
+                  "en": "There was no community."
+                },
+                {
+                  "es": "No existían tutoriales.",
+                  "en": "There were no tutorials."
+                },
+                {
+                  "es": "El aprendizaje consistía en analizar el código existente.",
+                  "en": "Learning meant analysing the existing code."
+                }
+              ]
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Componentes propios",
+                "en": "Own components"
+              },
+              "items": [
+                {
+                  "es": "Renderizado de vistas.",
+                  "en": "View rendering."
+                },
+                {
+                  "es": "Comunicación AJAX.",
+                  "en": "AJAX communication."
+                },
+                {
+                  "es": "Sistema de contenidos.",
+                  "en": "Content system."
+                },
+                {
+                  "es": "Componentes JavaScript.",
+                  "en": "JavaScript components."
+                },
+                {
+                  "es": "Modales, tablas y formularios.",
+                  "en": "Modals, tables and forms."
+                },
+                {
+                  "es": "Gestión de usuarios y permisos.",
+                  "en": "User management and permissions."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Cierre",
+                "en": "Takeaway"
+              },
+              "content": {
+                "es": "Esta experiencia fortaleció mi capacidad para comprender arquitecturas desconocidas y adaptarme rápidamente a tecnologías internas.",
+                "en": "This experience strengthened my ability to understand unknown architectures and to adapt quickly to internal technologies."
+              }
+            }
+          ]
+        },
+        {
+          "id": "foodservice",
+          "title": {
+            "es": "FoodService: primer sistema interno",
+            "en": "FoodService: first in-house system"
           },
           "icon": "fa-solid fa-utensils",
           "blocks": [
             {
               "type": "text",
               "title": {
-                "es": "Objetivo",
-                "en": "Goal"
+                "es": "Presentación",
+                "en": "Overview"
               },
               "content": {
-                "es": "Construir un sistema interno para gestionar los pedidos de comida de los empleados, con carga automática de menús mediante OCR.",
-                "en": "Build an internal system to manage employee meal orders, with automatic menu uploads using OCR."
+                "es": "FoodService fue el primer sistema desarrollado dentro de la empresa. Se construyó prácticamente desde cero utilizando el framework propietario, abarcando el desarrollo completo tanto del backend como del frontend.",
+                "en": "FoodService was the first system developed in the company. It was built almost entirely from scratch using the proprietary framework, covering the full backend and frontend development."
               }
             },
             {
               "type": "bullets",
               "title": {
-                "es": "Mi participación",
-                "en": "My involvement"
+                "es": "Funcionalidades principales",
+                "en": "Main features"
               },
               "items": [
                 {
-                  "es": "Desarrollo full stack del sistema.",
-                  "en": "Full stack development of the system."
+                  "es": "Administración de usuarios.",
+                  "en": "User administration."
                 },
                 {
-                  "es": "Integración manual de Tesseract OCR.",
-                  "en": "Manual integration of Tesseract OCR."
+                  "es": "Administración de empleados.",
+                  "en": "Employee administration."
                 },
                 {
-                  "es": "Autenticación, roles, pedidos y panel de administración.",
-                  "en": "Authentication, roles, orders and admin panel."
+                  "es": "Perfiles.",
+                  "en": "Profiles."
                 },
                 {
-                  "es": "Exportación de reportes a PDF.",
-                  "en": "PDF report export."
-                }
-              ]
-            },
-            {
-              "type": "bullets",
-              "title": {
-                "es": "Desafíos",
-                "en": "Challenges"
-              },
-              "items": [
-                {
-                  "es": "Trabajar sin librerías externas ni documentación.",
-                  "en": "Working without external libraries or documentation."
+                  "es": "Pedidos semanales.",
+                  "en": "Weekly orders."
                 },
                 {
-                  "es": "Estabilizar el reconocimiento OCR dentro del framework.",
-                  "en": "Stabilizing OCR recognition within the framework."
+                  "es": "Panel administrativo.",
+                  "en": "Administrative panel."
+                },
+                {
+                  "es": "Generación de estadísticas.",
+                  "en": "Statistics generation."
+                },
+                {
+                  "es": "Cancelación diaria de pedidos.",
+                  "en": "Daily order cancellation."
+                },
+                {
+                  "es": "Opción Home Office y opción Ausencia.",
+                  "en": "Home Office and Absence options."
                 }
               ]
             },
             {
               "type": "text",
               "title": {
-                "es": "Solución",
-                "en": "Solution"
+                "es": "Carga automática de menús con OCR",
+                "en": "Automatic menu upload with OCR"
               },
               "content": {
-                "es": "Limpieza y corrección del texto extraído por OCR antes de la carga, validada con pruebas continuas en distintos entornos.",
-                "en": "Cleaning and correction of OCR-extracted text before upload, validated with continuous testing across environments."
+                "es": "El proveedor enviaba semanalmente el menú escaneado. El sistema utilizaba Tesseract OCR para interpretar automáticamente el contenido de la imagen y, posteriormente, se procesaban esos datos para generar automáticamente las opciones disponibles dentro del formulario que completaban los empleados. Este proceso reducía significativamente la carga manual del menú.",
+                "en": "The supplier sent the scanned menu every week. The system used Tesseract OCR to automatically interpret the image content, and that data was then processed to automatically generate the available options in the form employees filled in. This process significantly reduced the manual workload of loading the menu."
               }
             },
             {
@@ -114,28 +203,40 @@
             {
               "type": "text",
               "title": {
-                "es": "Objetivo",
-                "en": "Goal"
+                "es": "Interfaces completas",
+                "en": "Complete interfaces"
               },
               "content": {
-                "es": "Construir interfaces responsive y fieles a los diseños provistos por el equipo.",
-                "en": "Build responsive interfaces faithful to the designs provided by the team."
+                "es": "Desarrollaba interfaces completas a partir de los diseños entregados por el área de diseño. El objetivo era reproducir exactamente el diseño aprobado por el cliente.",
+                "en": "I built complete interfaces from the designs delivered by the design team. The goal was to reproduce exactly the design approved by the client."
               }
             },
             {
               "type": "bullets",
               "title": {
-                "es": "Mi participación",
-                "en": "My involvement"
+                "es": "Técnicas y herramientas",
+                "en": "Techniques and tools"
               },
               "items": [
                 {
-                  "es": "Maquetado con HTML, CSS, Bootstrap y JavaScript.",
-                  "en": "Layout with HTML, CSS, Bootstrap and JavaScript."
+                  "es": "Pixel Perfect.",
+                  "en": "Pixel Perfect."
                 },
                 {
-                  "es": "Adaptación responsive y ajustes de UI/UX.",
-                  "en": "Responsive adaptation and UI/UX adjustments."
+                  "es": "Responsive Design.",
+                  "en": "Responsive Design."
+                },
+                {
+                  "es": "Bootstrap y JavaScript.",
+                  "en": "Bootstrap and JavaScript."
+                },
+                {
+                  "es": "Adaptación para escritorio.",
+                  "en": "Desktop adaptation."
+                },
+                {
+                  "es": "Adaptación para dispositivos móviles.",
+                  "en": "Mobile device adaptation."
                 }
               ]
             },
@@ -150,7 +251,7 @@
           ]
         },
         {
-          "id": "apis",
+          "id": "integracion-apis",
           "title": {
             "es": "Integración con APIs",
             "en": "API integration"
@@ -160,37 +261,42 @@
             {
               "type": "text",
               "title": {
-                "es": "Objetivo",
-                "en": "Goal"
+                "es": "Interfaces conectadas",
+                "en": "Connected interfaces"
               },
               "content": {
-                "es": "Conectar el frontend con APIs backend protegidas de forma segura.",
-                "en": "Securely connect the frontend with protected backend APIs."
+                "es": "Desarrollé interfaces visuales conectadas con APIs existentes, interpretando el comportamiento de cada endpoint mediante pruebas y colaboración con el equipo.",
+                "en": "I developed visual interfaces connected to existing APIs, interpreting the behaviour of each endpoint through testing and collaboration with the team."
               }
             },
             {
               "type": "bullets",
               "title": {
-                "es": "Desafíos",
-                "en": "Challenges"
+                "es": "Aspectos trabajados",
+                "en": "Areas covered"
               },
               "items": [
                 {
-                  "es": "Documentación limitada del backend.",
-                  "en": "Limited backend documentation."
+                  "es": "Consumo de APIs REST.",
+                  "en": "REST API consumption."
+                },
+                {
+                  "es": "Procesamiento de respuestas.",
+                  "en": "Response handling."
+                },
+                {
+                  "es": "Renderizado dinámico.",
+                  "en": "Dynamic rendering."
+                },
+                {
+                  "es": "Validaciones.",
+                  "en": "Validations."
+                },
+                {
+                  "es": "Comunicación asincrónica.",
+                  "en": "Asynchronous communication."
                 }
               ]
-            },
-            {
-              "type": "text",
-              "title": {
-                "es": "Solución",
-                "en": "Solution"
-              },
-              "content": {
-                "es": "Consumo de endpoints con autenticación JWT, interpretando el comportamiento de la API mediante pruebas y colaboración.",
-                "en": "Consuming endpoints with JWT authentication, interpreting API behavior through testing and collaboration."
-              }
             },
             {
               "type": "projects",
@@ -203,13 +309,24 @@
           ]
         },
         {
-          "id": "maintenance",
+          "id": "mantenimiento",
           "title": {
             "es": "Mantenimiento de aplicaciones",
             "en": "Application maintenance"
           },
           "icon": "fa-solid fa-wrench",
           "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Más que corrección de errores",
+                "en": "More than bug fixing"
+              },
+              "content": {
+                "es": "El trabajo de mantenimiento iba más allá de corregir errores: implicaba analizar incidencias reportadas, investigar el origen del problema, comprender los módulos existentes e implementar nuevas funcionalidades manteniendo la compatibilidad con el resto del sistema.",
+                "en": "Maintenance work went beyond fixing bugs: it involved analysing reported incidents, investigating the root cause, understanding existing modules and implementing new features while staying compatible with the rest of the system."
+              }
+            },
             {
               "type": "bullets",
               "title": {
@@ -218,57 +335,410 @@
               },
               "items": [
                 {
-                  "es": "Corrección de errores en producción.",
-                  "en": "Bug fixing in production."
+                  "es": "Analizar incidencias reportadas.",
+                  "en": "Analysing reported incidents."
                 },
                 {
-                  "es": "Optimización de consultas y rendimiento.",
-                  "en": "Query and performance optimization."
+                  "es": "Investigar el origen del problema.",
+                  "en": "Investigating the root cause of issues."
                 },
                 {
-                  "es": "Incorporación de nuevas funcionalidades sobre código existente.",
-                  "en": "Adding new features on top of existing code."
+                  "es": "Comprender módulos existentes.",
+                  "en": "Understanding existing modules."
+                },
+                {
+                  "es": "Implementar nuevas funcionalidades.",
+                  "en": "Implementing new features."
+                },
+                {
+                  "es": "Optimizar consultas SQL.",
+                  "en": "Optimising SQL queries."
+                },
+                {
+                  "es": "Mantener compatibilidad con el resto del sistema.",
+                  "en": "Keeping compatibility with the rest of the system."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Código de otros integrantes",
+                "en": "Code written by others"
+              },
+              "content": {
+                "es": "Muchas incidencias requerían comprender código desarrollado previamente por otros integrantes del equipo antes de poder implementar cualquier cambio.",
+                "en": "Many incidents required understanding code previously written by other team members before any change could be made."
+              }
+            }
+          ]
+        },
+        {
+          "id": "migracion-nuevo-framework",
+          "title": {
+            "es": "Migración hacia el nuevo framework",
+            "en": "Migration to the new framework"
+          },
+          "icon": "fa-solid fa-arrows-split-up-and-left",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Nueva plataforma",
+                "en": "New platform"
+              },
+              "content": {
+                "es": "La empresa comenzó el desarrollo de una nueva plataforma, con el objetivo de construir un framework más moderno, más mantenible y más escalable.",
+                "en": "The company started building a new platform, aiming to create a more modern, more maintainable and more scalable framework."
+              }
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Adaptación de Roles y Permisos",
+                "en": "Adapting Roles and Permissions"
+              },
+              "content": {
+                "es": "Una de mis principales responsabilidades fue adaptar el sistema de Roles y Permisos existente en el framework original. No fue una copia del código: fue necesario comprender ambas arquitecturas y desarrollar nuevamente el módulo para integrarlo correctamente dentro del nuevo framework.",
+                "en": "One of my main responsibilities was adapting the existing Roles and Permissions system from the original framework. It was not a copy of the code: it required understanding both architectures and rebuilding the module to integrate it correctly into the new framework."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Trabajo incluido",
+                "en": "Work involved"
+              },
+              "items": [
+                {
+                  "es": "Adaptación de consultas SQL.",
+                  "en": "Adapting SQL queries."
+                },
+                {
+                  "es": "Adaptación de modelos.",
+                  "en": "Adapting models."
+                },
+                {
+                  "es": "Adaptación de controladores.",
+                  "en": "Adapting controllers."
+                },
+                {
+                  "es": "Rediseño de interfaces.",
+                  "en": "Interface redesign."
+                },
+                {
+                  "es": "Integración con contenidos.",
+                  "en": "Content integration."
+                },
+                {
+                  "es": "Sincronización de usuarios.",
+                  "en": "User synchronisation."
+                },
+                {
+                  "es": "Lógica de permisos.",
+                  "en": "Permission logic."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Cierre",
+                "en": "Takeaway"
+              },
+              "content": {
+                "es": "Este trabajo me permitió participar activamente en la evolución del framework interno de la empresa.",
+                "en": "This work let me actively take part in the evolution of the company's internal framework."
+              }
+            }
+          ]
+        },
+        {
+          "id": "arquitectura-empresarial",
+          "title": {
+            "es": "Arquitectura empresarial",
+            "en": "Enterprise architecture"
+          },
+          "icon": "fa-solid fa-building",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Base del sistema",
+                "en": "System foundation"
+              },
+              "content": {
+                "es": "El desarrollo se realizaba sobre aplicaciones empresariales bajo una arquitectura basada en microservicios y múltiples clientes (multitenant).",
+                "en": "Development was carried out on enterprise applications under an architecture based on microservices and multiple clients (multitenant)."
+              }
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Compatibilidad entre clientes",
+                "en": "Client compatibility"
+              },
+              "content": {
+                "es": "Muchas funcionalidades debían mantenerse compatibles para distintos clientes utilizando la misma base del sistema.",
+                "en": "Many features had to remain compatible for different clients using the same system base."
+              }
+            }
+          ]
+        },
+        {
+          "id": "bases-de-datos",
+          "title": {
+            "es": "Trabajo con bases de datos",
+            "en": "Working with databases"
+          },
+          "icon": "fa-solid fa-database",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "MySQL como base",
+                "en": "MySQL as the foundation"
+              },
+              "content": {
+                "es": "El desarrollo implicaba trabajar continuamente sobre MySQL.",
+                "en": "Development involved continuously working with MySQL."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Aspectos trabajados",
+                "en": "Areas covered"
+              },
+              "items": [
+                {
+                  "es": "Consultas SQL.",
+                  "en": "SQL queries."
+                },
+                {
+                  "es": "JOIN.",
+                  "en": "JOIN."
+                },
+                {
+                  "es": "Filtros.",
+                  "en": "Filters."
+                },
+                {
+                  "es": "Optimización.",
+                  "en": "Optimisation."
+                },
+                {
+                  "es": "Relaciones entre tablas.",
+                  "en": "Relationships between tables."
+                },
+                {
+                  "es": "Modificación de estructuras.",
+                  "en": "Schema modifications."
+                },
+                {
+                  "es": "Análisis de información.",
+                  "en": "Data analysis."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "phpMyAdmin",
+                "en": "phpMyAdmin"
+              },
+              "content": {
+                "es": "phpMyAdmin era utilizado habitualmente para administrar y analizar la base de datos.",
+                "en": "phpMyAdmin was commonly used to administer and analyse the database."
+              }
+            }
+          ]
+        },
+        {
+          "id": "resolucion-problemas",
+          "title": {
+            "es": "Resolución de problemas",
+            "en": "Problem solving"
+          },
+          "icon": "fa-solid fa-magnifying-glass",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Comprender lo existente",
+                "en": "Understanding what exists"
+              },
+              "content": {
+                "es": "Gran parte del trabajo consistía en comprender aplicaciones existentes antes de poder modificarlas.",
+                "en": "A large part of the work was understanding existing applications before being able to modify them."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Tareas frecuentes",
+                "en": "Frequent tasks"
+              },
+              "items": [
+                {
+                  "es": "Lectura de código legado.",
+                  "en": "Reading legacy code."
+                },
+                {
+                  "es": "Seguimiento del flujo entre frontend y backend.",
+                  "en": "Tracing the flow between frontend and backend."
+                },
+                {
+                  "es": "Análisis de consultas SQL.",
+                  "en": "Analysing SQL queries."
+                },
+                {
+                  "es": "Identificación de errores.",
+                  "en": "Identifying errors."
+                },
+                {
+                  "es": "Mantenimiento de compatibilidad.",
+                  "en": "Maintaining compatibility."
+                },
+                {
+                  "es": "Incorporación de nuevas funcionalidades.",
+                  "en": "Adding new features."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Investigar el framework",
+                "en": "Investigating the framework"
+              },
+              "content": {
+                "es": "Muchas tareas requerían investigar el comportamiento del framework debido a la ausencia de documentación oficial.",
+                "en": "Many tasks required investigating how the framework behaved because there was no official documentation."
+              }
+            }
+          ]
+        },
+        {
+          "id": "trabajo-en-equipo",
+          "title": {
+            "es": "Trabajo en equipo",
+            "en": "Teamwork"
+          },
+          "icon": "fa-solid fa-people-group",
+          "blocks": [
+            {
+              "type": "text",
+              "title": {
+                "es": "Individual y colaborativo",
+                "en": "Solo and collaborative"
+              },
+              "content": {
+                "es": "Trabajé tanto de forma individual como colaborando con otros desarrolladores.",
+                "en": "I worked both individually and collaborating with other developers."
+              }
+            },
+            {
+              "type": "bullets",
+              "title": {
+                "es": "Colaboraciones",
+                "en": "Collaborations"
+              },
+              "items": [
+                {
+                  "es": "Resolución conjunta de incidencias.",
+                  "en": "Joint incident resolution."
+                },
+                {
+                  "es": "Revisión de funcionalidades.",
+                  "en": "Feature review."
+                },
+                {
+                  "es": "Colaboración en nuevos desarrollos.",
+                  "en": "Collaboration on new developments."
+                },
+                {
+                  "es": "Apoyo en la evolución del framework.",
+                  "en": "Support on the framework evolution."
                 }
               ]
             }
           ]
         },
         {
-          "id": "framework",
+          "id": "cierre",
           "title": {
-            "es": "Evolución del framework",
-            "en": "Framework evolution"
+            "es": "Lo que me dejó esta experiencia",
+            "en": "What this experience gave me"
           },
-          "icon": "fa-solid fa-arrows-rotate",
+          "icon": "fa-solid fa-lightbulb",
           "blocks": [
             {
               "type": "text",
               "title": {
-                "es": "Aprendizaje",
-                "en": "Learning"
+                "es": "Competencias desarrolladas",
+                "en": "Skills developed"
               },
               "content": {
-                "es": "Profundo conocimiento de un framework propietario, resolviendo problemas complejos dentro de sus limitaciones.",
-                "en": "Deep knowledge of a proprietary framework, solving complex problems within its constraints."
+                "es": "Esta experiencia me permitió desarrollar competencias como:",
+                "en": "This experience allowed me to develop skills such as:"
               }
-            }
-          ]
-        },
-        {
-          "id": "tech",
-          "title": {
-            "es": "Tecnologías",
-            "en": "Technologies"
-          },
-          "icon": "fa-solid fa-layer-group",
-          "blocks": [
+            },
             {
-              "type": "tags",
+              "type": "bullets",
               "title": {
-                "es": "Tecnologías principales",
-                "en": "Main technologies"
+                "es": "Competencias",
+                "en": "Skills"
               },
-              "items": ["PHP", "MySQL", "JavaScript", "Bootstrap", "AJAX", "Tesseract OCR", "JWT"]
+              "items": [
+                {
+                  "es": "Adaptación rápida a nuevas tecnologías.",
+                  "en": "Quick adaptation to new technologies."
+                },
+                {
+                  "es": "Comprensión de arquitecturas complejas.",
+                  "en": "Understanding complex architectures."
+                },
+                {
+                  "es": "Lectura de código legado.",
+                  "en": "Reading legacy code."
+                },
+                {
+                  "es": "Resolución de problemas.",
+                  "en": "Problem solving."
+                },
+                {
+                  "es": "Análisis funcional.",
+                  "en": "Functional analysis."
+                },
+                {
+                  "es": "Mantenimiento de software empresarial.",
+                  "en": "Enterprise software maintenance."
+                },
+                {
+                  "es": "Trabajo sobre productos en producción.",
+                  "en": "Working on products in production."
+                },
+                {
+                  "es": "Evolución de frameworks internos.",
+                  "en": "Evolving internal frameworks."
+                },
+                {
+                  "es": "Desarrollo de soluciones escalables.",
+                  "en": "Building scalable solutions."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": {
+                "es": "Reflexión final",
+                "en": "Final reflection"
+              },
+              "content": {
+                "es": "Trabajar sobre frameworks propietarios sin documentación pública fortaleció mi capacidad para comprender rápidamente sistemas existentes, analizar arquitecturas complejas y desarrollar nuevas funcionalidades manteniendo la estabilidad del producto. Esta experiencia me permitió adquirir una metodología de trabajo basada en el análisis, la investigación y la resolución de problemas, habilidades que hoy considero uno de mis principales diferenciales como desarrollador.",
+                "en": "Working on proprietary frameworks with no public documentation strengthened my ability to quickly understand existing systems, analyse complex architectures and build new features while keeping the product stable. This experience gave me a working methodology based on analysis, research and problem solving — skills I now consider one of my main differentiators as a developer."
+              }
             }
           ]
         }

@@ -33,11 +33,10 @@
 
         <div class="experience-card__sections">
           <ExperienceSection
-            v-for="(section, i) in sections"
+            v-for="section in sections"
             :key="section.id"
             :section="section"
             :projects="projects"
-            :default-open="i === 0"
           />
         </div>
       </div>
