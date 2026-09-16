@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, nextTick } from "vue"
+import { ref, computed, onMounted, onUnmounted } from "vue"
 import Card from "./Card.vue"
 
 const props = defineProps({
@@ -37,6 +37,7 @@ const props = defineProps({
 })
 
 const CLONE_COUNT = 3
+const SLIDE_DURATION = 460
 
 const currentIndex = ref(0)
 const animating = ref(false)
@@ -101,28 +102,36 @@ const trackStyle = computed(() => {
 
 const next = () => {
   const total = props.projects.length
+
+  if (currentIndex.value >= total - 1) {
+    animating.value = true
+    currentIndex.value = total
+    setTimeout(() => {
+      animating.value = false
+      currentIndex.value = 0
+    }, SLIDE_DURATION)
+    return
+  }
+
   animating.value = true
   currentIndex.value++
-
-  if (currentIndex.value >= total) {
-    currentIndex.value = 0
-    nextTick(() => {
-      animating.value = false
-    })
-  }
 }
 
 const prev = () => {
   const total = props.projects.length
+
+  if (currentIndex.value === 0) {
+    animating.value = true
+    currentIndex.value = -1
+    setTimeout(() => {
+      animating.value = false
+      currentIndex.value = total - 1
+    }, SLIDE_DURATION)
+    return
+  }
+
   animating.value = true
   currentIndex.value--
-
-  if (currentIndex.value < 0) {
-    currentIndex.value = total - 1
-    nextTick(() => {
-      animating.value = false
-    })
-  }
 }
 
 const onResize = () => {
@@ -155,6 +164,7 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   padding: 0 clamp(1rem, 5vw, 4rem) 1rem;
+  box-sizing: border-box;
 }
 
 .carousel__viewport {
