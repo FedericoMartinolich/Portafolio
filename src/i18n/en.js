@@ -40,7 +40,7 @@ export default {
   about: {
     title: "Hey there!",
     cv: "Download CV",
-    intro: "I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I'm passionate about transforming ideas into applications that truly simplify processes and improve user experience.",
+    intro: "Full Stack Developer trained in Software Analysis & Development. I specialise in PHP, Laravel and Vue.js, building web applications for companies and clients. I'm interested in creating well-structured systems that solve real problems.",
     careerTitle: "Experience"
   },
 
@@ -78,26 +78,22 @@ export default {
     {
       name: 'About Me',
       title: 'About Me',
-      description: `I am Federico Martinolich, a web developer focused on creating functional and well-structured solutions. I'm passionate about transforming ideas into applications that truly simplify processes and improve user experience.`
+      description: `Full Stack Developer trained in Software Analysis & Development. I specialise in PHP, Laravel and Vue.js, building web applications for companies and clients.`
     },
     {
       name: 'Experience',
       title: 'Experience',
-      description: `
-      Full Stack Developer with over a year of experience on enterprise production platforms. I work with PHP, MySQL, and JavaScript, developing features, frontend-backend integrations, and scalable solutions. I also develop personal projects available in my portfolio.
-      ` 
+      description: `Over a year developing enterprise web applications in production. I work with PHP, MySQL and JavaScript, integrating frontend-backend and building scalable solutions.`
     },
     {
       name: 'Technologies',
       title: 'Technologies',
-      description: `I mainly work with technologies such as Laravel, Vue.js, PHP, and JavaScript. I also enjoy designing interfaces with HTML, CSS, and Bootstrap, always looking for a balance between functionality and aesthetics.`
+      description: `Laravel, Vue.js, PHP and JavaScript as my main stack. Also HTML, CSS and Bootstrap for responsive, functional interfaces.`
     },
     { 
       name: 'Formation',
       title: 'Formation',
-      description: ` 
-        Higher Technician in Software Analysis and Development, with training in programming, databases, and application development. I am currently studying English with a Pre-Intermediate level.
-      ` 
+      description: `Higher Technician in Software Analysis & Development with training in programming, databases and application development.`
     }
   ],
 

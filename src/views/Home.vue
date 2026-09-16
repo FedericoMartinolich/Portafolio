@@ -9,16 +9,7 @@
     <p class="hero__hint">{{ $t('home.hint') }}</p>
   </section>
 
-  <div class="cards-grid">
-    <Card
-      v-for="project in projects"
-      :key="project.id"
-      :route="`/projects/${project.id}`"
-      :head="project.title"
-      :text="project.shortDesc"
-      :routeImg="project.thumbnail"
-    />
-  </div>
+  <ProjectCarousel :projects="projects" />
 </main>
 </template>
 
@@ -26,7 +17,7 @@
 import { ref, watch } from "vue"
 import { useI18n } from "vue-i18n"
 
-import Card from "../components/Card.vue"
+import ProjectCarousel from "../components/ProjectCarousel.vue"
 import SpotlightSearch from "../components/SpotlightSearch.vue"
 import baseProjects from "../data/projects.base.js"
 
@@ -87,10 +78,5 @@ watch(locale, loadProjects, { immediate: true })
   color: rgba(255, 255, 255, 0.4);
 }
 
-.cards-grid {
-  display: grid;
-  gap: 1.5rem;
-  padding: 0.5rem 2rem 0;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
+
 </style>

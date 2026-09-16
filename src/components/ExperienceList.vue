@@ -46,8 +46,6 @@ watch(locale, loadProjects, { immediate: true })
   flex-direction: column;
   gap: 1.25rem;
   width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
   text-align: left;
 }
 </style>

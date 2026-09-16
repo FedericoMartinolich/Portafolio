@@ -1,56 +1,29 @@
 <template>
 <main>
-    <h1 class="title-font">{{ $t("about.title") }}</h1>
-    <div class="img-wrapper">
-      <img src="/perfil.jpeg" alt="">
+  <div class="two-columns">
+    <!-- Columna Izquierda: Sobre mí -->
+    <div class="column-left">
+      <div class="photo-container">
+        <img class="photo-bg" src="/perfil.jpeg" alt="" />
+        <img class="photo-fg" src="/perfil.jpeg" alt="Foto de perfil" />
+      </div>
+      <h1 class="title-font">{{ $t("about.title") }}</h1>
+      <p class="intro">Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.</p>
+      <a href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf" download class="btn-cv">
+        <i class="fa fa-download"></i> {{ $t("about.cv") }}
+      </a>
     </div>
-    <a href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf" download class="btn-cv">
-      <i class="fa fa-download"></i> {{ $t("about.cv") }}
-    </a>
 
-    <p class="intro">{{ $t("about.intro") }}</p>
-
-    <section class="career">
+    <!-- Columna Derecha: Experiencia -->
+    <div class="column-right">
       <h2 class="career__title title-font">{{ $t("about.careerTitle") }}</h2>
-      <ExperienceList :experiences="experiences" />
-    </section>
+      <section class="career">
+        <ExperienceList :experiences="experiences" />
+      </section>
+    </div>
+  </div>
 
-<div class="main-wrapper">
-  <div class="badge yellow">
-    <div class="circle"> <i class="fa fa-brands fa-js"></i></div>
-    <div class="ribbon">JavaScript</div>
-  </div>
-  <div class="badge orange">
-    <div class="circle"> <i class="fa fa-brands fa-html5"></i></div>
-    <div class="ribbon">Html</div>
-  </div>
-  <div class="badge red">
-    <div class="circle"> <i class="fa fa-brands fa-laravel"></i></div>
-    <div class="ribbon">Laravel</div>
-  </div>
-  <div class="badge purple">
-    <div class="circle"> <i class="fa fa-brands fa-bootstrap"></i></div>
-    <div class="ribbon">Bootstrap</div>
-  </div>
-  <div class="badge blue">
-    <div class="circle"> <i class="fa fa-brands fa-css3"></i></div>
-    <div class="ribbon">Css</div>
-  </div>
-  <div class="badge blue-dark">
-    <div class="circle"> <i class="fa fa-brands fa-php"></i></div>
-    <div class="ribbon">PHP</div>
-  </div>
-  <div class="badge green-dark">
-    <div class="circle"> <i class="fa fa-brands fa-vuejs"></i></div>
-    <div class="ribbon">vue</div>
-  </div>
-  <div class="badge silver">
-    <div class="circle"> <i class="fa fa-solid fa-database"></i></div>
-    <div class="ribbon">SQL</div>
-  </div>
-</div>
-
-<footer>
+  <footer>
     <a href="https://www.linkedin.com/in/federico-martinolich" target="_blank">
         <i class="fa fa-brands fa-linkedin-in icons"></i>
     </a>
@@ -63,8 +36,7 @@
     <a href="https://www.instagram.com/fedev.jpg" target="_blank">
       <i class="fa fa-brands fa-instagram icons"></i>
     </a>
-</footer>
-
+  </footer>
 </main>
 </template>
 
@@ -81,6 +53,7 @@ const experiences = experiencesData.experiences;
 .btn-cv {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
 
   padding: 0.85rem 1.6rem;
@@ -95,6 +68,8 @@ const experiences = experiencesData.experiences;
   transition: all 0.25s ease;
 
   margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-cv:hover {
@@ -118,29 +93,70 @@ main {
     padding: 2rem;
 }
 
-.img-wrapper {
-  position: relative;
-  display: inline-block;
-  border-radius: 5%;
-  overflow: hidden;
-  border: 2px solid rgba(143, 143, 143, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08); /* glow exterior */
+.two-columns {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
 }
 
-.img-wrapper::after {
+.column-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.column-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.career {
+  width: 100%;
+  margin-top: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 3rem;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.photo-container::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7);
   pointer-events: none;
+  box-shadow: inset 0 0 20px 2px rgba(0, 0, 0, 0.6);
 }
 
-.img-wrapper img {
-  max-height: 35rem;
-  display: block;
+.photo-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.2);
+}
+
+.photo-fg {
+  position: relative;
+  display: block;
+  width: auto;
   height: auto;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 h1 {
@@ -149,140 +165,23 @@ h1 {
 }
 
 .intro {
-  max-width: 640px;
-  margin: 2rem auto 0;
+  max-width: 100%;
+  margin: 2rem 0 0;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.05rem;
   line-height: 1.7;
-  text-align: center;
+  text-align: justify;
 }
 
 .career {
   width: 100%;
-  margin-top: 3.5rem;
+  margin-top: 0;
 }
 
 .career__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0 0 1.5rem;
-  text-align: center;
-}
-
-/* icons */
-
-.main-wrapper {
-  width: 90%;
-  max-width: 900px;
-  margin: 3em auto;
-  text-align: center;
-}
-
-.badge {
-  position: relative;
-  margin: 1.5em 3em;
-  width: 4em;
-  height: 6.2em;
-  border-radius: 10px;
-  display: inline-block;
-  top: 0;
-  transition: all 0.2s ease;
-}
-.badge:before, .badge:after {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: inherit;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-.badge:before {
-  transform: rotate(60deg);
-}
-.badge:after {
-  transform: rotate(-60deg);
-}
-.badge:hover {
-  top: -4px;
-}
-.badge .circle {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  background: #fff;
-  z-index: 10;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-.badge .circle i.fa {
-  font-size: 2em;
-  margin-top: 8px;
-}
-.badge .ribbon {
-  position: absolute;
-  border-radius: 4px;
-  padding: 5px 5px 4px;
-  width: 100px;
-  z-index: 11;
-  color: #fff;
-  bottom: 12px;
-  left: 50%;
-  margin-left: -55px;
-  height: 15px;
-  font-size: 14px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  background: linear-gradient(to bottom right, #555 0%, #333 100%);
-  cursor: default;
-}
-
-.yellow {
-  background: linear-gradient(to bottom right, #ffeb3b 0%, #fbc02d 100%);
-  color: #ffb300;
-}
-
-.orange {
-  background: linear-gradient(to bottom right, #ffc107 0%, #f57c00 100%);
-  color: #f68401;
-}
-
-.red {
-  background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
-  color: #c62828;
-}
-
-.purple {
-  background: linear-gradient(to bottom right, #ab47bc 0%, #4527a0 100%);
-  color: #7127a8;
-}
-
-.blue {
-  background: linear-gradient(to bottom right, #4FC3F7 0%, #2196F3 100%);
-  color: #259af3;
-}
-
-.blue-dark {
-  background: linear-gradient(to bottom right, #1976D2 0%, #283593 100%);
-  color: #1c68c5;
-}
-
-.green-dark {
-  background: linear-gradient(to bottom right, #4CAF50 0%, #1B5E20 100%);
-  color: #00944a;
-}
-
-.silver {
-  background: linear-gradient(to bottom right, #E0E0E0 0%, #BDBDBD 100%);
-  color: #9e9e9e;
+  text-align: left;
 }
 
 footer {
@@ -307,6 +206,35 @@ footer a .icons {
   margin-top: 12px;
   display: inline-block;
   font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .column-left {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .column-right {
+    width: 100%;
+  }
+
+  .career {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .intro {
+    text-align: justify;
+  }
+
+  .career__title {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {

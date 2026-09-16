@@ -24,6 +24,7 @@ import { useRoute } from 'vue-router';
 .app-container {
   min-height: 65vh;
   background: #0e131b;
+  overflow-x: hidden;
 }
 
 .fade-enter-active,
