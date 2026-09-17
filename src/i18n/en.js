@@ -64,7 +64,8 @@ export default {
     verDemo: "Live Demo",
     github: "GitHub",
     moreTechs: "+{n} more",
-    lessTechs: "Show less"
+    lessTechs: "Show less",
+    detailsCarousel: "Project Details Carousel"
   },
   categories: {
     context: "Context",

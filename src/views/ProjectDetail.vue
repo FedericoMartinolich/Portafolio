@@ -8,126 +8,118 @@
         </router-link>
       </header>
 
-      <!-- Executive summary -->
+      <!-- Header card: two columns -->
       <section class="exec">
-        <div class="exec__head">
+        <div class="exec__media">
           <img
             v-if="project.thumbnail"
             :src="project.thumbnail"
-            class="exec__logo"
+            class="exec__hero-img"
             :style="{ '--accent': project.accent || '#3b58ff' }"
-            alt=""
+            :alt="project.title"
           />
-          <div class="exec__head-text">
-            <h1 class="exec__title">{{ project.title }}</h1>
-            <p v-if="project.company" class="exec__company">
-              {{ project.company }}
-            </p>
-            <p class="exec__summary">{{ project.shortDesc }}</p>
+        </div>
+        <div class="exec__info">
+          <h1 class="exec__title">{{ project.title }}</h1>
+          <p v-if="project.company" class="exec__company">
+            {{ project.company }}
+          </p>
+          <p class="exec__summary">{{ project.shortDesc }}</p>
+
+          <div v-if="meta.state" class="exec__state-row">
+            <span
+              :class="['exec__state', `exec__state--${project.status || 'done'}`]"
+            >
+              {{ meta.state }}
+            </span>
           </div>
-        </div>
 
-        <div v-if="meta.state" class="exec__state-row">
-          <span
-            :class="['exec__state', `exec__state--${project.status || 'done'}`]"
-            >{{ meta.state }}</span
-          >
-        </div>
-
-        <div class="exec__meta-line">
-          <span v-if="meta.type">{{ meta.type }}</span>
-          <span
-            v-if="meta.type && meta.role"
-            class="exec__dot"
-            aria-hidden="true"
-          ></span>
-          <span v-if="meta.role">{{ meta.role }}</span>
-          <span
-            v-if="meta.duration"
-            class="exec__dot"
-            aria-hidden="true"
-          ></span>
-          <span v-if="meta.duration">{{ meta.duration }}</span>
-        </div>
-
-        <div v-if="project.techStack?.length" class="exec__tech-row">
-          <TechBadge v-for="tech in visibleTech" :key="tech" :name="tech" />
-          <button
-            v-if="hiddenTechCount > 0"
-            type="button"
-            class="exec__more"
-            :aria-expanded="showAllTech"
-            @click="showAllTech = !showAllTech"
-          >
-            {{
-              showAllTech
-                ? t("project.lessTechs")
-                : t("project.moreTechs", { n: hiddenTechCount })
-            }}
-          </button>
-        </div>
-
-        <div v-if="hasActions" class="exec__actions">
-          <a
-            v-if="project.demo"
-            :href="project.demo"
-            target="_blank"
-            rel="noopener"
-            class="exec__action exec__action--primary"
-          >
-            <i
-              class="fa-solid fa-arrow-up-right-from-square"
+          <div class="exec__meta-line">
+            <span v-if="meta.type">{{ meta.type }}</span>
+            <span
+              v-if="meta.type && meta.role"
+              class="exec__dot"
               aria-hidden="true"
-            ></i>
-            {{ t("project.verDemo") }}
-          </a>
-          <a
-            v-if="project.repository"
-            :href="project.repository"
-            target="_blank"
-            rel="noopener"
-            class="exec__action"
-          >
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-            {{ t("project.github") }}
-          </a>
+            ></span>
+            <span v-if="meta.role">{{ meta.role }}</span>
+            <span
+              v-if="meta.duration"
+              class="exec__dot"
+              aria-hidden="true"
+            ></span>
+            <span v-if="meta.duration">{{ meta.duration }}</span>
+          </div>
+
+          <div v-if="project.techStack?.length" class="exec__tech-row">
+            <TechBadge v-for="tech in visibleTech" :key="tech" :name="tech" />
+            <button
+              v-if="hiddenTechCount > 0"
+              type="button"
+              class="exec__more"
+              :aria-expanded="showAllTech"
+              @click="showAllTech = !showAllTech"
+            >
+              {{
+                showAllTech
+                  ? t("project.lessTechs")
+                  : t("project.moreTechs", { n: hiddenTechCount })
+              }}
+            </button>
+          </div>
+
+          <div v-if="hasActions" class="exec__actions">
+            <a
+              v-if="project.demo"
+              :href="project.demo"
+              target="_blank"
+              rel="noopener"
+              class="exec__action exec__action--primary"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-from-square"
+                aria-hidden="true"
+              ></i>
+              {{ t("project.verDemo") }}
+            </a>
+            <a
+              v-if="project.repository"
+              :href="project.repository"
+              target="_blank"
+              rel="noopener"
+              class="exec__action"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              {{ t("project.github") }}
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- Mobile index -->
-      <nav v-if="sections.length" class="pd-chips">
-        <button
-          v-for="section in sections"
-          :key="section.id"
-          type="button"
-          class="pd-chips__item"
-          :class="{ 'pd-chips__item--active': section.id === activeId }"
-          @click="setSection(section.id)"
-        >
-          {{ section.title }}
-        </button>
-      </nav>
-
-      <div class="pd-layout">
-        <ProjectSidebar
-          class="pd-sidebar"
-          :groups="groupedSections"
-          :active-id="activeId"
-          :label="t('project.onThisPage')"
-          @navigate="setSection"
+      <!-- Project details carousel -->
+      <section v-if="project.gallery?.length" class="project-gallery">
+        <h2 class="project-gallery__title title-font">
+          {{ t("project.detailsCarousel") }}
+        </h2>
+        <BlockGallery
+          :images="project.gallery"
+          :captions="galleryCaptions"
+          :title="project.title"
         />
+      </section>
 
-        <div class="pd-content">
-          <Transition name="pd-fade" mode="out-in">
-            <ProjectBlock
-              v-if="activeBlock"
-              :key="activeBlock.id"
-              :block="activeBlock"
-              :project="project"
-            />
-          </Transition>
+      <!-- Features grid -->
+      <section v-if="project.features?.length" class="project-features">
+        <div class="project-features__grid">
+          <div
+            v-for="(feature, i) in project.features"
+            :key="i"
+            class="project-features__item"
+          >
+            <h3 class="project-features__name">{{ feature.title }}</h3>
+            <p class="project-features__desc">{{ feature.description }}</p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </main>
 
@@ -142,8 +134,7 @@ import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
 import baseProjects from "../data/projects.base.js";
-import ProjectSidebar from "../components/ProjectSidebar.vue";
-import ProjectBlock from "../components/ProjectBlock.vue";
+import BlockGallery from "../components/BlockGallery.vue";
 import TechBadge from "../components/TechBadge.vue";
 
 const route = useRoute();
@@ -152,7 +143,6 @@ const { locale, t } = useI18n();
 const SHOW_TECH_COUNT = 3;
 
 const project = ref(null);
-const activeId = ref("");
 const showAllTech = ref(false);
 
 const loadProject = async () => {
@@ -167,19 +157,18 @@ const loadProject = async () => {
 
   showAllTech.value = false;
   await nextTick();
-  activeId.value = sections.value[0]?.id || "";
   window.scrollTo(0, 0);
 };
 
 watch([locale, () => route.params.id], loadProject, { immediate: true });
 
 const meta = computed(() => project.value?.meta || {});
-const blocks = computed(() => project.value?.blocks || []);
-const sections = computed(() =>
-  blocks.value
-    .filter((b) => b.title)
-    .map((b) => ({ id: b.id, title: b.title })),
-);
+
+const galleryCaptions = computed(() => {
+  const blocks = project.value?.blocks || [];
+  const galleryBlock = blocks.find((b) => b.id === "galeria");
+  return galleryBlock?.captions || [];
+});
 
 const visibleTech = computed(() => {
   const stack = project.value?.techStack || [];
@@ -193,37 +182,6 @@ const hiddenTechCount = computed(() =>
 const hasActions = computed(() =>
   Boolean(project.value?.demo || project.value?.repository),
 );
-
-const activeBlock = computed(() =>
-  blocks.value.find((b) => b.id === activeId.value) || blocks.value[0],
-);
-
-const CATEGORY_BY_ID = {
-  resumen: "context",
-  participacion: "development",
-  resultado: "conclusion",
-  galeria: "conclusion",
-  enlaces: "resources",
-};
-
-const CATEGORY_ORDER = ["context", "development", "conclusion", "resources"];
-
-const groupedSections = computed(() => {
-  const map = {};
-  for (const s of sections.value) {
-    const cat = CATEGORY_BY_ID[s.id] || "development";
-    if (!map[cat]) map[cat] = [];
-    map[cat].push(s);
-  }
-  return CATEGORY_ORDER.filter((key) => map[key]).map((key) => ({
-    key,
-    items: map[key],
-  }));
-});
-
-const setSection = (id) => {
-  activeId.value = id;
-};
 </script>
 
 <style scoped>
@@ -268,10 +226,13 @@ const setSection = (id) => {
 /* ===== Executive summary card ===== */
 .exec {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
-  padding: 1.6rem 1.8rem;
+  padding: 1.6rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
@@ -286,51 +247,54 @@ const setSection = (id) => {
   background: linear-gradient(90deg, #3b58ff, #ff3b77);
 }
 
-.exec__head {
+.exec__media {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  justify-content: center;
 }
 
-.exec__logo {
-  width: 56px;
-  height: 56px;
+.exec__hero-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   border-radius: 14px;
   object-fit: cover;
-  flex-shrink: 0;
   border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
   box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
+.exec__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .exec__title {
   margin: 0;
-  font-size: 1.55rem;
+  font-size: 1.8rem;
   letter-spacing: -0.01em;
   color: #fff;
   text-align: left;
 }
 
 .exec__company {
-  margin: 0.1rem 0 0;
+  margin: 0.15rem 0 0;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.5);
   text-align: left;
 }
 
 .exec__summary {
-  margin: 0.35rem 0 0;
+  margin: 0.6rem 0 0;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.95rem;
   line-height: 1.6;
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  text-wrap: pretty;
+  text-align: left;
 }
 
 .exec__state-row {
-  margin-top: 1.1rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
 }
@@ -461,84 +425,49 @@ const setSection = (id) => {
   border-color: transparent;
 }
 
-/* ===== Layout ===== */
-.pd-layout {
-  display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  gap: 3.5rem;
-  align-items: start;
+/* ===== Project gallery section ===== */
+.project-gallery {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.project-gallery__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+/* ===== Features grid ===== */
+.project-features {
   margin-top: 3rem;
 }
 
-.pd-sidebar {
-  position: sticky;
-  top: 2rem;
+.project-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
-.pd-content {
-  min-width: 0;
+.project-features__item {
+  text-align: left;
 }
 
-.pd-fade-enter-active,
-.pd-fade-leave-active {
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease;
+.project-features__name {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
 }
 
-.pd-fade-enter-from {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-.pd-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
-}
-
-/* ===== Mobile chips ===== */
-.pd-chips {
-  display: none;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  overflow-x: auto;
-  padding: 0.75rem 0 0.5rem;
-  background: #0e131b;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  scrollbar-width: none;
-}
-
-.pd-chips::-webkit-scrollbar {
-  display: none;
-}
-
-.pd-chips__item {
-  flex-shrink: 0;
-  font-size: 0.82rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
+.project-features__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
 }
 
-.pd-chips__item:hover {
-  color: #fff;
-}
-
-.pd-chips__item--active {
-  border-color: rgba(59, 88, 255, 0.6);
-  background: rgba(59, 88, 255, 0.15);
-  color: #fff;
-}
-
+/* ===== Not found ===== */
 .pd-notfound {
   text-align: center;
   padding: 4rem 2rem;
@@ -547,17 +476,22 @@ const setSection = (id) => {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .pd-layout {
+  .exec {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  .pd-sidebar {
-    display: none;
+  .exec__media {
+    order: -1;
   }
 
-  .pd-chips {
-    display: flex;
+  .exec__hero-img {
+    max-width: 260px;
+  }
+
+  .project-features__grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 }
 
@@ -567,23 +501,15 @@ const setSection = (id) => {
   }
 
   .exec {
-    padding: 1rem 1rem;
-  }
-
-  .exec__head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-  }
-
-  .exec__logo {
-    width: 52px;
-    height: 52px;
+    padding: 1.2rem;
   }
 
   .exec__title {
     font-size: 1.5rem;
-    text-align: left;
+  }
+
+  .project-gallery__title {
+    font-size: 1.25rem;
   }
 }
 </style>
