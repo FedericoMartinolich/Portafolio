@@ -42,7 +42,7 @@ export default {
     cv: "Download CV",
     cdr: "Recommendation letter",
     degree: "Download degree",
-    intro: "I'm Federico Martinolich, a web developer focused on building functional, well-structured solutions. I love turning ideas into applications that truly streamline processes and improve the user experience.",
+    intro: "I am Federico Martinolich, since I was a child I showed interest and ease in topics related to the sciences of technology. Every small achievement I obtained as a child brought me closer to the idea that this was my vocation. Today I am fortunate to be able to dedicate myself to what I am passionate about and to continue learning and growing professionally.",
     careerTitle: "Experience"
   },
 

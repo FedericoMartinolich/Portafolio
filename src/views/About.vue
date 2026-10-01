@@ -1,57 +1,72 @@
 <template>
-<main>
-  <div class="two-columns">
-    <!-- Columna Izquierda: Sobre mí -->
-    <div class="column-left">
-      <div class="photo-container">
-        <img class="photo-bg" src="/perfil.jpeg" alt="" />
-        <img class="photo-fg" src="/perfil.jpeg" alt="Foto de perfil" />
+  <main>
+    <div class="two-columns">
+      <!-- Columna Izquierda: Sobre mí -->
+      <div class="column-left">
+        <div class="photo-container">
+          <img class="photo-bg" src="/perfil.jpeg" alt="" />
+          <img class="photo-fg" src="/perfil.jpeg" alt="Foto de perfil" />
+        </div>
+        <h1 class="title-font">{{ $t("about.title") }}</h1>
+        <p class="intro">{{ $t("about.intro") }}</p>
+        <a
+          href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf"
+          download
+          class="btn-cv"
+        >
+          <i class="fa fa-download"></i> {{ $t("about.cv") }}
+        </a>
+        <div class="cv-actions">
+          <a
+            href="/Portafolio/cv/cdR_federico_martinolich.pdf"
+            download
+            class="btn-cv btn-cv--secondary"
+          >
+            <i class="fa-solid fa-envelope"></i> {{ $t("about.cdr") }}
+          </a>
+          <a
+            href="/Portafolio/cv/Titulo-FedericoJoseMartinolich-Sistemas-IPSS.pdf"
+            download
+            class="btn-cv btn-cv--secondary"
+          >
+            <i class="fa-solid fa-graduation-cap"></i> {{ $t("about.degree") }}
+          </a>
+        </div>
       </div>
-      <h1 class="title-font">{{ $t("about.title") }}</h1>
-      <p class="intro">{{ $t("about.intro") }}</p>
-      <a href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf" download class="btn-cv">
-        <i class="fa fa-download"></i> {{ $t("about.cv") }}
-      </a>
-      <div class="cv-actions">
-        <a href="/Portafolio/cv/cdR_federico_martinolich.pdf" download class="btn-cv btn-cv--secondary">
-          <i class="fa-solid fa-envelope"></i> {{ $t("about.cdr") }}
-        </a>
-        <a href="/Portafolio/cv/Titulo-FedericoJoseMartinolich-Sistemas-IPSS.pdf" download class="btn-cv btn-cv--secondary">
-          <i class="fa-solid fa-graduation-cap"></i> {{ $t("about.degree") }}
-        </a>
+
+      <!-- Columna Derecha: Experiencia -->
+      <div class="column-right">
+        <h2 class="career__title title-font">{{ $t("about.careerTitle") }}</h2>
+        <section class="career">
+          <ExperienceList :experiences="experiences" />
+        </section>
       </div>
     </div>
 
-    <!-- Columna Derecha: Experiencia -->
-    <div class="column-right">
-      <h2 class="career__title title-font">{{ $t("about.careerTitle") }}</h2>
-      <section class="career">
-        <ExperienceList :experiences="experiences" />
-      </section>
-    </div>
-  </div>
-
-  <footer>
-    <a href="https://www.linkedin.com/in/federico-martinolich" target="_blank">
+    <footer>
+      <a
+        href="https://www.linkedin.com/in/federico-martinolich"
+        target="_blank"
+      >
         <i class="fa fa-brands fa-linkedin-in icons"></i>
-    </a>
-    <a href="https://github.com/FedericoMartinolich" target="_blank">
+      </a>
+      <a href="https://github.com/FedericoMartinolich" target="_blank">
         <i class="fa fa-brands fa-github icons"></i>
-    </a>
-    <a href="https://wa.me/541125276194" target="_blank">
+      </a>
+      <a href="https://wa.me/541125276194" target="_blank">
         <i class="fa fa-brands fa-whatsapp icons"></i>
-    </a>
-    <a href="https://www.instagram.com/fedev.jpg" target="_blank">
-      <i class="fa fa-brands fa-instagram icons"></i>
-    </a>
-  </footer>
-</main>
+      </a>
+      <a href="https://www.instagram.com/fedev.jpg" target="_blank">
+        <i class="fa fa-brands fa-instagram icons"></i>
+      </a>
+    </footer>
+  </main>
 </template>
 
 <script setup>
-import ExperienceList from '../components/ExperienceList.vue';
-import { useI18n } from 'vue-i18n';
-import experiencesData from '../data/experiences.json';
+import ExperienceList from "../components/ExperienceList.vue";
+import { useI18n } from "vue-i18n";
+import experiencesData from "../data/experiences.json";
 
 const { t } = useI18n();
 const experiences = experiencesData.experiences;
@@ -130,11 +145,11 @@ const experiences = experiencesData.experiences;
 /* all */
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: var(--font-sans);
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-sans);
+  padding: 2rem;
 }
 
 .two-columns {
@@ -204,8 +219,8 @@ main {
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .intro {

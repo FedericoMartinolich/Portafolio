@@ -33,7 +33,7 @@ export default {
     cv: "Descargar CV",
     cdr: "Carta de recomendación",
     degree: "Descargar título",
-    intro: "Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.",
+    intro: "Soy Federico Martinolich, desde que era niño mostre interés y facilidad sobre temas relacionados con las ciencias de la tecnología. Cada pequeño logro que obtenía de chico me acercaba a la idea de que esta era mi vocación. Hoy tengo la fortuna de poder dedicarme a lo que me apasiona y poder seguir aprendiendo y creciendo profesionalmente.",
     careerTitle: "Experiencia"
   },
   experience: {
