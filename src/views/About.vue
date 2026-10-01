@@ -8,10 +8,18 @@
         <img class="photo-fg" src="/perfil.jpeg" alt="Foto de perfil" />
       </div>
       <h1 class="title-font">{{ $t("about.title") }}</h1>
-      <p class="intro">Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.</p>
+      <p class="intro">{{ $t("about.intro") }}</p>
       <a href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf" download class="btn-cv">
         <i class="fa fa-download"></i> {{ $t("about.cv") }}
       </a>
+      <div class="cv-actions">
+        <a href="/Portafolio/cv/cdR_federico_martinolich.pdf" download class="btn-cv btn-cv--secondary">
+          <i class="fa-solid fa-envelope"></i> {{ $t("about.cdr") }}
+        </a>
+        <a href="/Portafolio/cv/Titulo-FedericoJoseMartinolich-Sistemas-IPSS.pdf" download class="btn-cv btn-cv--secondary">
+          <i class="fa-solid fa-graduation-cap"></i> {{ $t("about.degree") }}
+        </a>
+      </div>
     </div>
 
     <!-- Columna Derecha: Experiencia -->
@@ -70,6 +78,42 @@ const experiences = experiencesData.experiences;
   margin-top: 2rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.cv-actions .btn-cv {
+  flex: 1 1 180px;
+  width: auto;
+  margin-top: 0;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-cv.btn-cv--secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.85);
+  transform: none;
+}
+
+.btn-cv.btn-cv--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cv.btn-cv--secondary:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .btn-cv:hover {

@@ -31,7 +31,9 @@ export default {
   about: {
     title: "¡Hola a todos!",
     cv: "Descargar CV",
-    intro: "Desarrollador Full Stack con formación en Análisis y Desarrollo de Software. Me especializo en PHP, Laravel y Vue.js, creando aplicaciones web para empresas y clientes. Me interesa construir sistemas bien estructurados que resuelvan problemas reales.",
+    cdr: "Carta de recomendación",
+    degree: "Descargar título",
+    intro: "Soy Federico Martinolich, un desarrollador web enfocado en crear soluciones funcionales y bien estructuradas. Me apasiona transformar ideas en aplicaciones que realmente simplifiquen procesos y mejoren la experiencia del usuario.",
     careerTitle: "Experiencia"
   },
   experience: {
@@ -48,7 +50,7 @@ export default {
     onThisPage: "En esta página",
     back: "Todos los proyectos",
     notFound: "Proyecto no encontrado.",
-    verDemo: "Ver Demo",
+    verDemo: "Visitar Sitio",
     github: "GitHub",
     moreTechs: "+{n} tecnologías",
     lessTechs: "Ver menos",

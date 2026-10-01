@@ -40,7 +40,9 @@ export default {
   about: {
     title: "Hey there!",
     cv: "Download CV",
-    intro: "Full Stack Developer trained in Software Analysis & Development. I specialise in PHP, Laravel and Vue.js, building web applications for companies and clients. I'm interested in creating well-structured systems that solve real problems.",
+    cdr: "Recommendation letter",
+    degree: "Download degree",
+    intro: "I'm Federico Martinolich, a web developer focused on building functional, well-structured solutions. I love turning ideas into applications that truly streamline processes and improve the user experience.",
     careerTitle: "Experience"
   },
 
@@ -61,7 +63,7 @@ export default {
     onThisPage: "On this page",
     back: "All projects",
     notFound: "Project not found.",
-    verDemo: "Live Demo",
+    verDemo: "Visit Site",
     github: "GitHub",
     moreTechs: "+{n} more",
     lessTechs: "Show less",

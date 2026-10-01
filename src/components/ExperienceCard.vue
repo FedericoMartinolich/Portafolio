@@ -3,7 +3,13 @@
     <header class="experience-card__header" @click="toggle">
       <div class="experience-card__top">
         <span class="experience-card__icon" aria-hidden="true">
-          <i class="fa-solid fa-briefcase"></i>
+          <img
+            v-if="logo"
+            class="experience-card__logo"
+            :src="logo"
+            :alt="company"
+          />
+          <i v-else class="fa-solid fa-briefcase"></i>
         </span>
         <div class="experience-card__titles">
           <h3 class="experience-card__role">{{ role }}</h3>
@@ -69,6 +75,7 @@ const duration = computed(() => pick(props.experience.duration, locale.value))
 const summary = computed(() => pick(props.experience.summary, locale.value))
 const tags = computed(() => pick(props.experience.tags, locale.value) || [])
 const sections = computed(() => props.experience.sections || [])
+const logo = computed(() => props.experience.logo)
 </script>
 
 <style scoped>
@@ -113,6 +120,17 @@ const sections = computed(() => props.experience.sections || [])
   background: rgba(59, 88, 255, 0.15);
   color: #6a84ff;
   font-size: 1.05rem;
+  overflow: hidden;
+}
+
+.experience-card__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12px;
 }
 
 .experience-card__titles {

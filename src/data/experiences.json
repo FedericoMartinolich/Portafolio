@@ -3,10 +3,11 @@
     {
       "id": "rebrit",
       "role": {
-        "es": "Desarrollador Web Full Stack",
-        "en": "Full Stack Web Developer"
+        "es": "Desarrollador Full Stack",
+        "en": "Full Stack Developer"
       },
       "company": "Rebrit SRL",
+      "logo": "/Portafolio/imgs/logos-exp/Rebrit-logo.png",
       "period": {
         "es": "Feb 2025 — Ago 2026",
         "en": "Feb 2025 — Aug 2026"
@@ -138,6 +139,7 @@
         "es": "Universidad Sedes Sapientiae",
         "en": "Sedes Sapientiae University"
       },
+      "logo": "/Portafolio/imgs/logos-exp/IPSS-logo.jpg",
       "period": {
         "es": "Feb 2022 — Dic 2024",
         "en": "Feb 2022 — Dec 2024"
