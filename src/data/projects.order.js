@@ -6,7 +6,8 @@
    5. estancias: SaaS personal en desarrollo
    6. kredit: frontend financiero con JWT
    7. checking: backend PHP puro desde cero (front precario)
-   8. mecha: solo maquetado sin logica
+   8. pascal: 128 ejercicios y algoritmos en Free Pascal (repo con ejecutables)
+   9. mecha: solo maquetado sin logica
 */
 export default [
   'nexo',
@@ -16,5 +17,6 @@ export default [
   'estancias',
   'kredit',
   'checking',
+  'pascal',
   'mecha'
 ]

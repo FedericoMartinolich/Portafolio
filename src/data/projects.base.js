@@ -218,5 +218,19 @@ export default {
       { title: 'Gestión comercial', description: 'Productos, stock, compras, cuenta corriente, presupuestos/remitos en PDF y reportes con gráficos y Excel.' }
     ],
     repository: 'https://github.com/Felipe-258/sistema-mayorista'
+  },
+  'pascal': {
+    id: 'pascal',
+    category: 'fullstack',
+    accent: '#60a5fa',
+    status: 'done',
+    thumbnail: '/Portafolio/imgs/projects/Pascal/Logo.png',
+    techStack: ['Free Pascal'],
+    features: [
+      { title: 'Números romanos', description: 'Conversor decimal ↔ romano (1–4999) con notación sustractiva generada por valor posicional.' },
+      { title: 'Validación de fechas', description: 'Control de meses de 30/31 días y años bisiestos, con ordenamiento cronológico.' },
+      { title: 'Records y algoritmos', description: 'Mini-aplicaciones con records, procedimientos y ordenamiento sobre colecciones.' }
+    ],
+    repository: 'https://github.com/FedericoMartinolich/pascal-portfolio'
   }
 }

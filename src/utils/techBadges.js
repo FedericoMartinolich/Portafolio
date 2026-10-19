@@ -20,7 +20,8 @@ const TECH = {
   leaflet: { icon: 'fa-solid fa-map-location-dot', color: '#a3e635' },
   jwt: { icon: 'fa-solid fa-key', color: '#fde68a' },
   laragon: { icon: 'fa-solid fa-laptop-code', color: '#94a3b8' },
-  vite: { icon: 'fa-solid fa-bolt', color: '#a78bfa' }
+  vite: { icon: 'fa-solid fa-bolt', color: '#a78bfa' },
+  'free pascal': { icon: 'fa-solid fa-terminal', color: '#60a5fa' }
 }
 
 const FALLBACK = { icon: 'fa-solid fa-code', color: '#94a3b8' }

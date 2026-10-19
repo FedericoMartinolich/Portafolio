@@ -571,5 +571,58 @@ export default {
         ]
       }
     ]
+  },
+  "pascal": {
+    title: "Pascal Exercises & Algorithms",
+    shortDesc: "A collection of 128 Free Pascal programs: from language fundamentals to mini-apps with records and algorithms.",
+    meta: {
+      type: "Academic project",
+      role: "Programming",
+      state: "Finished"
+    },
+    blocks: [
+      {
+        id: "resumen",
+        type: "text",
+        title: "What it is",
+        content: `
+          The complete repository of my exercises and projects written in
+          Free Pascal during my training: 128 programs ranging from language
+          fundamentals to concrete problem solving such as a Roman numeral
+          converter, date validation with leap years and record-based
+          statistics systems.
+        `
+      },
+      {
+        id: "participacion",
+        type: "text",
+        title: "Highlights",
+        content: `
+          The featured programs solve complete problems: a decimal to Roman
+          numeral converter with subtractive notation, chronological date
+          validation and sorting, and a sports statistics app built with
+          records, multiple procedures and key-based lookup. The repository
+          keeps the remaining exercises as a record of the learning process.
+        `
+      },
+      {
+        id: "resultado",
+        type: "text",
+        title: "Result",
+        content: `
+          A solid foundation in low-level programming: data structures,
+          sorting algorithms and multi-procedure program design applied to
+          concrete problems.
+        `
+      },
+      {
+        id: "enlaces",
+        type: "links",
+        title: "Links",
+        links: [
+          { label: "GitHub", url: "https://github.com/FedericoMartinolich/pascal-portfolio" }
+        ]
+      }
+    ]
   }
 }
