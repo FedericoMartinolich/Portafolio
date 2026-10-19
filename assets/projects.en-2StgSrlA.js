@@ -84,7 +84,23 @@ const e={checking:{title:"ChecKing",shortDesc:"Attendance management system for 
           I built the backend with Laravel, Livewire and Tailwind CSS, with
           RBAC granular permissions, decoupled availability management and
           operational dashboards.
-        `},{id:"resultado",type:"text",title:"Result",content:"Under development."}]},pascal:{title:"Pascal Exercises & Algorithms",shortDesc:"A collection of 128 Free Pascal programs: from language fundamentals to mini-apps with records and algorithms.",meta:{type:"Academic project",role:"Programming",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
+        `},{id:"resultado",type:"text",title:"Result",content:"Under development."}]},nexo:{title:"Nexo",shortDesc:"Multi-tenant system for wholesale distributors and hardware wholesalers.",meta:{type:"Collaborative project",role:"Full Stack Developer",state:"In development"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
+          Nexo is a multi-tenant system for wholesale distributors and
+          hardware stores. It centralises products, stock, suppliers,
+          customers, purchases, orders, credit accounts and commercial
+          documents, responsive on desktop and mobile. Includes subscription
+          plans, supplier price-list import and reports.
+        `,media:[{index:0,caption:"Dashboard with sales summary, critical stock and receivables."}]},{id:"participacion",type:"text",title:"My role",content:`
+          Built together with Felipe Franco. I contribute on the Laravel
+          backend (multi-tenant with TieneTenant, roles, stock, pricing,
+          PhpSpreadsheet import, dompdf PDFs) and Vue 3 + Inertia +
+          TypeScript frontend. We implemented manual orders and a WhatsApp
+          parser, credit accounts, quotes/delivery notes and chart + Excel/PDF
+          reports.
+        `,media:[{index:1,caption:"Product list with filters, desktop sorting and catalog export."},{index:2,caption:"Order management with states and fast WhatsApp loading."}]},{id:"resultado",type:"text",title:"Result",content:`
+          In development: phases 0–5 done, now in stabilisation with manual
+          testing and bug fixing before deployment.
+        `},{id:"galeria",type:"gallery",title:"Screenshots",captions:["Dashboard with sales summary and alerts.","Product list with filters and states.","Order management with states.","Sales reports with charts and export."]},{id:"enlaces",type:"links",title:"Links",links:[{label:"GitHub",url:"https://github.com/Felipe-258/sistema-mayorista"}]}]},pascal:{title:"Pascal Exercises & Algorithms",shortDesc:"A collection of 128 Free Pascal programs: from language fundamentals to mini-apps with records and algorithms.",meta:{type:"Academic project",role:"Programming",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
           The complete repository of my exercises and projects written in
           Free Pascal during my training: 128 programs ranging from language
           fundamentals to concrete problem solving such as a Roman numeral
