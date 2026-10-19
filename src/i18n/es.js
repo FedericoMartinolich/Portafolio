@@ -2,7 +2,11 @@ export default {
   home: {
     profession: "Desarrollador Full Stack",
     tagline: "Construyo aplicaciones web escalables utilizando Laravel, Vue y PHP.",
-    hint: "Busca cualquier tecnología o proyecto ↑"
+    hint: "Busca cualquier tecnología o proyecto ↑",
+    fullstack: "Full-Stack",
+    frontend: "Frontend",
+    backend: "Backend",
+    emptyBackend: "Sin proyectos backend puros por ahora — mi trabajo backend vive dentro de los Full-Stack."
   },
   search: {
     prefix: "Buscar",

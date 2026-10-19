@@ -64,6 +64,7 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
 import baseProjects from '../data/projects.base.js'
+import projectOrder from '../data/projects.order.js'
 
 const { locale, t, tm } = useI18n()
 const router = useRouter()
@@ -80,7 +81,9 @@ const loadProjects = async () => {
     id: key,
     ...baseProjects[key],
     ...langProjects[key]
-  }))
+  })).sort(
+    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
+  )
 }
 
 watch(locale, loadProjects, { immediate: true })

@@ -1,11 +1,11 @@
 <template>
   <div class="carousel">
-    <button class="carousel__arrow carousel__arrow--left" @click="prev" aria-label="Previous">
+    <button v-if="isCarousel" class="carousel__arrow carousel__arrow--left" @click="prev" aria-label="Previous">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
 
     <div class="carousel__viewport" ref="viewportEl">
-      <div class="carousel__track" :style="trackStyle" :class="{ 'carousel__track--animating': animating }">
+      <div class="carousel__track" :class="{ 'carousel__track--animating': animating && isCarousel, 'carousel__track--static': !isCarousel }" :style="trackStyle">
         <div
           v-for="(item, i) in trackItems"
           :key="item._key"
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <button class="carousel__arrow carousel__arrow--right" @click="next" aria-label="Next">
+    <button v-if="isCarousel" class="carousel__arrow carousel__arrow--right" @click="next" aria-label="Next">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </div>
@@ -56,6 +56,10 @@ const maxVisible = computed(() => {
   return 1
 })
 
+// El carrusel se activa solo si hay más proyectos de los que entran
+// en pantalla: así nunca quedan cards en una segunda fila.
+const isCarousel = computed(() => props.projects.length > maxVisible.value)
+
 const slideWidth = computed(() => {
   const count = maxVisible.value
   const totalGap = gap * (count - 1)
@@ -65,6 +69,10 @@ const slideWidth = computed(() => {
 const trackItems = computed(() => {
   const list = props.projects
   if (!list.length) return []
+  // 4 o menos: sin clones ni repetición
+  if (!isCarousel.value) {
+    return list.map((item, i) => ({ ...item, _key: `orig-${i}` }))
+  }
   const items = []
   for (let c = 0; c < CLONE_COUNT; c++) {
     for (let i = 0; i < list.length; i++) {
@@ -92,6 +100,7 @@ const slidePx = computed(() => {
 })
 
 const trackStyle = computed(() => {
+  if (!isCarousel.value) return {}
   const offset = originalsStart.value + currentIndex.value
   const px = slidePx.value
   if (px === 0) return { transform: "translateX(0)" }
@@ -101,6 +110,7 @@ const trackStyle = computed(() => {
 })
 
 const next = () => {
+  if (!isCarousel.value) return
   const total = props.projects.length
 
   if (currentIndex.value >= total - 1) {
@@ -118,6 +128,7 @@ const next = () => {
 }
 
 const prev = () => {
+  if (!isCarousel.value) return
   const total = props.projects.length
 
   if (currentIndex.value === 0) {
@@ -180,6 +191,11 @@ onUnmounted(() => {
 
 .carousel__track--animating {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel__track--static {
+  flex-wrap: nowrap;
+  transform: none;
 }
 
 .carousel__slide {

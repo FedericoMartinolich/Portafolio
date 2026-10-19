@@ -4,6 +4,7 @@
 export default {
   checking: {
     id: 'checking',
+    category: 'backend',
     company: 'Universidad Sedes Sapientiae',
     accent: '#38bdf8',
     status: 'done',
@@ -25,6 +26,7 @@ export default {
 
   foodservice: {
     id: 'foodservice',
+    category: 'fullstack',
     company: 'Rebrit SRL',
     accent: '#f97316',
     status: 'done',
@@ -58,6 +60,7 @@ export default {
 
   'tiro-libre': {
     id: 'tiro-libre',
+    category: 'fullstack',
     accent: '#22c55e',
     status: 'done',
     thumbnail: '/Portafolio/imgs/projects/TiroLibre/Logo.png',
@@ -84,6 +87,7 @@ export default {
 
   mecha: {
     id: 'mecha',
+    category: 'frontend',
     company: 'Rebrit SRL',
     accent: '#f59e0b',
     status: 'done',
@@ -107,6 +111,7 @@ export default {
 
   kredit: {
     id: 'kredit',
+    category: 'frontend',
     company: 'Rebrit SRL',
     accent: '#34d399',
     status: 'done',
@@ -128,6 +133,7 @@ export default {
 
   'ferreteria-el-moro': {
     id: 'ferreteria-el-moro',
+    category: 'frontend',
     company: 'Ferretería El Moro',
     accent: '#fb923c',
     status: 'done',
@@ -157,6 +163,7 @@ export default {
   'estancias': 
   {
     id: 'estancias',
+    category: 'fullstack',
     accent: '#2dd4bf',
     status: 'progress',
     thumbnail: '/Portafolio/imgs/projects/Estancias/Logo.png',
@@ -181,5 +188,35 @@ export default {
       { title: 'Arquitectura SaaS', description: 'Diseño modular escalable hacia modelo SaaS con dashboards operativos.' }
     ],
     repository: ''
+  },
+  'nexo': {
+    id: 'nexo',
+    category: 'fullstack',
+    company: 'Proyecto colaborativo con Felipe Franco',
+    accent: '#6366f1',
+    status: 'progress',
+    thumbnail: '/Portafolio/imgs/projects/Nexo/Logo.png',
+    techStack: [
+      'Laravel 13',
+      'Vue 3',
+      'Inertia.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'MySQL 8',
+      'PhpSpreadsheet',
+      'dompdf'
+    ],
+    gallery: [
+      '/Portafolio/imgs/projects/Nexo/1.png',
+      '/Portafolio/imgs/projects/Nexo/2.png',
+      '/Portafolio/imgs/projects/Nexo/3.png',
+      '/Portafolio/imgs/projects/Nexo/4.png'
+    ],
+    features: [
+      { title: 'Multi-tenant + Roles', description: 'Aislamiento por tenant con trait TieneTenant, roles admin/operador/vendedor y planes por suscripción.' },
+      { title: 'Pedidos y WhatsApp', description: 'Pedidos manuales con reserva de stock y parser para pegar mensajes de WhatsApp y generar el pedido.' },
+      { title: 'Gestión comercial', description: 'Productos, stock, compras, cuenta corriente, presupuestos/remitos en PDF y reportes con gráficos y Excel.' }
+    ],
+    repository: 'https://github.com/Felipe-258/sistema-mayorista'
   }
 }

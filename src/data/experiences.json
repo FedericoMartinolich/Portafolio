@@ -90,7 +90,7 @@
         "es": "Desarrollo de productos web propios y para clientes, cubriendo arquitectura, frontend, backend y despliegue.",
         "en": "Development of my own and client web products, covering architecture, frontend, backend and deployment."
       },
-      "tags": ["Laravel", "Vue 3", "PHP", "Livewire", "Tailwind CSS", "MySQL", "Vite", "Cloudinary", "Vercel"],
+      "tags": ["Laravel", "Vue 3", "Inertia.js", "TypeScript", "PHP", "Livewire", "Tailwind CSS", "MySQL", "Vite", "Cloudinary", "Vercel"],
       "sections": [
         {
           "id": "personal-main",
@@ -108,6 +108,10 @@
               },
               "items": [
                 {
+                  "es": "Nexo: sistema multi-tenant para mayoristas con Laravel, Vue 3 e Inertia, desarrollado junto a Felipe Franco.",
+                  "en": "Nexo: multi-tenant system for wholesalers with Laravel, Vue 3 and Inertia, built together with Felipe Franco."
+                },
+                {
                   "es": "Ferretería El Moro: catálogo online sin backend con Google Sheets y Cloudinary.",
                   "en": "Ferretería El Moro: backend-less online catalog with Google Sheets and Cloudinary."
                 },
@@ -123,7 +127,7 @@
                 "es": "Proyectos relacionados",
                 "en": "Related projects"
               },
-              "projects": ["ferreteria-el-moro", "estancias"]
+              "projects": ["nexo", "ferreteria-el-moro", "estancias"]
             }
           ]
         }

@@ -15,6 +15,7 @@ import { useI18n } from 'vue-i18n'
 
 import ExperienceCard from './ExperienceCard.vue'
 import baseProjects from '../data/projects.base.js'
+import projectOrder from '../data/projects.order.js'
 
 defineProps({
   experiences: {
