@@ -91,4 +91,20 @@ const e={checking:{title:"ChecKing",shortDesc:"Sistema de gestión de asistencia
           base de datos. Implementé el backend con Laravel, Livewire y
           Tailwind CSS, con RBAC de permisos granulares, gestión de
           disponibilidad desacoplada y dashboards operativos.
-        `},{id:"resultado",type:"text",title:"Resultado",content:"En desarrollo."}]}};export{e as default};
+        `},{id:"resultado",type:"text",title:"Resultado",content:"En desarrollo."}]},nexo:{title:"Nexo",shortDesc:"Sistema multi-tenant para gestión comercial de distribuidoras y ferreterías mayoristas.",meta:{type:"Proyecto colaborativo",role:"Desarrollador Full Stack",state:"En desarrollo"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
+          Nexo es un sistema integral multi-tenant para distribuidoras y
+          ferreterías mayoristas. Centraliza productos, stock, proveedores,
+          clientes, compras, pedidos, cuenta corriente y documentación
+          comercial, con acceso responsive desde PC y celular. Incluye planes
+          por suscripción, importación de listas de precios y reportes.
+        `,media:[{index:0,caption:"Dashboard con resumen de ventas, stock crítico y cuentas por cobrar."}]},{id:"participacion",type:"text",title:"Mi participación",content:`
+          Proyecto desarrollado junto a Felipe Franco. Aporto en backend con
+          Laravel (multi-tenant con TieneTenant, roles, stock, precios,
+          importación con PhpSpreadsheet, PDFs con dompdf) y en frontend con
+          Vue 3 + Inertia + TypeScript. Implementamos pedidos manuales y
+          parser de WhatsApp, cuenta corriente, presupuestos/remitos y
+          reportes con gráficos y exportación a Excel/PDF.
+        `,media:[{index:1,caption:"Listado de productos con filtros, sorting en desktop y exportación de catálogo."},{index:2,caption:"Gestión de pedidos con estados y carga rápida desde WhatsApp."}]},{id:"resultado",type:"text",title:"Resultado",content:`
+          En desarrollo: fases 0 a 5 completas y en etapa de estabilización
+          con testing manual y corrección de bugs antes del despliegue.
+        `},{id:"galeria",type:"gallery",title:"Capturas",captions:["Dashboard con resumen de ventas y alertas.","Listado de productos con filtros y estados.","Gestión de pedidos con estados.","Reportes de ventas con gráficos y exportación."]},{id:"enlaces",type:"links",title:"Enlaces",links:[{label:"GitHub",url:"https://github.com/Felipe-258/sistema-mayorista"}]}]}};export{e as default};
