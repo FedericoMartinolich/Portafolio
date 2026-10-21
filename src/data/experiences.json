@@ -9,8 +9,8 @@
       "company": "Rebrit SRL",
       "logo": "/Portafolio/imgs/logos-exp/Rebrit-logo.png",
       "period": {
-        "es": "Feb 2025 — Ago 2026",
-        "en": "Feb 2025 — Aug 2026"
+        "es": "Feb 2025 — Jul 2026",
+        "en": "Feb 2025 — Jul 2026"
       },
       "duration": {
         "es": "1 año y medio",
@@ -112,8 +112,8 @@
                   "en": "Nexo: multi-tenant system for wholesalers with Laravel, Vue 3 and Inertia, built together with Felipe Franco."
                 },
                 {
-                  "es": "Ferretería El Moro: catálogo online sin backend con Google Sheets y Cloudinary.",
-                  "en": "Ferretería El Moro: backend-less online catalog with Google Sheets and Cloudinary."
+                  "es": "Catálogos online para comercios (caso de éxito: Ferretería El Moro): arquitectura sin backend con Google Sheets y Cloudinary.",
+                  "en": "Online catalogs for businesses (success case: Ferretería El Moro): backend-less architecture with Google Sheets and Cloudinary."
                 },
                 {
                   "es": "Estancias: sistema de gestión turística con Laravel, Livewire y RBAC.",
@@ -153,10 +153,10 @@
         "en": "3 years"
       },
       "summary": {
-        "es": "Formación en programación, bases de datos y desarrollo de aplicaciones, con proyectos integradores reales.",
-        "en": "Training in programming, databases and application development, with real capstone projects."
+        "es": "Título con validez nacional (promedio 8,75). Formación integral en programación, análisis y diseño de sistemas, bases de datos, auditoría, estadística, redes y desarrollo de aplicaciones, con proyectos integradores reales.",
+        "en": "Nationally valid degree (GPA 8.75). Full training in programming, system analysis and design, databases, auditing, statistics, networks and application development, with real capstone projects."
       },
-      "tags": ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      "tags": ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript", "Kotlin", "UML"],
       "sections": [
         {
           "id": "education-main",
@@ -180,6 +180,10 @@
                 {
                   "es": "Tiro Libre: plataforma de reservas de canchas con Laravel 10 y FullCalendar.",
                   "en": "Tiro Libre: football field booking platform with Laravel 10 and FullCalendar."
+                },
+                {
+                  "es": "Contenido de la carrera: análisis y diseño de sistemas (UML, DFD, DER), ingeniería de software, auditoría y pruebas (caja blanca/negra), estadística, sistemas operativos y redes, legislación informática y desarrollo móvil Android/Kotlin.",
+                  "en": "Coursework: system analysis and design (UML, DFD, ER), software engineering, auditing and testing (white/black box), statistics, operating systems and networks, IT law and Android/Kotlin mobile development."
                 }
               ]
             },

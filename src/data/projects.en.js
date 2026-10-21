@@ -385,14 +385,15 @@ export default {
         type: "text",
         title: "What it is",
         content: `
-          Web catalog for a local hardware store, designed to display products
-          efficiently without backend infrastructure or maintenance costs.
-          The client can manage content without technical knowledge.
+          Web catalog for a local hardware store, built to display 800+
+          products across 29 categories without backend infrastructure or
+          maintenance costs. The client manages all content without
+          technical knowledge.
         `,
         media: [
           {
             index: 0,
-            caption: "General product catalog view."
+            caption: "Home with featured banners, payment methods and category shortcuts."
           }
         ]
       },
@@ -401,19 +402,22 @@ export default {
         type: "text",
         title: "My role",
         content: `
-          I designed a frontend-first architecture: Google Sheets as the data
-          source and Cloudinary for images. I built the catalog with Vue 3
-          and Vite, integrated a shopping cart with WhatsApp checkout and
-          deployed on Vercel. The catalog updates without touching code.
+          I designed a frontend-first architecture: Google Sheets as the
+          data source and Cloudinary for images. I built the catalog in
+          Vue 3 + Vite with search, category and brand filters, a
+          wishlist page, special offers and a cart that assembles the
+          order and sends it via WhatsApp with the customer's details.
+          Deployed on Vercel: the store loads products, prices and banners
+          without touching code.
         `,
         media: [
           {
             index: 1,
-            caption: "Product detail view."
+            caption: "Product detail with stock, discount and direct purchase or WhatsApp enquiry."
           },
           {
             index: 6,
-            caption: "Cart modal with WhatsApp integration."
+            caption: "Booking modal collecting customer details before sending the order via WhatsApp."
           }
         ]
       },
@@ -422,8 +426,9 @@ export default {
         type: "text",
         title: "Result",
         content: `
-          A fast and professional online catalog easily managed by the client
-          without technical intervention.
+          A catalog with 800+ products across 29 categories, fast and
+          professional, fully managed by the client from a spreadsheet —
+          no technical knowledge and no server costs.
         `
       },
       {
@@ -431,14 +436,14 @@ export default {
         type: "gallery",
         title: "Screenshots",
         captions: [
-          "General catalog view.",
-          "Product detail.",
-          "Placeholder handling.",
-          "Contact with interactive map.",
-          "About us section.",
-          "Shopping cart.",
-          "Cart with WhatsApp integration.",
-          "New products section."
+          "Home: featured banners, payment methods and category shortcuts.",
+          "Product detail with stock, discount and direct purchase or WhatsApp enquiry.",
+          "Catalog with search, category filter and sorting.",
+          "Contact page with form, store details and interactive map.",
+          "About us section with the store's story.",
+          "Shopping cart with live order summary.",
+          "Booking modal: the order is sent pre-filled via WhatsApp.",
+          "Special offers with discounted prices and partner brands."
         ]
       },
       {

@@ -392,14 +392,14 @@ export default {
         title: "Qué es",
         content: `
           Catálogo web para una ferretería local, diseñado para mostrar
-          productos de forma eficiente sin infraestructura backend ni costos
-          de mantenimiento. El cliente puede administrar el contenido sin
-          conocimientos técnicos.
+          más de 800 productos en 29 categorías sin infraestructura backend
+          ni costos de mantenimiento. El cliente administra todo el
+          contenido sin conocimientos técnicos.
         `,
         media: [
           {
             index: 0,
-            caption: "Vista general del catálogo de productos."
+            caption: "Inicio con banners destacados, medios de pago y acceso por categoría."
           }
         ]
       },
@@ -409,18 +409,20 @@ export default {
         title: "Mi participación",
         content: `
           Diseñé una arquitectura frontend-first: Google Sheets como fuente
-          de datos y Cloudinary para imágenes. Desarrollé el catálogo con
-          Vue 3 y Vite, integré un carrito de compras con envío por WhatsApp
-          y despleué en Vercel. El catálogo se actualiza sin tocar código.
+          de datos y Cloudinary para imágenes. Desarrollé el catálogo en
+          Vue 3 + Vite con buscador, filtros por categoría y marca, página
+          de favoritos, ofertas y un carrito que arma el pedido y lo envía
+          por WhatsApp con los datos del cliente. Desplegué en Vercel: el
+          local carga productos, precios y banners sin tocar código.
         `,
         media: [
           {
             index: 1,
-            caption: "Vista de detalle de producto."
+            caption: "Detalle de producto con stock, descuento y compra o consulta por WhatsApp."
           },
           {
             index: 6,
-            caption: "Modal del carrito con integración a WhatsApp."
+            caption: "Modal de reserva con los datos del cliente para enviar el pedido por WhatsApp."
           }
         ]
       },
@@ -429,8 +431,9 @@ export default {
         type: "text",
         title: "Resultado",
         content: `
-          Catálogo online rápido y profesional que el cliente puede
-          administrar sin conocimientos técnicos.
+          Catálogo con más de 800 productos publicados en 29 categorías,
+          rápido y profesional, que el cliente administra desde una
+          planilla sin conocimientos técnicos ni costos de servidor.
         `
       },
       {
@@ -438,14 +441,14 @@ export default {
         type: "gallery",
         title: "Capturas",
         captions: [
-          "Vista general del catálogo.",
-          "Detalle de producto.",
-          "Manejo de placeholders.",
-          "Contacto con mapa interactivo.",
-          "Sección sobre nosotros.",
-          "Carrito de compras.",
-          "Carrito con integración a WhatsApp.",
-          "Nuevos productos."
+          "Inicio: banners destacados, medios de pago y acceso por categoría.",
+          "Detalle de producto con stock, descuento y compra o consulta por WhatsApp.",
+          "Catálogo con buscador, filtro por categoría y ordenamiento.",
+          "Contacto con formulario, datos del local y mapa interactivo.",
+          "Sección ¿Quiénes somos? con la historia del negocio.",
+          "Carrito con resumen de compra y total en tiempo real.",
+          "Modal de reserva: el pedido se envía armado por WhatsApp.",
+          "Ofertas especiales con precios tachados y marcas que trabajamos."
         ]
       },
       {

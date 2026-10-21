@@ -10,7 +10,7 @@
         <h1 class="title-font">{{ $t("about.title") }}</h1>
         <p class="intro">{{ $t("about.intro") }}</p>
         <a
-          href="/Portafolio/cv/Federico_Martinolich_Desarollador_Analista_Sistemas.pdf"
+          href="/Portafolio/cv/Federico_Martinolich_Desarrollador_Analista_Sistemas.pdf"
           download
           class="btn-cv"
         >
