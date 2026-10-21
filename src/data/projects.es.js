@@ -571,14 +571,6 @@ export default {
           "Gestión de pedidos con estados.",
           "Reportes de ventas con gráficos y exportación."
         ]
-      },
-      {
-        id: "enlaces",
-        type: "links",
-        title: "Enlaces",
-        links: [
-          { label: "GitHub", url: "https://github.com/Felipe-258/sistema-mayorista" }
-        ]
       }
     ]
   },

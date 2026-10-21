@@ -217,7 +217,7 @@ export default {
       { title: 'Pedidos y WhatsApp', description: 'Pedidos manuales con reserva de stock y parser para pegar mensajes de WhatsApp y generar el pedido.' },
       { title: 'Gestión comercial', description: 'Productos, stock, compras, cuenta corriente, presupuestos/remitos en PDF y reportes con gráficos y Excel.' }
     ],
-    repository: 'https://github.com/Felipe-258/sistema-mayorista'
+    repository: ''
   },
   'pascal': {
     id: 'pascal',

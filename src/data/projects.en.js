@@ -566,14 +566,6 @@ export default {
           "Order management with states.",
           "Sales reports with charts and export."
         ]
-      },
-      {
-        id: "enlaces",
-        type: "links",
-        title: "Links",
-        links: [
-          { label: "GitHub", url: "https://github.com/Felipe-258/sistema-mayorista" }
-        ]
       }
     ]
   },
