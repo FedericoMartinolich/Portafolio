@@ -221,7 +221,7 @@ export default {
   },
   'pascal': {
     id: 'pascal',
-    category: 'fullstack',
+    category: 'backend',
     accent: '#60a5fa',
     status: 'done',
     thumbnail: '/Portafolio/imgs/projects/Pascal/Logo.png',
