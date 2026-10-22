@@ -70,18 +70,21 @@ const e={checking:{title:"ChecKing",shortDesc:"Sistema de gestión de asistencia
           con flujo de autenticación JWT completo.
         `}]},"ferreteria-el-moro":{title:"Ferretería El Moro",shortDesc:"Catálogo online dinámico sin backend, optimizado para rendimiento.",meta:{type:"Proyecto freelance",role:"Desarrollador Full Stack",state:"Finalizado"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
           Catálogo web para una ferretería local, diseñado para mostrar
-          productos de forma eficiente sin infraestructura backend ni costos
-          de mantenimiento. El cliente puede administrar el contenido sin
-          conocimientos técnicos.
-        `,media:[{index:0,caption:"Vista general del catálogo de productos."}]},{id:"participacion",type:"text",title:"Mi participación",content:`
+          más de 800 productos en 29 categorías sin infraestructura backend
+          ni costos de mantenimiento. El cliente administra todo el
+          contenido sin conocimientos técnicos.
+        `,media:[{index:0,caption:"Inicio con banners destacados, medios de pago y acceso por categoría."}]},{id:"participacion",type:"text",title:"Mi participación",content:`
           Diseñé una arquitectura frontend-first: Google Sheets como fuente
-          de datos y Cloudinary para imágenes. Desarrollé el catálogo con
-          Vue 3 y Vite, integré un carrito de compras con envío por WhatsApp
-          y despleué en Vercel. El catálogo se actualiza sin tocar código.
-        `,media:[{index:1,caption:"Vista de detalle de producto."},{index:6,caption:"Modal del carrito con integración a WhatsApp."}]},{id:"resultado",type:"text",title:"Resultado",content:`
-          Catálogo online rápido y profesional que el cliente puede
-          administrar sin conocimientos técnicos.
-        `},{id:"galeria",type:"gallery",title:"Capturas",captions:["Vista general del catálogo.","Detalle de producto.","Manejo de placeholders.","Contacto con mapa interactivo.","Sección sobre nosotros.","Carrito de compras.","Carrito con integración a WhatsApp.","Nuevos productos."]},{id:"enlaces",type:"links",title:"Enlaces",links:[{label:"Sitio web",url:"https://ferreteriaelmoro-five.vercel.app/"}]}]},estancias:{title:"Estancias - Sistema Integral de Gestión Turística",shortDesc:"Plataforma de gestión para establecimientos turísticos y hoteleros.",meta:{type:"Proyecto personal",role:"Desarrollador Full Stack",state:"En desarrollo"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
+          de datos y Cloudinary para imágenes. Desarrollé el catálogo en
+          Vue 3 + Vite con buscador, filtros por categoría y marca, página
+          de favoritos, ofertas y un carrito que arma el pedido y lo envía
+          por WhatsApp con los datos del cliente. Desplegué en Vercel: el
+          local carga productos, precios y banners sin tocar código.
+        `,media:[{index:1,caption:"Detalle de producto con stock, descuento y compra o consulta por WhatsApp."},{index:6,caption:"Modal de reserva con los datos del cliente para enviar el pedido por WhatsApp."}]},{id:"resultado",type:"text",title:"Resultado",content:`
+          Catálogo con más de 800 productos publicados en 29 categorías,
+          rápido y profesional, que el cliente administra desde una
+          planilla sin conocimientos técnicos ni costos de servidor.
+        `},{id:"galeria",type:"gallery",title:"Capturas",captions:["Inicio: banners destacados, medios de pago y acceso por categoría.","Detalle de producto con stock, descuento y compra o consulta por WhatsApp.","Catálogo con buscador, filtro por categoría y ordenamiento.","Contacto con formulario, datos del local y mapa interactivo.","Sección ¿Quiénes somos? con la historia del negocio.","Carrito con resumen de compra y total en tiempo real.","Modal de reserva: el pedido se envía armado por WhatsApp.","Ofertas especiales con precios tachados y marcas que trabajamos."]},{id:"enlaces",type:"links",title:"Enlaces",links:[{label:"Sitio web",url:"https://ferreteriaelmoro-five.vercel.app/"}]}]},estancias:{title:"Estancias - Sistema Integral de Gestión Turística",shortDesc:"Plataforma de gestión para establecimientos turísticos y hoteleros.",meta:{type:"Proyecto personal",role:"Desarrollador Full Stack",state:"En desarrollo"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
           Estancia es un sistema de gestión integral para establecimientos
           turísticos, hoteles boutique y estancias rurales. Centraliza
           reservas, huéspedes, pagos, servicios, disponibilidad y operaciones
@@ -107,7 +110,7 @@ const e={checking:{title:"ChecKing",shortDesc:"Sistema de gestión de asistencia
         `,media:[{index:1,caption:"Listado de productos con filtros, sorting en desktop y exportación de catálogo."},{index:2,caption:"Gestión de pedidos con estados y carga rápida desde WhatsApp."}]},{id:"resultado",type:"text",title:"Resultado",content:`
           En desarrollo: fases 0 a 5 completas y en etapa de estabilización
           con testing manual y corrección de bugs antes del despliegue.
-        `},{id:"galeria",type:"gallery",title:"Capturas",captions:["Dashboard con resumen de ventas y alertas.","Listado de productos con filtros y estados.","Gestión de pedidos con estados.","Reportes de ventas con gráficos y exportación."]},{id:"enlaces",type:"links",title:"Enlaces",links:[{label:"GitHub",url:"https://github.com/Felipe-258/sistema-mayorista"}]}]},pascal:{title:"Ejercicios y algoritmos en Pascal",shortDesc:"Colección de 128 programas en Free Pascal: desde fundamentos hasta mini-aplicaciones con records y algoritmos.",meta:{type:"Proyecto académico",role:"Programación",state:"Finalizado"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
+        `},{id:"galeria",type:"gallery",title:"Capturas",captions:["Dashboard con resumen de ventas y alertas.","Listado de productos con filtros y estados.","Gestión de pedidos con estados.","Reportes de ventas con gráficos y exportación."]}]},pascal:{title:"Ejercicios y algoritmos en Pascal",shortDesc:"Colección de 128 programas en Free Pascal: desde fundamentos hasta mini-aplicaciones con records y algoritmos.",meta:{type:"Proyecto académico",role:"Programación",state:"Finalizado"},blocks:[{id:"resumen",type:"text",title:"Qué es",content:`
           Repositorio completo de mis ejercicios y proyectos escritos en
           Free Pascal durante mi formación: 128 programas que van desde los
           fundamentos del lenguaje hasta la resolución de problemas concretos

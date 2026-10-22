@@ -63,18 +63,23 @@ const e={checking:{title:"ChecKing",shortDesc:"Attendance management system for 
           A responsive frontend with stable API communication and a complete
           JWT authentication flow.
         `}]},"ferreteria-el-moro":{title:"Ferretería El Moro",shortDesc:"Dynamic online catalog built without a backend, optimized for performance.",meta:{type:"Freelance project",role:"Full Stack Developer",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
-          Web catalog for a local hardware store, designed to display products
-          efficiently without backend infrastructure or maintenance costs.
-          The client can manage content without technical knowledge.
-        `,media:[{index:0,caption:"General product catalog view."}]},{id:"participacion",type:"text",title:"My role",content:`
-          I designed a frontend-first architecture: Google Sheets as the data
-          source and Cloudinary for images. I built the catalog with Vue 3
-          and Vite, integrated a shopping cart with WhatsApp checkout and
-          deployed on Vercel. The catalog updates without touching code.
-        `,media:[{index:1,caption:"Product detail view."},{index:6,caption:"Cart modal with WhatsApp integration."}]},{id:"resultado",type:"text",title:"Result",content:`
-          A fast and professional online catalog easily managed by the client
-          without technical intervention.
-        `},{id:"galeria",type:"gallery",title:"Screenshots",captions:["General catalog view.","Product detail.","Placeholder handling.","Contact with interactive map.","About us section.","Shopping cart.","Cart with WhatsApp integration.","New products section."]},{id:"enlaces",type:"links",title:"Links",links:[{label:"Website",url:"https://ferreteriaelmoro-five.vercel.app/"}]}]},estancias:{title:"Estancias — Tourism Management System",shortDesc:"Management platform for tourism and hospitality establishments.",meta:{type:"Personal project",role:"Full Stack Developer",state:"In development"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
+          Web catalog for a local hardware store, built to display 800+
+          products across 29 categories without backend infrastructure or
+          maintenance costs. The client manages all content without
+          technical knowledge.
+        `,media:[{index:0,caption:"Home with featured banners, payment methods and category shortcuts."}]},{id:"participacion",type:"text",title:"My role",content:`
+          I designed a frontend-first architecture: Google Sheets as the
+          data source and Cloudinary for images. I built the catalog in
+          Vue 3 + Vite with search, category and brand filters, a
+          wishlist page, special offers and a cart that assembles the
+          order and sends it via WhatsApp with the customer's details.
+          Deployed on Vercel: the store loads products, prices and banners
+          without touching code.
+        `,media:[{index:1,caption:"Product detail with stock, discount and direct purchase or WhatsApp enquiry."},{index:6,caption:"Booking modal collecting customer details before sending the order via WhatsApp."}]},{id:"resultado",type:"text",title:"Result",content:`
+          A catalog with 800+ products across 29 categories, fast and
+          professional, fully managed by the client from a spreadsheet —
+          no technical knowledge and no server costs.
+        `},{id:"galeria",type:"gallery",title:"Screenshots",captions:["Home: featured banners, payment methods and category shortcuts.","Product detail with stock, discount and direct purchase or WhatsApp enquiry.","Catalog with search, category filter and sorting.","Contact page with form, store details and interactive map.","About us section with the store's story.","Shopping cart with live order summary.","Booking modal: the order is sent pre-filled via WhatsApp.","Special offers with discounted prices and partner brands."]},{id:"enlaces",type:"links",title:"Links",links:[{label:"Website",url:"https://ferreteriaelmoro-five.vercel.app/"}]}]},estancias:{title:"Estancias — Tourism Management System",shortDesc:"Management platform for tourism and hospitality establishments.",meta:{type:"Personal project",role:"Full Stack Developer",state:"In development"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
           Estancias is an all-in-one management system for tourism
           establishments, boutique hotels and rural lodges. It centralises
           bookings, guests, payments, services, availability and internal
@@ -100,7 +105,7 @@ const e={checking:{title:"ChecKing",shortDesc:"Attendance management system for 
         `,media:[{index:1,caption:"Product list with filters, desktop sorting and catalog export."},{index:2,caption:"Order management with states and fast WhatsApp loading."}]},{id:"resultado",type:"text",title:"Result",content:`
           In development: phases 0–5 done, now in stabilisation with manual
           testing and bug fixing before deployment.
-        `},{id:"galeria",type:"gallery",title:"Screenshots",captions:["Dashboard with sales summary and alerts.","Product list with filters and states.","Order management with states.","Sales reports with charts and export."]},{id:"enlaces",type:"links",title:"Links",links:[{label:"GitHub",url:"https://github.com/Felipe-258/sistema-mayorista"}]}]},pascal:{title:"Pascal Exercises & Algorithms",shortDesc:"A collection of 128 Free Pascal programs: from language fundamentals to mini-apps with records and algorithms.",meta:{type:"Academic project",role:"Programming",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
+        `},{id:"galeria",type:"gallery",title:"Screenshots",captions:["Dashboard with sales summary and alerts.","Product list with filters and states.","Order management with states.","Sales reports with charts and export."]}]},pascal:{title:"Pascal Exercises & Algorithms",shortDesc:"A collection of 128 Free Pascal programs: from language fundamentals to mini-apps with records and algorithms.",meta:{type:"Academic project",role:"Programming",state:"Finished"},blocks:[{id:"resumen",type:"text",title:"What it is",content:`
           The complete repository of my exercises and projects written in
           Free Pascal during my training: 128 programs ranging from language
           fundamentals to concrete problem solving such as a Roman numeral
